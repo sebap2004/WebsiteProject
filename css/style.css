@@ -1,0 +1,147 @@
+body
+{
+    background-image: linear-gradient(to bottom, #600BA8, #2a0649);
+    font-family: pixelFont;
+    color: #e0d7f3;
+}
+img{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+    padding: 10px 40px;
+}
+h1{
+    font-size: 60px;
+    margin: 0px;
+}
+@font-face {
+    font-family: pixelFont;
+    src:url(../font/Silkscreen-Regular.ttf)
+}
+.header-container
+{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-flow: row wrap;
+    height: 100px;
+}
+.header
+{
+    display: flex;
+    height: auto;
+}
+.header-item
+{
+    width: auto;
+    display: flex;
+
+}
+
+
+
+
+
+
+
+.intro
+{
+    font-size: 20px;
+}
+.navbar {
+    overflow: hidden;
+    background-color: #2a0649;
+
+
+}
+.navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    width:100px;
+    text-decoration: none;
+    font-size: 17px;
+    border: 4px outset #b37ee5;
+
+
+}
+
+.navbar a:hover {
+    background-color: white;
+    color: black;
+}
+.navbar a:active {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    width:100px;
+    text-decoration: none;
+    font-size: 17px;
+    border: 4px inset #dbb5ff;
+
+
+}
+
+
+.navcontainer
+{
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    height: 50px;
+}
+.nav
+{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+
+}
+.navitem
+{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0px 0px;
+    margin: 0px;
+}
+.homecontainer
+{
+    display: flex;
+    justify-content: center;
+    align-content: space-between;
+    flex-direction: column;
+    flex-flow: column;
+}
+.home
+{
+    display: flex;
+
+
+}
+.homeitem
+{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-flow: column;
+    width: 100%;
+    padding: 0px 0px;
+    margin: 0px;
+}.homeitemvertical
+ {
+     display: flex;
+     align-content: center;
+     justify-content: center;
+     flex-direction: column;
+     flex-flow: column;
+    height: 50%;
+     padding: 0px 10px;
+     margin: 0px;
+ }
