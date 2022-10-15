@@ -42,6 +42,22 @@ h1{
 ;
 
 }
+.header-left
+{
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+.header-right
+{
+    display: flex !important;
+    text-align: right !important;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
 
 
 
@@ -61,13 +77,16 @@ h1{
 }
 .navbar a {
     float: left;
-    display: block;
+    display: flex;
     color: #f2f2f2;
     text-align: center;
-    width:100px;
+    width: 100px;
     text-decoration: none;
     font-size: 17px;
+    justify-content: center;
     border: 4px outset #b37ee5;
+    align-content: space-around;
+    flex-direction: column;
 
 
 }
@@ -122,8 +141,7 @@ h1{
     display: flex;
     justify-content: center;
     align-content: space-between;
-    flex-direction: column;
-    flex-flow: column;
+
 }
 .home
 {
@@ -152,3 +170,56 @@ h1{
      padding: 0px 10px;
      margin: 0px;
  }
+ .bodycontainer
+ {
+     display: flex;
+     justify-content: center;
+     align-content: space-between;
+     flex-direction: row;
+     flex-wrap: wrap;
+     padding: 20px;
+     margin: 20px;
+ }
+ .body
+ {
+     display: flex;
+ }
+ .bodyitem
+ {
+     display: flex;
+    flex-direction: column !important;
+     padding: 10px;
+     margin: auto;
+ }
+ .bodyshort
+ {
+     width:20%
+ }
+ button
+ {
+     float: left;
+     color: white;
+     text-align: center;
+     font-family: pixelFont;
+     width: 300px;
+     text-decoration: none;
+     font-size: 17px;
+     justify-content: center;
+     border: 4px outset #b37ee5;
+     align-content: space-around;
+     background-color: #2a0649
+ }
+button:hover {
+    background-color: white;
+    color: black;
+}
+button:active {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    width: 300px;
+    text-decoration: none;
+    font-size: 17px;
+    border: 4px inset #dbb5ff;
+}
