@@ -6,11 +6,13 @@ body
 }
 img{
     display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-    padding: 10px 40px;
+    padding: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 700px;
+
 }
+
 h1{
     font-size: 60px;
     margin: 0px;
@@ -25,7 +27,7 @@ h1{
     justify-content: center;
     align-content: center;
     flex-flow: row wrap;
-    height: 100px;
+    height:auto;
 }
 .header
 {
@@ -34,8 +36,10 @@ h1{
 }
 .header-item
 {
-    width: auto;
+
     display: flex;
+    padding: 5px
+;
 
 }
 
@@ -92,6 +96,8 @@ h1{
     justify-content: center;
     flex-flow: row wrap;
     height: 50px;
+    text-align-all: center;
+    font-size: 10px;
 }
 .nav
 {
@@ -109,6 +115,7 @@ h1{
     width: 100%;
     padding: 0px 1px;
     margin: 0px;
+
 }
 .homecontainer
 {
