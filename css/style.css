@@ -174,7 +174,7 @@ h1{
  {
      display: flex;
      justify-content: center;
-     align-content: space-between;
+     align-content: space-around;
      flex-direction: row;
      flex-wrap: wrap;
      padding: 20px;
@@ -183,17 +183,23 @@ h1{
  .body
  {
      display: flex;
+     align-content: space-around;
+     justify-content: center;
  }
  .bodyitem
  {
      display: flex;
     flex-direction: column !important;
      padding: 10px;
-     margin: auto;
+     margin: 100px;
  }
  .bodyshort
  {
-     width:20%
+     width:20%;
+ }
+ .bodylarge
+ {
+     width:70%;
  }
  button
  {
@@ -222,4 +228,46 @@ button:active {
     text-decoration: none;
     font-size: 17px;
     border: 4px inset #dbb5ff;
+}
+input
+{
+    float: left;
+    color: white;
+    text-align: left;
+    font-family: pixelFont;
+    width: 300px;
+    text-decoration: none;
+    font-size: 17px;
+    justify-content: center;
+    border: 2px inset darkgray;
+    align-content: space-around;
+    background-color: #2a0649
+}
+select
+{
+    float: left;
+    color: white;
+    text-align: left;
+    font-family: pixelFont;
+    width: 300px;
+    text-decoration: none;
+    font-size: 17px;
+    justify-content: center;
+    border: 2px inset darkgray;
+    align-content: space-around;
+    background-color: #2a0649
+}
+textarea
+{
+    float: left;
+    color: white;
+    text-align: left;
+    font-family: pixelFont;
+    width: 300px;
+    text-decoration: none;
+    font-size: 17px;
+    justify-content: center;
+    border: 2px inset darkgray;
+    align-content: space-around;
+    background-color: #2a0649
 }

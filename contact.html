@@ -44,6 +44,29 @@
 </div>
     <div class="bodycontainer">
         <div class="body">
+            <div class="bodyitem">
+            <form action="#">
+                <label for="fname">First name:</label><br>
+                <input type="text" id="fname" name="fname" value=""><br><br>
+                <label for="lname">Last name:</label><br>
+                <input type="text" id="lname" name="lname" value=""><br><br>
+                <label for="lname">Email</label><br>
+                <input type="text" id="email" name="email" value=""><br><br>
+                <label for="cars">Reason for contacting:</label><br>
+                <select id="cars" name="cars">
+                    <option value="volvo">Select...</option>
+                    <option value="volvo">Inquiry</option>
+                    <option value="saab">Game Bug</option>
+                    <option value="fiat">Collaboration</option>
+                    <option value="audi">Death Threat</option>
+                    <option value="audi">Other</option>
+                </select><br><br>
+                <label>Message:</label><br>
+                <textarea id="message" name="message" rows="15" cols="100" style="resize: none"></textarea><br><br>
+                <button type="button" onclick="alert('Form submitted (not really nothing happened)')">Submit Form</button>
+            </form>
+
+        </div>
             <div class="bodyitem bodyshort">
                 <h2>
                     Need to contact me?
@@ -54,29 +77,7 @@
                 <button type="button">Dummy Button</button>
 
             </div>
-            <div class="bodyitem">
-                <form action="#">
-                    <label for="fname">First name:</label><br>
-                    <input type="text" id="fname" name="fname" value="John"><br><br>
-                    <label for="lname">Last name:</label><br>
-                    <input type="text" id="lname" name="lname" value="Doe"><br><br>
-                    <label for="lname">Email</label><br>
-                    <input type="text" id="email" name="email" value="Doe"><br><br>
-                    <label for="cars">Reason for contacting:</label><br>
-                    <select id="cars" name="cars">
-                        <option value="volvo">Inquiry</option>
-                        <option value="saab">Game Bug</option>
-                        <option value="fiat">Collaboration</option>
-                        <option value="audi">Death Threat</option>
-                        <option value="audi">Other</option>
-                    </select><br><br>
-                    <label>Message:</label><br>
-                    <textarea id="message" name="message" rows="20" cols="50" style="resize: none">Enter text here.
-                    </textarea><br>
-                    <button type="button" onclick="alert('Form submitted (not really nothing happened)')">Submit Form</button>
-                </form>
 
-            </div>
 
         </div>
     </div>
