@@ -184,6 +184,7 @@ h1{
  {
      display: flex;
      align-content: space-around;
+     flex-direction: row;
      justify-content: center;
  }
  .bodyitem
@@ -191,7 +192,8 @@ h1{
      display: flex;
     flex-direction: column !important;
      padding: 10px;
-     margin: 100px;
+     margin: 10px;
+     height: 700px;
  }
  .bodyshort
  {
@@ -213,7 +215,9 @@ h1{
      justify-content: center;
      border: 4px outset #b37ee5;
      align-content: space-around;
-     background-color: #2a0649
+     background-color: #2a0649;
+     margin-top: 10px;
+
  }
 button:hover {
     background-color: white;
