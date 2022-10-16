@@ -1,0 +1,11 @@
+{
+    "c2dictionary": true,
+    "data": {
+        "rpg": 1,
+        "revolver": 6,
+        "assaultRifle": 30,
+        "shotgun": 5,
+        "pistol": 15,
+        "uzi": 32
+    }
+}
