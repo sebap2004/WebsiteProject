@@ -200,7 +200,7 @@ h1{
     flex-direction: column !important;
      padding: 10px;
      margin: 10px;
-     height: 700px;
+     height: auto;
  }
  .bodyshort
  {
@@ -254,6 +254,20 @@ input
     align-content: space-around;
     background-color: #2a0649
 }
+.inputsmall
+{
+    width:60px;
+    float: left;
+    color: white;
+    text-align: left;
+    font-family: pixelFont;
+    text-decoration: none;
+    font-size: 17px;
+    justify-content: center;
+    border: 2px inset darkgray;
+    align-content: space-around;
+    background-color: #2a0649
+}
 select
 {
     float: left;
@@ -299,12 +313,14 @@ textarea
 .footer
 {
     display: flex;
+    align-content: start;
+    justify-content: start;
 }
 .footeritem
 {
     display: flex;
     flex-direction: column;
-    margin: 10px;
+    margin: 10px 30px 10px 30px;
 
 }
 .closep
