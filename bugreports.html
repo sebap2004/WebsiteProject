@@ -2,12 +2,31 @@
 <html lang="en-GB">
 <head>
     <title>Home Page</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <link href="css/style.css" rel="stylesheet">
+    <meta content="Long Shot" property="og:title" />
+    <meta content="Bug Reports for Long Shot Website" property="og:description" />
+    <meta content="https://longshotgame.netlify.app/index.html" property="og:url" />
+    <meta content="https://cdn.discordapp.com/attachments/765315376203431939/1031347393456787486/title.png" property="og:image" />
+    <meta content="#7315d6" data-react-helmet="true" name="theme-color" />
     <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-<a href="index.html">
-    <img alt="Title Logo" id="title" src="media/title.png">
-</a>
+<div class="header-container">
+    <div class="header">
+        <div class="header-item header-left">
+            Left element
+        </div>
+        <div style="justify-self: center;" class="header-item">
+            <a href="index.html">
+                <img alt="Title Logo" src="media/title.png">
+            </a>
+        </div>
+        <div class="header-item header-right">
+            Basket: 0 items
+        </div>
+    </div>
+</div>
 <div class="navcontainer">
     <div class="nav">
         <div class="navitem navbar">
@@ -30,7 +49,94 @@
         </div>
     </div>
 </div>
+<div class="bodycontainer">
+<div class="body" style="justify-content: start; flex-direction: column; width:100%;">
+    <div class="bodyitem" style="margin: auto; flex-direction: column; text-align: center">
+        <h1>Found a bug?</h1>
+        <p>You wouldn't be the first. Fill out this form and I might get back to you and sort it out when I get the time.</p>
+    </div>
+    <div class="bodyitem" style="flex-direction: row">
+        <div class="bodyitem" style="margin: 10%">
 
-<p>fuck you bro no bug fixes for you</p>
+        </div>
 
-<br>
+
+
+        <br>
+        <div class="bodyitem"style="margin: auto; flex-direction: row">
+        <div class="form">
+        <form action="#">
+            <label for="fname">First name:</label><br>
+            <input type="text" id="fname" name="fname" value=""><br><br>
+            <label for="lname">Last name:</label><br>
+            <input type="text" id="lname" name="lname" value=""><br><br>
+            <label for="lname">Email</label><br>
+            <input type="text" id="email" name="email" value=""><br><br>
+            <label for="lname">Was it perhaps a skill issue?</label><br><br>
+            <input class="inputsmall" type="radio" id="html" name="skill-issue" value="Yes">
+            <label for="html"> Yes</label><br>
+            <input class="inputsmall" type="radio" id="css" name="skill-issue" value="no">
+            <label for="css"> No</label><br>
+            <input class="inputsmall" type="radio" id="javascript" name="skill-issue" value="cops">
+            <label for="javascript">I'm calling the cops</label><br><br>
+            <label for="lname">Does this bug need an urgent fix?</label><br>
+            <select style="width: 100%" id="bug" name="bug">
+                <option value="no-answer">Select...</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select><br><br>
+            <label for="bugtype">Bug type</label><br>
+            <select style="width: 100%" id="bugtype" name="bugtype">
+                <option value="visual">Visual</option>
+                <option value="gameplay">Gameplay</option>
+                <option value="serious">Serious</option>
+                <option value="gamebreak">Game breaking</option>
+                <option value="save">Save state issue</option>
+                <option value="other">Other</option>
+            </select><br><br>
+            <label>Explain in detail:</label><br>
+            <textarea id="message" name="message" rows="15" cols="100" style="resize: none"></textarea>
+
+            <button style="width: 100%" type="button" onclick="alert('Form submitted (not really nothing happened)')">Submit Form</button>
+        </form>
+        </div>
+
+        </div>
+        <div class="bodyitem" style="margin: 10%">
+
+        </div>
+
+
+    </div>
+
+
+
+
+</div>
+</div>
+<br><br><br><br>
+<div class="footercontainer">
+    <div class="footer">
+        <div class="footeritem footertext">
+            <p class="closep" style="font-size: 20px; color: #ad70f5"><u>Social media links</u></p>
+            <a href="https://www.instagram.com/" target="_blank"><p class="closep">Instagram</p></a>
+            <a href="https://twitter.com/home" target="_blank"><p class="closep">Twitter</p></a>
+            <a href="https://www.youtube.com/" target="_blank"><p class="closep">Youtube</p></a>
+        </div>
+        <div class="footeritem footertext">
+            <p class="closep" style="font-size: 20px; color: #ad70f5"><u>Other links</u></p>
+            <a href="https://www.youtube.com/watch?v=fcZXfoB2f70" target="_blank"><p class="closep">Hot singles near you!</p>
+            </a>
+          <a href="https://www.rd.com/wp-content/uploads/2019/01/shutterstock_673465372.jpg?fit=700,467" target="_blank"><p class="closep">Image of a cute cat</p></a>
+            <a href="https://open.spotify.com/playlist/48F3Mkwelt0aepdluNBPUy?si=0c401048ebd3495e" target="_blank"><p class="closep">my mixtape (spotify)</p></a>
+        </div>
+        <div class="footeritem footertext">
+            <p class="closep" style="font-size: 20px; color: #ad70f5"><u>Game related links</u></p>
+            <a href="https://shebbgames.itch.io/long-shot" target="_blank"><p class="closep">itch.io page</p></a>
+            <a href="https://shebbgames.itch.io/long-shot/devlog/" target="_blank"><p class="closep">Devlog</p></a>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

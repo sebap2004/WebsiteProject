@@ -2,13 +2,32 @@
 <html lang="en-GB">
 <head>
     <title>Home Page</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <link href="css/style.css" rel="stylesheet">
+    <meta content="Long Shot" property="og:title" />
+    <meta content="Contact Page for Long Shot Website" property="og:description" />
+    <meta content="https://longshotgame.netlify.app/index.html" property="og:url" />
+    <meta content="https://cdn.discordapp.com/attachments/765315376203431939/1031347393456787486/title.png" property="og:image" />
+    <meta content="#7315d6" data-react-helmet="true" name="theme-color" />
     <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-<a href="index.html">
-    <img alt="Title Logo" id="title" src="media/title.png">
-</a>
-<div class="navcontainer">
+    <div class="header-container">
+    <div class="header">
+        <div class="header-item header-left">
+            Left element
+        </div>
+        <div style="justify-self: center;" class="header-item">
+            <a href="index.html">
+                <img alt="Title Logo" src="media/title.png">
+            </a>
+        </div>
+        <div class="header-item header-right">
+            Basket: 0 items
+        </div>
+    </div>
+</div>
+    <div class="navcontainer">
     <div class="nav">
         <div class="navitem navbar">
             <a style="flex-grow: 2" href="index.html">Home</a>
@@ -30,5 +49,66 @@
         </div>
     </div>
 </div>
+    <div class="bodycontainer">
+        <div class="body" >
+            <div class="bodyitem bodyshort" style="outline: 1px red solid;">
+            <form action="#">
+                <label for="fname">First name:</label><br>
+                <input type="text" id="fname" name="fname" value=""><br><br>
+                <label for="lname">Last name:</label><br>
+                <input type="text" id="lname" name="lname" value=""><br><br>
+                <label for="lname">Email</label><br>
+                <input type="text" id="email" name="email" value=""><br><br>
+                <label for="reason">Reason for contacting:</label><br>
+                <select id="reason" name="reason">
+                    <option value="no-answer">Select...</option>
+                    <option value="inquirt">Inquiry</option>
+                    <option value="bug">Game Bug</option>
+                    <option value="collab">Collaboration</option>
+                    <option value="DT">Death Threat</option>
+                    <option value="other">Other</option>
+                </select><br><br>
+                <label>Message:</label><br>
+                <textarea id="message" name="message" rows="15" cols="100" style="resize: none"></textarea><br><br>
+                <button type="button" onclick="alert('Form submitted (not really nothing happened)')">Submit Form</button>
+            </form>
 
-<br>
+            </div>
+            <div class="bodyitem bodyshort" style="outline: 1px red solid; flex-direction: column">
+                <h2>
+                    Need to contact me?
+                </h2>
+
+                <p>Use this form to contact me and I'll try to get back to you as soon as i can.
+                    No promises, though, as i am very busy :p</p>
+                <button type="button">Dummy Button</button>
+
+            </div>
+
+
+        </div>
+    </div>
+    <div class="footercontainer">
+        <div class="footer">
+            <div class="footeritem footertext">
+                <p class="closep" style="font-size: 20px; color: #ad70f5"><u>Social media links</u></p>
+                <a href="https://www.instagram.com/" target="_blank"><p class="closep">Instagram</p></a>
+                <a href="https://twitter.com/home" target="_blank"><p class="closep">Twitter</p></a>
+                <a href="https://www.youtube.com/" target="_blank"><p class="closep">Youtube</p></a>
+            </div>
+            <div class="footeritem footertext">
+                <p class="closep" style="font-size: 20px; color: #ad70f5"><u>Other links</u></p>
+                <a href="https://www.youtube.com/watch?v=fcZXfoB2f70" target="_blank"><p class="closep">Hot singles near you!</p></a>
+                <a href="https://www.rd.com/wp-content/uploads/2019/01/shutterstock_673465372.jpg?fit=700,467" target="_blank"><p class="closep">Image of a cute cat</p></a>
+                <a href="https://open.spotify.com/playlist/48F3Mkwelt0aepdluNBPUy?si=0c401048ebd3495e" target="_blank"><p class="closep">my mixtape (spotify)</p></a>
+            </div>
+            <div class="footeritem footertext">
+                <p class="closep" style="font-size: 20px; color: #ad70f5"><u>Game related links</u></p>
+                <a href="https://shebbgames.itch.io/long-shot" target="_blank"><p class="closep">itch.io page</p></a>
+                <a href="https://shebbgames.itch.io/long-shot/devlog/" target="_blank"><p class="closep">Devlog</p></a>
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
