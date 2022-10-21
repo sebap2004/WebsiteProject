@@ -6,6 +6,7 @@ body
     padding: 0;
     margin: 0;
 }
+
 img{
     display: block;
     padding: 0;
@@ -145,8 +146,8 @@ h1{
     align-content: center;
     justify-content: center;
     width: 100%;
-    padding: 0px 1px;
-    margin: 0px;
+    padding: 0 1px;
+    margin: 0;
 
 }
 .homecontainer
@@ -188,28 +189,45 @@ h1{
      display: flex;
      justify-content: center;
      align-content: space-around;
-     flex-direction: row;
+     flex-direction: column;
      flex-wrap: nowrap;
      padding: 20px;
      margin: auto;
  }
- .body
+.bodyrow
+{
+    display: flex;
+    align-content: space-around;
+    flex-direction: row;
+    justify-content: center;
+}
+.bodycolumn
  {
      display: flex;
      align-content: space-around;
-     flex-direction: row;
+     flex-direction: column;
      justify-content: center;
  }
- .bodyitem
+ .bodyitemrow
  {
     display: flex;
      padding: 10px;
      margin: 10px;
-     flex-direction: column;
+     flex-direction: row;
 
 
 
  }
+.bodyitemcolumn
+{
+    display: flex;
+    padding: 10px;
+    margin: 10px;
+    flex-direction: column;
+
+
+
+}
  .bodyshort
  {
      width:30%;
@@ -373,5 +391,37 @@ textarea
 .basketlink a, .basketlink a:visited
 {
     text-decoration: none;
+}
+.dropdown
+{
+    float:left;
+    overflow: hidden;
+}
+.dropdown .dropbtn
+{
+    float: left;
+    color: white;
+    text-align: center;
+    font-family: pixelFont;
+    width: 100%;
+    text-decoration: none;
+    font-size: 17px;
+    justify-content: center;
+    border: 4px outset #b37ee5;
+    align-content: space-around;
+    background-color: #2a0649;
+    margin-top: 10px;
+
+}
+.dropdown:hover .dropbtn, .dropdowncontent:hover
+{
+    background-color: white;
+    color: black;
+}
+.dropdowncontent {
+}
+
+.dropdown:hover .dropdowncontent {
+    display: block;
 }
 

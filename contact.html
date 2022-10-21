@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-    <title>Home Page</title>
+    <title>Contact Me</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <link href="css/style.css" rel="stylesheet">
     <meta content="Long Shot" property="og:title" />
@@ -13,19 +13,25 @@
 </head>
 <body>
     <div class="header-container">
-    <div class="header">
-        <div class="header-item header-left">
-            Left element
+        <div class="header-container">
+            <div class="header">
+                <div class="header-item header-left">
+                    Left element
+                </div>
+                <div style="justify-self: center;" class="header-item">
+                    <a href="index.html">
+                        <img alt="Title Logo" src="media/title.png">
+                    </a>
+                </div>
+
+                <div class="header-item header-right" style="display: flex; flex-direction: row">
+                    <a class="basketlink" href="checkout.html"> <img class="basket"src="media/basket.png"></a>
+                    <p style="margin: 0">Basket: 0 items</p>
+
+                </div>
+
+            </div>
         </div>
-        <div style="justify-self: center;" class="header-item">
-            <a href="index.html">
-                <img alt="Title Logo" src="media/title.png">
-            </a>
-        </div>
-        <div class="header-item header-right">
-            Basket: 0 items
-        </div>
-    </div>
 </div>
     <div class="navcontainer">
     <div class="nav">
@@ -50,8 +56,8 @@
     </div>
 </div>
     <div class="bodycontainer">
-        <div class="body" >
-            <div class="bodyitem bodyshort" style="outline: 1px red solid;">
+        <div class="bodyrow" >
+            <div class="bodyitemcolumn bodyshort" style="outline: 1px red solid;">
             <form action="#">
                 <label for="fname">First name:</label><br>
                 <input type="text" id="fname" name="fname" value=""><br><br>
@@ -74,7 +80,7 @@
             </form>
 
             </div>
-            <div class="bodyitem bodyshort" style="outline: 1px red solid; flex-direction: column">
+            <div class="bodyitemcolumn bodyshort" style="outline: 1px red solid; flex-direction: column">
                 <h2>
                     Need to contact me?
                 </h2>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-    <title>Home Page</title>
+    <title>Bug Reports</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <link href="css/style.css" rel="stylesheet">
     <meta content="Long Shot" property="og:title" />
@@ -22,9 +22,13 @@
                 <img alt="Title Logo" src="media/title.png">
             </a>
         </div>
-        <div class="header-item header-right">
-            Basket: 0 items
+
+        <div class="header-item header-right" style="display: flex; flex-direction: row">
+            <a class="basketlink" href="checkout.html"> <img class="basket"src="media/basket.png"></a>
+            <p style="margin: 0">Basket: 0 items</p>
+
         </div>
+
     </div>
 </div>
 <div class="navcontainer">
@@ -51,19 +55,19 @@
 </div>
 <div class="bodycontainer">
 <div class="body" style="justify-content: start; flex-direction: column; width:100%;">
-    <div class="bodyitem" style="margin: auto; flex-direction: column; text-align: center">
+    <div class="bodyitemcolumn" style="margin: auto; flex-direction: column; text-align: center">
         <h1>Found a bug?</h1>
         <p>You wouldn't be the first. Fill out this form and I might get back to you and sort it out when I get the time.</p>
     </div>
-    <div class="bodyitem" style="flex-direction: row">
-        <div class="bodyitem" style="margin: 10%">
+    <div class="bodyitemrow">
+        <div class="bodyitemcolumn" style="margin: 10%">
 
         </div>
 
 
 
         <br>
-        <div class="bodyitem"style="margin: auto; flex-direction: row">
+        <div class="bodyitemrow"style="margin: auto; flex-direction: row">
         <div class="form">
         <form action="#">
             <label for="fname">First name:</label><br>
@@ -102,7 +106,7 @@
         </div>
 
         </div>
-        <div class="bodyitem" style="margin: 10%">
+        <div class="bodyitemrow" style="margin: 10%">
 
         </div>
 
