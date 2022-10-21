@@ -51,12 +51,20 @@
 </div>
 <div class="bodycontainer">
 <div class="body" style="justify-content: start; flex-direction: column; width:100%;">
-    <div class="bodyitem">
+    <div class="bodyitem" style="margin: auto; flex-direction: column; text-align: center">
         <h1>Found a bug?</h1>
         <p>You wouldn't be the first. Fill out this form and I might get back to you and sort it out when I get the time.</p>
     </div>
+    <div class="bodyitem" style="flex-direction: row">
+        <div class="bodyitem" style="margin: 10%">
 
-    <div class="bodyitem">
+        </div>
+
+
+
+        <br>
+        <div class="bodyitem"style="margin: auto; flex-direction: row">
+        <div class="form">
         <form action="#">
             <label for="fname">First name:</label><br>
             <input type="text" id="fname" name="fname" value=""><br><br>
@@ -66,19 +74,19 @@
             <input type="text" id="email" name="email" value=""><br><br>
             <label for="lname">Was it perhaps a skill issue?</label><br><br>
             <input class="inputsmall" type="radio" id="html" name="skill-issue" value="Yes">
-            <label for="html">Yes</label><br>
+            <label for="html"> Yes</label><br>
             <input class="inputsmall" type="radio" id="css" name="skill-issue" value="no">
-            <label for="css">No</label><br>
+            <label for="css"> No</label><br>
             <input class="inputsmall" type="radio" id="javascript" name="skill-issue" value="cops">
             <label for="javascript">I'm calling the cops</label><br><br>
             <label for="lname">Does this bug need an urgent fix?</label><br>
-            <select id="bug" name="bug">
+            <select style="width: 100%" id="bug" name="bug">
                 <option value="no-answer">Select...</option>
                 <option value="yes">Yes</option>
                 <option value="no">No</option>
             </select><br><br>
             <label for="bugtype">Bug type</label><br>
-            <select id="bugtype" name="bugtype">
+            <select style="width: 100%" id="bugtype" name="bugtype">
                 <option value="visual">Visual</option>
                 <option value="gameplay">Gameplay</option>
                 <option value="serious">Serious</option>
@@ -87,12 +95,21 @@
                 <option value="other">Other</option>
             </select><br><br>
             <label>Explain in detail:</label><br>
-            <textarea id="message" name="message" rows="15" cols="100" style="resize: none"></textarea><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-            <button type="button" onclick="alert('Form submitted (not really nothing happened)')">Submit Form</button>
+            <textarea id="message" name="message" rows="15" cols="100" style="resize: none"></textarea>
 
+            <button style="width: 100%" type="button" onclick="alert('Form submitted (not really nothing happened)')">Submit Form</button>
         </form>
+        </div>
+
+        </div>
+        <div class="bodyitem" style="margin: 10%">
+
+        </div>
+
 
     </div>
+
+
 
 
 </div>

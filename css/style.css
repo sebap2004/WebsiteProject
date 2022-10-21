@@ -63,6 +63,8 @@ h1{
     flex-direction: column;
     justify-content: flex-end;
     flex-wrap: wrap;
+    align-content: flex-end;
+    align-items: flex-end;
 }
 
 
@@ -104,13 +106,17 @@ h1{
 }
 .navbar a:active {
     float: left;
-    display: block;
-    color: black;
+    display: flex;
     text-align: center;
-    width:100px;
+    width: 100px;
     text-decoration: none;
     font-size: 17px;
-    border: 4px inset #dbb5ff;
+    justify-content: center;
+    border: 4px inset #b37ee5;
+    align-content: space-around;
+    flex-direction: column;
+	background-color: #2a0649;
+	color:white;
 
 
 }
@@ -185,7 +191,7 @@ h1{
      flex-direction: row;
      flex-wrap: nowrap;
      padding: 20px;
-     margin: 20px;
+     margin: auto;
  }
  .body
  {
@@ -196,14 +202,17 @@ h1{
  }
  .bodyitem
  {
-
+    display: flex;
      padding: 10px;
      margin: 10px;
+     flex-direction: column;
+
+
 
  }
  .bodyshort
  {
-     width:20%;
+     width:30%;
  }
  .bodylarge
  {
@@ -215,7 +224,7 @@ h1{
      color: white;
      text-align: center;
      font-family: pixelFont;
-     width: 300px;
+     width: 100%;
      text-decoration: none;
      font-size: 17px;
      justify-content: center;
@@ -231,13 +240,16 @@ button:hover {
 }
 button:active {
     float: left;
-    display: block;
-    color: #f2f2f2;
     text-align: center;
-    width: 300px;
+    width: 100%;
     text-decoration: none;
     font-size: 17px;
-    border: 4px inset #dbb5ff;
+    justify-content: center;
+    border: 4px inset #b37ee5;
+    align-content: space-around;
+	background-color: #2a0649;
+	color:white;
+
 }
 input
 {
@@ -245,7 +257,7 @@ input
     color: white;
     text-align: left;
     font-family: pixelFont;
-    width: 300px;
+    width: auto;
     text-decoration: none;
     font-size: 17px;
     justify-content: center;
@@ -255,7 +267,7 @@ input
 }
 .inputsmall
 {
-    width:60px;
+    width:auto;
     float: left;
     color: white;
     text-align: left;
@@ -273,7 +285,7 @@ select
     color: white;
     text-align: left;
     font-family: pixelFont;
-    width: 300px;
+    width: 100%;
     text-decoration: none;
     font-size: 17px;
     justify-content: center;
@@ -328,7 +340,7 @@ textarea
 {
     margin: 3px;
 }
-.footertext a, a:visited
+.footertext a,.footertext a:visited
 {
     text-decoration: none;
     color: #c5b0f5
@@ -340,5 +352,26 @@ textarea
 .footertext a:active
 {
     color: black;
+}
+.basket
+{
+    image-rendering: pixelated;
+    height: 32px;
+    width: 32px;
+    display: block;
+
+}
+.basket:hover
+{
+    image-rendering: pixelated;
+    height: 32px;
+    width: 32px;
+    display: block;
+    filter: brightness(0%);
+
+}
+.basketlink a, .basketlink a:visited
+{
+    text-decoration: none;
 }
 
