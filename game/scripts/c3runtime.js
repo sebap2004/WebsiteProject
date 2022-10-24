@@ -5347,6 +5347,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Sprite.Exps.X,
 		C3.Plugins.Sprite.Exps.Y,
 		C3.Plugins.System.Acts.SetLayoutScale,
+		C3.Behaviors.EightDir.Acts.SetEnabled,
 		C3.Plugins.Keyboard.Cnds.OnKey,
 		C3.Plugins.Sprite.Cnds.IsAnimPlaying,
 		C3.Plugins.Text.Acts.SetText,
@@ -5455,6 +5456,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Sprite.Exps.AnimationName,
 		C3.Plugins.System.Acts.StopLoop,
 		C3.Plugins.shadowlight.Acts.SetPosToObject,
+		C3.Plugins.System.Acts.SetLayerEffectParam,
 		C3.Plugins.Sprite.Cnds.CompareInstanceVar,
 		C3.Plugins.System.Acts.SetGroupActive,
 		C3.Plugins.System.Cnds.Every,
@@ -5478,7 +5480,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Behaviors.Pathfinding.Acts.Stop,
 		C3.Behaviors.MoveTo.Acts.Stop,
 		C3.Plugins.Sprite.Exps.UID,
-		C3.Plugins.Sprite.Acts.SetScale,
+		C3.Behaviors.MoveTo.Cnds.IsMoving,
 		C3.Behaviors.Fade.Cnds.OnFadeInEnd,
 		C3.Plugins.TiledBg.Acts.SetEffectParam,
 		C3.Plugins.sliderbar.Acts.SetValue,
@@ -5498,22 +5500,21 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Acts.SetLayerInteractive,
 		C3.Plugins.System.Acts.SetObjectTimescale,
 		C3.Plugins.Audio.Acts.SetPaused,
+		C3.Plugins.Shape3D.Cnds.PickDistance,
 		C3.Plugins.Shape3D.Acts.SetEffectEnabled,
-		C3.Plugins.Sprite.Cnds.CompareX,
-		C3.Plugins.Shape3D.Exps.X,
-		C3.Plugins.Shape3D.Cnds.IsBoolInstanceVarSet,
-		C3.Plugins.Shape3D.Acts.SetAngle,
-		C3.Plugins.Shape3D.Exps.Angle,
+		C3.Plugins.Shape3D.Acts.SetInstanceVar,
+		C3.Plugins.Shape3D.Cnds.CompareInstanceVar,
 		C3.Plugins.Sprite.Acts.MoveToTop,
 		C3.Behaviors.EightDir.Acts.SetIgnoreInput,
 		C3.Plugins.System.Cnds.Compare,
 		C3.Plugins.Arr.Acts.SetXY,
 		C3.Plugins.NinePatch.Cnds.CompareInstanceVar,
 		C3.Plugins.NinePatch.Acts.SetEffectParam,
-		C3.Plugins.Shape3D.Cnds.CompareInstanceVar,
 		C3.Plugins.Shape3D.Acts.Destroy,
-		C3.Plugins.Shape3D.Exps.Y,
-		C3.Plugins.Shape3D.Acts.SubInstanceVar
+		C3.Plugins.Shape3D.Acts.SubInstanceVar,
+		C3.Plugins.Shape3D.Cnds.OnDestroyed,
+		C3.Plugins.Shape3D.Exps.X,
+		C3.Plugins.Shape3D.Exps.Y
 	];
 };
 self.C3_JsPropNameTable = [
@@ -5540,6 +5541,7 @@ self.C3_JsPropNameTable = [
 	{HP: 0},
 	{maxHP: 0},
 	{phase: 0},
+	{isdead: 0},
 	{Solid: 0},
 	{Timer: 0},
 	{Boss: 0},
@@ -5673,6 +5675,13 @@ self.C3_JsPropNameTable = [
 	{particleBreak: 0},
 	{particleDmg: 0},
 	{woodDestruct: 0},
+	{interact: 0},
+	{doorIID: 0},
+	{vertical: 0},
+	{swing: 0},
+	{opendoor: 0},
+	{initialx: 0},
+	{initialy: 0},
 	{playerDist: 0},
 	{open: 0},
 	{DoorWooden: 0},
@@ -5706,7 +5715,6 @@ self.C3_JsPropNameTable = [
 	{LevelText: 0},
 	{LevelPreview: 0},
 	{houseFloor: 0},
-	{interact: 0},
 	{windowOpen: 0},
 	{playerhub: 0},
 	{roomWall: 0},
@@ -5761,6 +5769,12 @@ self.C3_JsPropNameTable = [
 	{BossTrigger: 0},
 	{hpBar: 0},
 	{bossHPtext: 0},
+	{HPBarMaskEnemy: 0},
+	{decayBarEnemy: 0},
+	{hpBarEnemy: 0},
+	{enemyState: 0},
+	{TiledBackground3: 0},
+	{BossDoor: 0},
 	{Pathfinding: 0},
 	{enemies: 0},
 	{enemyBullets: 0},
@@ -5773,6 +5787,7 @@ self.C3_JsPropNameTable = [
 	{screenTriggers: 0},
 	{destructs: 0},
 	{PowerUp: 0},
+	{Doors: 0},
 	{sfxDB: 0},
 	{MusicDB: 0},
 	{Stamina: 0},
@@ -5791,6 +5806,7 @@ self.C3_JsPropNameTable = [
 	{playerDMG: 0},
 	{intendedScale: 0},
 	{player_HP: 0},
+	{dmgEffect: 0},
 	{startShooting: 0},
 	{menuOpen: 0},
 	{playOpen: 0},
@@ -5918,10 +5934,7 @@ self.C3_ExpressionFuncs = [
 			const n1 = p._GetNode(1);
 			return () => C3.lerp(n0.ExpObject(), n1.ExpObject(), 0.1);
 		},
-		p => {
-			const v0 = p._GetNode(0).GetVar();
-			return () => C3.lerp(v0.GetValue(), 1, 0.5);
-		},
+		() => 0.75,
 		() => "ui",
 		() => "gunUI",
 		() => "pistol",
@@ -6101,9 +6114,8 @@ self.C3_ExpressionFuncs = [
 		() => "idle",
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
-			return () => f0("wood1", "wood2", "wood3", "wood4");
+			return () => f0("stone1", "stone2", "stone3", "stone4", "stone5", "stone6");
 		},
-		() => 6,
 		() => "runblank",
 		() => "initPlayer",
 		() => 50,
@@ -6181,6 +6193,7 @@ self.C3_ExpressionFuncs = [
 		},
 		() => "Shooting",
 		() => "Shotgun",
+		() => 6,
 		() => "Play",
 		() => 2900,
 		p => {
@@ -6290,7 +6303,9 @@ self.C3_ExpressionFuncs = [
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => f0("blankScan");
 		},
+		() => "RadialBlur",
 		() => "fade",
+		() => "help",
 		() => "Turret",
 		() => 0.7,
 		() => -90,
@@ -6316,7 +6331,6 @@ self.C3_ExpressionFuncs = [
 			const n0 = p._GetNode(0);
 			return () => (n0.ExpObject() - 120);
 		},
-		() => "help",
 		p => {
 			const n0 = p._GetNode(0);
 			return () => (n0.ExpInstVar() + 1);
@@ -6376,6 +6390,21 @@ self.C3_ExpressionFuncs = [
 			const n0 = p._GetNode(0);
 			return () => (n0.ExpInstVar() * 1.5);
 		},
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			return () => (0.5 * f0());
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const f1 = p._GetNode(1).GetBoundMethod();
+			return () => (n0.ExpObject() + f1((-200), 200));
+		},
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			return () => f0("enemyHurt", "enemyHurt2", "enemyHurt3", "enemyHurt4", "enemyHurt5");
+		},
+		() => 3.5,
+		() => 10000,
 		() => "Enemies",
 		() => "Knockback",
 		p => {
@@ -6384,6 +6413,17 @@ self.C3_ExpressionFuncs = [
 			return () => (n0.ExpObject() - n1.ExpInstVar());
 		},
 		() => "Revolbert",
+		() => "HPbar",
+		p => {
+			const n0 = p._GetNode(0);
+			const n1 = p._GetNode(1);
+			return () => ((n0.ExpInstVar() / n1.ExpInstVar()) * 256);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const n1 = p._GetNode(1);
+			return () => C3.lerp(n0.ExpObject(), n1.ExpObject(), 0.05);
+		},
 		() => "AI",
 		() => "revolbert",
 		() => "sus",
@@ -6409,23 +6449,9 @@ self.C3_ExpressionFuncs = [
 			const n1 = p._GetNode(1);
 			return () => (n0.ExpObject() + n1.ExpInstVar());
 		},
-		p => {
-			const f0 = p._GetNode(0).GetBoundMethod();
-			return () => f0("enemyHurt", "enemyHurt2", "enemyHurt3", "enemyHurt4", "enemyHurt5");
-		},
 		() => "lookingAt",
 		() => "revolbertShooting",
-		p => {
-			const f0 = p._GetNode(0).GetBoundMethod();
-			return () => f0(0, 3840);
-		},
-		p => {
-			const f0 = p._GetNode(0).GetBoundMethod();
-			return () => f0(0, 2160);
-		},
-		() => 17,
-		() => "summon",
-		() => "revolbertBullet",
+		() => "moving",
 		() => 960,
 		() => 540,
 		() => 1007,
@@ -6474,13 +6500,12 @@ self.C3_ExpressionFuncs = [
 		() => "Hub",
 		() => "TutorialText",
 		() => -43807985663,
+		() => "Choose",
+		() => "Outline",
+		() => "Open",
 		p => {
 			const n0 = p._GetNode(0);
-			return () => (n0.ExpObject() + 90);
-		},
-		p => {
-			const n0 = p._GetNode(0);
-			return () => (n0.ExpObject() - 90);
+			return () => (n0.ExpInstVar_Family() + 255);
 		},
 		() => 976,
 		() => 560,
@@ -6498,6 +6523,10 @@ self.C3_ExpressionFuncs = [
 		},
 		() => "PlayerHub",
 		() => "walk",
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			return () => f0("wood1", "wood2", "wood3", "wood4");
+		},
 		() => "Doors",
 		() => 160,
 		() => 2896,
