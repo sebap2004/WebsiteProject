@@ -10,6 +10,7 @@
     <meta content="https://cdn.discordapp.com/attachments/765315376203431939/1031347393456787486/title.png" property="og:image" />
     <meta content="#7315d6" data-react-helmet="true" name="theme-color" />
     <link href="css/style.css" rel="stylesheet">
+    <script src="script/script.js" defer></script>
 </head>
 <body>
 <div class="header-container">
@@ -57,10 +58,18 @@
 <div class="bodycontainer">
     <div class="bodyrow">
         <div class="bodyitemcolumn">
-            <iframe src="game/index.html" allowfullscreen="" width="1024" height="576"></iframe>
+<p>Click on to the window to focus, click out to unfocus</p>
+        </div>
+        <div class="bodyitemcolumn">
+            <iframe id="game" class="gamewindow" src="game/index.html" allowfullscreen="true" width="1024" height="576"></iframe>
+            <button style="width: 20%" onclick="openFullscreen()">Fullscreen</button>
+        </div>
+        <div class="bodyitemcolumn">
+            <p>Click on to the window to focus, click out to unfocus</p>
         </div>
     </div>
 </div>
+
 <div class="bodycontainer" style="padding: 0; margin: 0;">
     <div class="bodyrow">
         <div class="bodyitemcolumn">
@@ -70,6 +79,14 @@
         <div class="bodyitemcolumn">
             <iframe src="https://itch.io/embed/1506901?border_width=2&amp;bg_color=9c0096&amp;fg_color=ffffff&amp;border_color=2b004b"
                     width="554" height="169"></iframe>
+        </div>
+    </div>
+</div>
+<div class="bodycontainer" style="padding: 0; margin: 0;">
+    <div class="bodyrow">
+        <div class="bodyitemcolumn">
+            <h2>Download</h2>
+            <p>If you want to download the game for local use, <a class="" href="download/LongShot-Latest.zip" download="LongShot-Latest">Download here!</a> I plan to add saving in the near future, as this is an early build</p>
         </div>
     </div>
 </div>

@@ -5265,6 +5265,10 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Dictionary.Acts.SetKey,
 		C3.Plugins.Particles.Acts.SetAngle,
 		C3.Plugins.System.Acts.Wait,
+		C3.Behaviors.Bullet.Cnds.OnStep,
+		C3.Plugins.Sprite.Cnds.IsOverlapping,
+		C3.Plugins.TiledBg.Acts.SetAngle,
+		C3.Plugins.TiledBg.Acts.SetInstanceVar,
 		C3.Behaviors.MoveTo.Acts.MoveToPosition,
 		C3.Behaviors.MoveTo.Cnds.OnArrived,
 		C3.Plugins.Sprite.Cnds.OnCreated,
@@ -5293,6 +5297,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Acts.SetLayerEffectParam,
 		C3.Plugins.Sprite.Cnds.CompareInstanceVar,
 		C3.Plugins.System.Acts.SetGroupActive,
+		C3.Plugins.sliderbar.Exps.Value,
 		C3.Plugins.System.Cnds.Every,
 		C3.Plugins.Arr.Cnds.CompareXY,
 		C3.Plugins.Arr.Acts.AddInstanceVar,
@@ -5301,7 +5306,6 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Particles.Acts.SetInitSize,
 		C3.Behaviors.Bullet.Acts.SetAngleOfMotion,
 		C3.Plugins.Sprite.Acts.SetDefaultColor,
-		C3.Plugins.Sprite.Cnds.IsOverlapping,
 		C3.Plugins.System.Exps.anglelerp,
 		C3.Plugins.Shape3D.Exps.UID,
 		C3.Plugins.Shape3D.Acts.SetInstanceVar,
@@ -5332,7 +5336,6 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Text.Acts.Destroy,
 		C3.Plugins.Arr.Acts.SetInstanceVar,
 		C3.Plugins.Audio.Acts.SetVolume,
-		C3.Plugins.sliderbar.Exps.Value,
 		C3.Plugins.System.Acts.SetObjectTimescale,
 		C3.Plugins.Audio.Acts.SetPaused,
 		C3.Plugins.Shape3D.Cnds.PickDistance,
@@ -5345,11 +5348,12 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Arr.Acts.SetXY,
 		C3.Plugins.NinePatch.Cnds.CompareInstanceVar,
 		C3.Plugins.NinePatch.Acts.SetEffectParam,
-		C3.Plugins.Shape3D.Acts.Destroy,
 		C3.Plugins.Shape3D.Acts.SubInstanceVar,
+		C3.Plugins.Shape3D.Acts.Destroy,
 		C3.Plugins.Shape3D.Cnds.OnDestroyed,
 		C3.Plugins.Shape3D.Exps.X,
 		C3.Plugins.Shape3D.Exps.Y,
+		C3.Plugins.Shape3D.Cnds.IsOverlapping,
 		C3.Plugins.TiledBg.Acts.SetImageOffsetY,
 		C3.Plugins.TiledBg.Exps.ImageOffsetY,
 		C3.Plugins.Sprite.Acts.SetY
@@ -5423,6 +5427,11 @@ self.C3_JsPropNameTable = [
 	{RightClick: 0},
 	{MoveTo: 0},
 	{RPGRockey: 0},
+	{distance: 0},
+	{railgun: 0},
+	{beamwidth: 0},
+	{damage: 0},
+	{Beam: 0},
 	{playerX: 0},
 	{playerY: 0},
 	{state: 0},
@@ -5560,7 +5569,6 @@ self.C3_JsPropNameTable = [
 	{houseWallSolid: 0},
 	{hubscroll: 0},
 	{hallWall: 0},
-	{distance: 0},
 	{door: 0},
 	{Bed: 0},
 	{desk: 0},
@@ -5579,7 +5587,6 @@ self.C3_JsPropNameTable = [
 	{Browser: 0},
 	{roll: 0},
 	{"3DShape": 0},
-	{Beam: 0},
 	{Loadout: 0},
 	{AJAX: 0},
 	{Retry: 0},
@@ -5637,6 +5644,7 @@ self.C3_JsPropNameTable = [
 	{SecretTutorial2: 0},
 	{VictorySecrets: 0},
 	{VictorySecretsValue: 0},
+	{railShot: 0},
 	{Pathfinding: 0},
 	{enemies: 0},
 	{enemyBullets: 0},
@@ -5689,7 +5697,6 @@ self.C3_JsPropNameTable = [
 	{dmg: 0},
 	{x: 0},
 	{y: 0},
-	{damage: 0},
 	{window: 0},
 	{paused: 0},
 	{width: 0}
@@ -5856,6 +5863,12 @@ self.C3_ExpressionFuncs = [
 		p => {
 			const n0 = p._GetNode(0);
 			return () => multiply(n0.ExpObject("uzi"), 19);
+		},
+		() => "railgun",
+		() => 300,
+		p => {
+			const n0 = p._GetNode(0);
+			return () => and(n0.ExpObject("railgun"), "/3");
 		},
 		() => "blank",
 		() => "no gun equipped",
@@ -6089,6 +6102,24 @@ self.C3_ExpressionFuncs = [
 			return () => subtract(n0.ExpObject("pistol"), 1);
 		},
 		() => 1350,
+		() => "Railgun",
+		p => {
+			const n0 = p._GetNode(0);
+			return () => subtract(n0.ExpObject("railgun"), 1);
+		},
+		() => 99999,
+		p => {
+			const n0 = p._GetNode(0);
+			const n1 = p._GetNode(1);
+			const n2 = p._GetNode(2);
+			const n3 = p._GetNode(3);
+			return () => C3.distanceTo(n0.ExpObject(1), n1.ExpObject(1), n2.ExpObject(), n3.ExpObject());
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpInstVar() + 100);
+		},
+		() => 32,
 		() => "Uzi",
 		() => 0.04,
 		p => {
@@ -6153,7 +6184,6 @@ self.C3_ExpressionFuncs = [
 		() => "revolverReload",
 		() => 1.5,
 		() => "rpgReload",
-		() => 32,
 		() => "damage",
 		() => "dmg",
 		() => "main",
@@ -6176,6 +6206,10 @@ self.C3_ExpressionFuncs = [
 		() => "fade",
 		() => "help",
 		() => "Turret",
+		p => {
+			const n0 = p._GetNode(0);
+			return () => ((-10) + n0.ExpObject());
+		},
 		() => 0.7,
 		() => -90,
 		() => "Dialogue",

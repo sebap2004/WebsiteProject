@@ -424,4 +424,11 @@ textarea
 .dropdown:hover .dropdowncontent {
     display: block;
 }
-
+.gamewindow
+{
+border-color: #600BA8;
+}
+.gamewindow:active
+{
+    border-color: #d2e70f;
+}

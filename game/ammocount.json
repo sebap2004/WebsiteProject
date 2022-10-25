@@ -6,6 +6,7 @@
         "assaultRifle": 30,
         "shotgun": 5,
         "pistol": 15,
-        "uzi": 32
+        "uzi": 32,
+        "railgun": 3
     }
 }
