@@ -4188,173 +4188,6 @@ WindowY(){return this._windowY},WindowWidth(){return this._windowWidth},WindowHe
 }
 
 {
-"use strict";
-
-{
-	C3.Plugins.eren_DiscordRPC = class eren_DiscordRPCPlugin extends C3.SDKPluginBase
-	{
-		constructor(opts)
-		{
-			super(opts);
-		}
-		
-		Release()
-		{
-			super.Release();
-		}
-	};
-}
-}
-
-{
-"use strict";
-
-{
-	C3.Plugins.eren_DiscordRPC.Type = class eren_DiscordRPCType extends C3.SDKTypeBase
-	{
-		constructor(objectClass)
-		{
-			super(objectClass);
-		}
-		
-		Release()
-		{
-			super.Release();
-		}
-		
-		OnCreate()
-		{	
-		}
-	};
-}
-}
-
-{
-"use strict";
-
-{
-	C3.Plugins.eren_DiscordRPC.Instance = class eren_DiscordRPCInstance extends C3.SDKInstanceBase
-	{
-		constructor(inst, properties)
-		{
-			super(inst);
-			
-			// Initialise object properties
-			var client_id = properties[0];
-			if (!this._runtime.IsPreview() && C3.Platform.IsDesktopApp){
-			  	this.client = require('discord-rich-presence/')(client_id);
-				this.rpc = this.client.first;
-				this.avatar = null;
-				this.id = null;
-				this.username = null;
-				this.premium = null;
-				this.usertag = null;
-			}
-
-		}
-		
-		Release()
-		{
-			super.Release();
-		}
-		
-		SaveToJson()
-		{
-			return {
-				// data to be saved for savegames
-			};
-		}
-		
-		LoadFromJson(o)
-		{
-			// load state for savegames
-		}
-	};
-}
-}
-
-{
-"use strict";
-
-{
-	C3.Plugins.eren_DiscordRPC.Cnds =
-	{
-		onpresence()
-		{
-			return true;
-		}
-	};
-}
-}
-
-{
-"use strict";
-
-{
-	C3.Plugins.eren_DiscordRPC.Acts =
-	{
-		setactivity(_state,_details,_largeimagekey,_largimagetext,_smallimagekey,_smallimagetext)
-		{
-			if (!this._runtime.IsPreview() && C3.Platform.IsDesktopApp)
-			{
-				if (this.client == null)
-				{
-					this.client = require('discord-rich-presence/')(client_id);
-				};
-				if (this.username == null && this.client.second.user != null)
-				{
-					this.username = this.client.second.user.username;
-					this.avatar = "https://cdn.discordapp.com/avatars/"+this.client.second.user.id+"/"+this.client.second.user.avatar+".png";
-					this.id = this.client.second.user.id;
-					this.premium = this.client.second.user.premium_type;
-					this.usertag = this.client.second.user.username+"#"+this.client.second.user.discriminator;
-				};
-				this.rpc.updatePresence({
-					details: _details,
-					state: _state,
-					smallImageKey:_smallimagekey,
-					smallImageText:_smallimagetext,
-					largeImageKey:_largeimagekey,
-					largeImageText: _largimagetext
-				});
-				this.Trigger(C3.Plugins.eren_DiscordRPC.Cnds.onpresence, this);
-			};
-		}
-	};
-}
-}
-
-{
-"use strict";
-
-{
-	C3.Plugins.eren_DiscordRPC.Exps =
-	{
-		username()
-		{
-			return(this.username);
-		},
-		avatar()
-		{
-			return(this.avatar);
-		},
-		usertag()
-		{
-			return(this.usertag);
-		},
-		id()
-		{
-			return(this.id);
-		},
-		premium()
-		{
-			return(this.premium);
-		}
-	};
-}
-}
-
-{
 'use strict';{const C3=self.C3;const DOM_COMPONENT_ID="button";C3.Plugins.Button=class ButtonPlugin extends C3.SDKDOMPluginBase{constructor(opts){super(opts,DOM_COMPONENT_ID);this.AddElementMessageHandler("click",(sdkInst,e)=>sdkInst._OnClick(e))}Release(){super.Release()}}}{const C3=self.C3;C3.Plugins.Button.Type=class ButtonType extends C3.SDKTypeBase{constructor(objectClass){super(objectClass)}Release(){super.Release()}OnCreate(){}}}
 {const C3=self.C3;const C3X=self.C3X;const TYPE=0;const TEXT=1;const TOOLTIP=2;const INITIALLY_VISIBLE=3;const ENABLE=4;const AUTO_FONT_SIZE=5;const CHECKED=6;const ID=7;const CLASS_NAME=8;const DOM_COMPONENT_ID="button";C3.Plugins.Button.Instance=class ButtonInstance extends C3.SDKDOMInstanceBase{constructor(inst,properties){super(inst,DOM_COMPONENT_ID);this._text="OK";this._isCheckbox=false;this._isChecked=false;this._title="";this._id="";this._className="";this._isEnabled=true;this._autoFontSize=
 true;if(properties){this._isCheckbox=properties[TYPE]===1;this._text=properties[TEXT];this._title=properties[TOOLTIP];this.GetWorldInfo().SetVisible(properties[INITIALLY_VISIBLE]);this._isEnabled=properties[ENABLE];this._autoFontSize=properties[AUTO_FONT_SIZE];this._isChecked=properties[CHECKED];this._id=properties[ID];this._className=properties[CLASS_NAME]}this.CreateElement({"id":this._id,"className":this._className})}Release(){super.Release()}GetElementState(){return{"text":this._text,"isCheckbox":this._isCheckbox,
@@ -5335,36 +5168,37 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.AJAX,
 		C3.Plugins.Dictionary,
 		C3.Plugins.NodeWebkit,
-		C3.Plugins.eren_DiscordRPC,
 		C3.Plugins.Button,
 		C3.Behaviors.Pathfinding,
 		C3.Plugins.System.Cnds.OnLayoutStart,
 		C3.Plugins.System.Acts.SetVar,
 		C3.Plugins.Audio.Acts.StopAll,
+		C3.Plugins.System.Acts.SetLayerVisible,
+		C3.Plugins.System.Acts.SetLayerInteractive,
 		C3.Plugins.System.Cnds.IsGroupActive,
-		C3.Plugins.System.Cnds.CompareVar,
-		C3.Plugins.Sprite.Acts.SetPos,
-		C3.Plugins.Sprite.Exps.X,
-		C3.Plugins.Sprite.Exps.Y,
-		C3.Plugins.System.Acts.SetLayoutScale,
-		C3.Behaviors.EightDir.Acts.SetEnabled,
-		C3.Plugins.Keyboard.Cnds.OnKey,
 		C3.Plugins.Sprite.Cnds.IsAnimPlaying,
 		C3.Plugins.Text.Acts.SetText,
 		C3.Plugins.Dictionary.Exps.Get,
 		C3.Plugins.TiledBg.Acts.SetWidth,
+		C3.Plugins.System.Cnds.CompareVar,
 		C3.Behaviors.Tween.Acts.TweenOneProperty,
 		C3.Plugins.System.Exps.rgbex255,
 		C3.Plugins.System.Cnds.TriggerOnce,
 		C3.Plugins.Sprite.Acts.SetInstanceVar,
 		C3.Plugins.TiledBg.Acts.SetDefaultColor,
 		C3.Plugins.Sprite.Acts.SetVisible,
+		C3.Plugins.Sprite.Acts.SetPos,
+		C3.Plugins.Sprite.Exps.X,
+		C3.Plugins.Sprite.Exps.Y,
 		C3.Plugins.System.Cnds.EveryTick,
 		C3.Plugins.Sprite.Acts.SetAnim,
 		C3.Plugins.Arr.Exps.At,
 		C3.Plugins.Mouse.Exps.X,
 		C3.Plugins.Mouse.Exps.Y,
 		C3.Plugins.TiledBg.Exps.Width,
+		C3.Plugins.System.Acts.SetLayoutScale,
+		C3.Behaviors.EightDir.Acts.SetEnabled,
+		C3.Plugins.Keyboard.Cnds.OnKey,
 		C3.Plugins.Sprite.Exps.IID,
 		C3.Plugins.System.Cnds.PickNth,
 		C3.Plugins.Sprite.Acts.SetEffectParam,
@@ -5469,6 +5303,8 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Sprite.Acts.SetDefaultColor,
 		C3.Plugins.Sprite.Cnds.IsOverlapping,
 		C3.Plugins.System.Exps.anglelerp,
+		C3.Plugins.Shape3D.Exps.UID,
+		C3.Plugins.Shape3D.Acts.SetInstanceVar,
 		C3.Plugins.Sprite.Acts.SubInstanceVar,
 		C3.Plugins.Sprite.Acts.SetTowardPosition,
 		C3.Behaviors.LOS.Cnds.HasLOSToObject,
@@ -5479,6 +5315,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Behaviors.Pathfinding.Acts.StartMoving,
 		C3.Behaviors.Pathfinding.Acts.Stop,
 		C3.Behaviors.MoveTo.Acts.Stop,
+		C3.Plugins.Sprite.Acts.AddInstanceVar,
 		C3.Plugins.Sprite.Exps.UID,
 		C3.Behaviors.MoveTo.Cnds.IsMoving,
 		C3.Behaviors.Fade.Cnds.OnFadeInEnd,
@@ -5496,14 +5333,12 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Arr.Acts.SetInstanceVar,
 		C3.Plugins.Audio.Acts.SetVolume,
 		C3.Plugins.sliderbar.Exps.Value,
-		C3.Plugins.System.Acts.SetLayerVisible,
-		C3.Plugins.System.Acts.SetLayerInteractive,
 		C3.Plugins.System.Acts.SetObjectTimescale,
 		C3.Plugins.Audio.Acts.SetPaused,
 		C3.Plugins.Shape3D.Cnds.PickDistance,
 		C3.Plugins.Shape3D.Acts.SetEffectEnabled,
-		C3.Plugins.Shape3D.Acts.SetInstanceVar,
 		C3.Plugins.Shape3D.Cnds.CompareInstanceVar,
+		C3.Plugins.Shape3D.Acts.SetEffectParam,
 		C3.Plugins.Sprite.Acts.MoveToTop,
 		C3.Behaviors.EightDir.Acts.SetIgnoreInput,
 		C3.Plugins.System.Cnds.Compare,
@@ -5514,7 +5349,10 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Shape3D.Acts.SubInstanceVar,
 		C3.Plugins.Shape3D.Cnds.OnDestroyed,
 		C3.Plugins.Shape3D.Exps.X,
-		C3.Plugins.Shape3D.Exps.Y
+		C3.Plugins.Shape3D.Exps.Y,
+		C3.Plugins.TiledBg.Acts.SetImageOffsetY,
+		C3.Plugins.TiledBg.Exps.ImageOffsetY,
+		C3.Plugins.Sprite.Acts.SetY
 	];
 };
 self.C3_JsPropNameTable = [
@@ -5682,6 +5520,7 @@ self.C3_JsPropNameTable = [
 	{opendoor: 0},
 	{initialx: 0},
 	{initialy: 0},
+	{locked: 0},
 	{playerDist: 0},
 	{open: 0},
 	{DoorWooden: 0},
@@ -5746,6 +5585,7 @@ self.C3_JsPropNameTable = [
 	{Retry: 0},
 	{MainMenu: 0},
 	{Text: 0},
+	{Sine2: 0},
 	{TitleScreen: 0},
 	{Particles: 0},
 	{Ammo: 0},
@@ -5761,7 +5601,6 @@ self.C3_JsPropNameTable = [
 	{Text2: 0},
 	{grass: 0},
 	{NWjs: 0},
-	{DiscordRPC: 0},
 	{busStopTrig: 0},
 	{LevelDescription: 0},
 	{Button: 0},
@@ -5773,8 +5612,31 @@ self.C3_JsPropNameTable = [
 	{decayBarEnemy: 0},
 	{hpBarEnemy: 0},
 	{enemyState: 0},
-	{TiledBackground3: 0},
+	{FinishLine: 0},
 	{BossDoor: 0},
+	{secondsTaken: 0},
+	{kills: 0},
+	{secrets: 0},
+	{secondsCount: 0},
+	{killsCount: 0},
+	{secretsCount: 0},
+	{TutorialManagerObject: 0},
+	{FinishVictory: 0},
+	{VictoryTime: 0},
+	{VictoryKills: 0},
+	{VictoryKillValue: 0},
+	{VictoryTimeValue: 0},
+	{FinishFade: 0},
+	{FinishLineLayer: 0},
+	{SecretTutorial1: 0},
+	{SecretFound: 0},
+	{SecretFoundBackground: 0},
+	{SecretFoundText: 0},
+	{SecretType: 0},
+	{SecretCount: 0},
+	{SecretTutorial2: 0},
+	{VictorySecrets: 0},
+	{VictorySecretsValue: 0},
 	{Pathfinding: 0},
 	{enemies: 0},
 	{enemyBullets: 0},
@@ -5788,6 +5650,8 @@ self.C3_JsPropNameTable = [
 	{destructs: 0},
 	{PowerUp: 0},
 	{Doors: 0},
+	{ManagerObjects: 0},
+	{Secrets: 0},
 	{sfxDB: 0},
 	{MusicDB: 0},
 	{Stamina: 0},
@@ -5796,9 +5660,11 @@ self.C3_JsPropNameTable = [
 	{mySpeed: 0},
 	{maxLoadout: 0},
 	{enemyTimescale: 0},
+	{TotalSecrets: 0},
 	{loadoutPosition: 0},
 	{isVisible: 0},
 	{myScroll: 0},
+	{isFinished: 0},
 	{ultimateType: 0},
 	{ultimateEnabled: 0},
 	{killCount: 0},
@@ -5825,7 +5691,8 @@ self.C3_JsPropNameTable = [
 	{y: 0},
 	{damage: 0},
 	{window: 0},
-	{paused: 0}
+	{paused: 0},
+	{width: 0}
 ];
 }
 
@@ -5927,14 +5794,8 @@ function or(l, r)
 
 self.C3_ExpressionFuncs = [
 		() => 0,
-		() => "Camera",
-		() => 1,
-		p => {
-			const n0 = p._GetNode(0);
-			const n1 = p._GetNode(1);
-			return () => C3.lerp(n0.ExpObject(), n1.ExpObject(), 0.1);
-		},
-		() => 0.75,
+		() => "finish",
+		() => "player",
 		() => "ui",
 		() => "gunUI",
 		() => "pistol",
@@ -6068,7 +5929,14 @@ self.C3_ExpressionFuncs = [
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => f0(255, 255, 255);
 		},
-		() => "player",
+		() => "Camera",
+		() => 1,
+		p => {
+			const n0 = p._GetNode(0);
+			const n1 = p._GetNode(1);
+			return () => C3.lerp(n0.ExpObject(), n1.ExpObject(), 0.1);
+		},
+		() => 0.75,
 		() => "loadout",
 		p => {
 			const n0 = p._GetNode(0);
@@ -6304,6 +6172,7 @@ self.C3_ExpressionFuncs = [
 			return () => f0("blankScan");
 		},
 		() => "RadialBlur",
+		() => "Tutorial",
 		() => "fade",
 		() => "help",
 		() => "Turret",
@@ -6371,6 +6240,7 @@ self.C3_ExpressionFuncs = [
 			const n1 = p._GetNode(1);
 			return () => C3.clamp(n0.ExpInstVar(), 0, n1.ExpInstVar());
 		},
+		() => 552,
 		() => -128,
 		p => {
 			const n0 = p._GetNode(0);
@@ -6403,8 +6273,10 @@ self.C3_ExpressionFuncs = [
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => f0("enemyHurt", "enemyHurt2", "enemyHurt3", "enemyHurt4", "enemyHurt5");
 		},
+		() => 1136,
 		() => 3.5,
 		() => 10000,
+		() => "BossDoors",
 		() => "Enemies",
 		() => "Knockback",
 		p => {
@@ -6417,7 +6289,7 @@ self.C3_ExpressionFuncs = [
 		p => {
 			const n0 = p._GetNode(0);
 			const n1 = p._GetNode(1);
-			return () => ((n0.ExpInstVar() / n1.ExpInstVar()) * 256);
+			return () => ((n0.ExpInstVar_Family() / n1.ExpInstVar_Family()) * 256);
 		},
 		p => {
 			const n0 = p._GetNode(0);
@@ -6498,14 +6370,16 @@ self.C3_ExpressionFuncs = [
 		() => "busStop",
 		() => "pause",
 		() => "Hub",
-		() => "TutorialText",
+		() => "DoorGroup",
+		() => "Manager",
 		() => -43807985663,
 		() => "Choose",
 		() => "Outline",
 		() => "Open",
 		p => {
 			const n0 = p._GetNode(0);
-			return () => (n0.ExpInstVar_Family() + 255);
+			const v1 = p._GetNode(1).GetVar();
+			return () => (n0.ExpInstVar_Family() + v1.GetValue());
 		},
 		() => 976,
 		() => 560,
@@ -6576,7 +6450,22 @@ self.C3_ExpressionFuncs = [
 			const v5 = p._GetNode(5).GetVar();
 			return () => and((and((and((and((and((and("Equipped: ", n0.ExpObject(0, 0)) + ", "), n1.ExpObject(1, 0)) + ", "), n2.ExpObject(2, 0)) + ", "), n3.ExpObject(3, 0)) + ", "), n4.ExpObject(4, 0)) + "    loadoutPos="), v5.GetValue());
 		},
-		() => "Bus Stop"
+		() => "Bus Stop",
+		() => "BreakGroup",
+		() => "Finish",
+		p => {
+			const n0 = p._GetNode(0);
+			return () => and(n0.ExpInstVar_Family(), " secs");
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() + 1);
+		},
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => and(v0.GetValue(), " secrets found");
+		},
+		() => -160
 ];
 
 
