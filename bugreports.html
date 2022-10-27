@@ -69,7 +69,7 @@
         <br>
         <div class="bodyitemrow"style="margin: auto; flex-direction: row">
         <div class="form">
-        <form action="#">
+        <form name="bugreport" method="post" data-netlify="true">
             <label for="fname">First name:</label><br>
             <input type="text" id="fname" name="fname" value=""><br><br>
             <label for="lname">Last name:</label><br>
@@ -101,7 +101,7 @@
             <label>Explain in detail:</label><br>
             <textarea id="message" name="message" rows="15" cols="100" style="resize: none"></textarea>
 
-            <button style="width: 100%" type="button" onclick="alert('Form submitted (not really nothing happened)')">Submit Form</button>
+            <button style="width: 100%" type="submit" onclick="alert('Form submitted!')">Submit Form</button>
         </form>
         </div>
 
