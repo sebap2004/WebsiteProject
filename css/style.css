@@ -31,22 +31,21 @@ h1{
 .header-container
 {
     display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-flow: row wrap;
+    width: 100%;
     height:auto;
 }
 .header
 {
     display: flex;
+    justify-content: space-around;
     height: auto;
+    width: 100%;
 }
 .header-item
 {
 
     display: flex;
-    padding: 5px
-;
+    padding: 5px;
 
 }
 .header-left
@@ -431,4 +430,8 @@ border-color: #600BA8;
 .gamewindow:active
 {
     border-color: #d2e70f;
+}
+.compact
+{
+    margin: 8px 0px;
 }
