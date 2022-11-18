@@ -60,13 +60,13 @@
             <div class="bodyitemcolumn bodyshort">
             <form name="contact" method="post" data-netlify="true">
                 <label for="fname">First name:</label><br>
-                <input type="text" id="fname" name="fname" value=""><br><br>
+                <input style="width:100%" type="text" id="fname" name="fname" value=""><br><br>
                 <label for="lname">Last name:</label><br>
-                <input type="text" id="lname" name="lname" value=""><br><br>
-                <label for="lname">Email</label><br>
-                <input type="text" id="email" name="email" value=""><br><br>
+                <input style="width:100%" type="text" id="lname" name="lname" value=""><br><br>
+                <label for="email">Email</label><br>
+                <input style="width:100%" type="text" id="email" name="email" value=""><br><br>
                 <label for="reason">Reason for contacting:</label><br>
-                <select id="reason" name="reason">
+                <select style="width: 100%" id="reason" name="reason">
                     <option value="no-answer">Select...</option>
                     <option value="inquiry">Inquiry</option>
                     <option value="bug">Game Bug</option>
@@ -74,8 +74,8 @@
                     <option value="DT">Death Threat</option>
                     <option value="other">Other</option>
                 </select><br><br>
-                <label>Message:</label><br>
-                <textarea id="message" name="message" rows="15" cols="100" style="resize: none"></textarea><br><br>
+                <label for="message">Message:</label><br>
+                <textarea style="width: 100%; resize: none" id="message" name="message" rows="15" cols="100" ></textarea><br><br>
                 <button type="submit" onclick="alert('Form submitted!')">Submit Form</button>
             </form>
 
