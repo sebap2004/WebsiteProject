@@ -391,38 +391,6 @@ textarea
 {
     text-decoration: none;
 }
-.dropdown
-{
-    float:left;
-    overflow: hidden;
-}
-.dropdown .dropbtn
-{
-    float: left;
-    color: white;
-    text-align: center;
-    font-family: pixelFont;
-    width: 100%;
-    text-decoration: none;
-    font-size: 17px;
-    justify-content: center;
-    border: 4px outset #b37ee5;
-    align-content: space-around;
-    background-color: #2a0649;
-    margin-top: 10px;
-
-}
-.dropdown:hover .dropbtn, .dropdowncontent:hover
-{
-    background-color: white;
-    color: black;
-}
-.dropdowncontent {
-}
-
-.dropdown:hover .dropdowncontent {
-    display: block;
-}
 .gamewindow
 {
 border-color: #600BA8;
@@ -434,4 +402,18 @@ border-color: #600BA8;
 .compact
 {
     margin: 8px 0px;
+}
+
+.product,.product:visited
+{
+    text-decoration: none;
+    color: #c5b0f5
+}
+.product:hover
+{
+    color: white;
+}
+.product:active
+{
+    color: black;
 }
