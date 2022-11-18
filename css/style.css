@@ -417,3 +417,15 @@ border-color: #600BA8;
 {
     color: black;
 }
+.symbol
+{
+font-size: 18px;
+}
+.price
+{
+ font-size: 30px;
+}
+.pricefraction
+{
+font-size: 20px;
+}
