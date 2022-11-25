@@ -56,59 +56,78 @@
 <div class="bodycontainer">
     <div class="bodyrow">
         <div class="bodyitemcolumn" style="width: 80%">
-            <h1>Shopping basket</h1>
-            <div class="basketitem">
-                <div class="basketelement">
-                    <embed class="basketimage" src="media/products/Ryzen97900X.jpg">
+           <h1>Checkout</h1>
+            <h2>Delivery Address</h2>
+            <form>
+                <label for="fullname">Full name</label><br>
+                <input style="width:100%" type="text" id="fullname" placeholder="Full Name" name="fullname" value=""><br><br>
+                <label for="phoneNumber">Phone number</label><br>
+                <input style="width:100%" type="text" id="phoneNumber" placeholder="Phone Number" name="phoneNumber" value=""><br><br>
+                <label for="addressline1">Address Line 1</label><br>
+                <input style="width:100%" type="text" id="addressline1" placeholder="Address Line 1" name="addressline1" value=""><br><br>
+                <label for="addressline2">Address Line 2 (optional)</label><br>
+                <input style="width:100%" type="text" id="addressline2" placeholder="Address Line 2 (optional)" name="addressline2" value=""><br><br>
+                <label for="county">County</label><br>
+                <input style="width:100%" type="text" id="county" placeholder="County" name="county" value=""><br><br>
+            </form>
+            <h2>Delivery Address</h2>
+            <form>
+                <label for="cardname">Name on card</label><br>
+                <input style="width:100%" type="text" id="cardname" placeholder="John Doe" name="cardname" value=""><br><br>
+                <label for="phoneNumber">Card number</label><br>
+                <input style="width:100%" type="text" id="cardnumber" placeholder="1234 5678 9012 3456" name="cardnumber" value=""><br><br>
+                <label for="securitynumber">Security number</label><br>
+                <input style="width:100%" type="text" id="securitynumber" placeholder="123" name="securitynumber" value=""><br><br>
+                <label for="expirydate">Date of expiry</label><br>
+                <input style="width:100%" type="text" id="expirydate" placeholder="05/26" name="expirydate" value="">
+            </form>
+            <h2>Basket Summary</h2>
+            <div class="basketitemsummary">
+                <div class="basketelementsummary">
+                    <embed class="basketimagesummary" src="media/products/Ryzen97900X.jpg">
                 </div>
-                <div class="basketelement">
+                <div class="basketelementsummary">
                     <h2>Ryzen 9 7900X</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto asperiores consectetur corporis cupiditate dolores laborum veniam. At blanditiis ipsum nemo.</p>
-                    <a class="remove" href="#">Remove from basket</a>
+                    
                 </div>
-                <div class="basketelement" style="width: 20%; text-align: right">
+                <div class="basketelementsummary" style="width: 20%; text-align: right">
                     <p>$999.99</p>
                     <p>QTY: 1</p>
                 </div>
             </div>
-            <div class="basketitem">
-                <div class="basketelement">
-                    <embed class="basketimage" src="media/products/Ryzen53600XT.jpg">
+            <div class="basketitemsummary">
+                <div class="basketelementsummary">
+                    <embed class="basketimagesummary" src="media/products/Ryzen53600XT.jpg">
                 </div>
-                <div class="basketelement">
+                <div class="basketelementsummary">
                     <h2>Ryzen 5 3600XT</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto asperiores consectetur corporis cupiditate dolores laborum veniam. At blanditiis ipsum nemo.</p>
-                    <a class="remove" href="#">Remove from basket</a>
+                    
                 </div>
-                <div class="basketelement" style="width: 20%; text-align: right">
+                <div class="basketelementsummary" style="width: 20%; text-align: right">
                     <p>$341.54</p>
                     <p>QTY: 1</p>
                 </div>
             </div>
-            <div class="basketitem">
-                <div class="basketelement">
-                    <embed class="basketimage" src="media/products/ryzen31200.jpg">
+            <div class="basketitemsummary">
+                <div class="basketelementsummary">
+                    <embed class="basketimagesummary" src="media/products/ryzen31200.jpg">
                 </div>
-                <div class="basketelement">
+                <div class="basketelementsummary">
                     <h2>Ryzen 3 1200</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto asperiores consectetur corporis cupiditate dolores laborum veniam. At blanditiis ipsum nemo.</p>
-                    <a class="remove" href="#">Remove from basket</a>
                 </div>
-                <div class="basketelement" style="width: 20%; text-align: right">
+                <div class="basketelementsummary" style="width: 20%; float: right; text-align: right">
                     <p>$99.99</p>
                     <p>QTY: 1</p>
                 </div>
             </div>
-            <div class="basketitem">
-                <div class="basketelement">
-                    <embed class="basketimage" src="media/products/ryzen72700.jpg">
+            <div class="basketitemsummary">
+                <div class="basketelementsummary">
+                    <embed class="basketimagesummary" src="media/products/ryzen72700.jpg">
                 </div>
-                <div class="basketelement">
-                    <h2>Ryzen 7 2700</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto asperiores consectetur corporis cupiditate dolores laborum veniam. At blanditiis ipsum nemo.</p>
-                    <a class="remove" href="#">Remove from basket</a>
+                <div class="basketelementsummary">
+                    <h2>Ryzen 7 2700</h2>   
                 </div>
-                <div class="basketelement" style="width: 20%;">
+                <div class="basketelementsummary" style="width: 20%;">
                     <p>$277.43</p>
                     <p>QTY: 1</p>
                 </div>
@@ -121,14 +140,14 @@
                 <p class="closep">Delivery cost: <span style="float: right">$5.00</span></p>
                 <br><br><hr style="height:2px;border-width:0;color:#b37ee5;background-color:#b37ee5">
                 <p class="closep"> Total <span style="float: right">$1723.95</span></p>
-                <a class="aButton" href="checkout.html">Go to checkout</a>
+                <a class="aButton" style="width: 50%" href="checkout.html">Pay now</a>
             </div>
+        </div>
+        </div>
+
 
 
         </div>
-    </div>
-</div>
-
 
 </body>
 <div class="footercontainer">

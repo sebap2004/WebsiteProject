@@ -480,3 +480,58 @@ font-size: 20px;
 {
   margin: 0 0 8px 0;
 }
+.aButton{
+    float: left;
+    color: white;
+    text-align: center;
+    background-color: #2a0649;
+    text-decoration: none;
+    font-size: 17px;
+    justify-content: center;
+    border: 4px outset #b37ee5;
+    align-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px 0px 0px 0px;
+
+
+}
+.aButton:hover {
+    background-color: white;
+    color: black;
+}
+.aButton:active {
+    float: left;
+    text-align: center;
+    text-decoration: none;
+    font-size: 17px;
+    justify-content: center;
+    border: 4px inset #b37ee5;
+    align-content: space-around;
+    flex-direction: column;
+    background-color: #2a0649;
+    color:white;
+
+
+}
+.basketitemsummary
+{
+    width: 50%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0 10px 0;
+    padding: 20px 0 20px 0;
+    border: #b37ee5 2px solid;
+}
+.basketelementsummary
+{
+    display: flex;
+    flex-direction: column;
+}
+.basketimagesummary
+{
+    width: 120px;
+    transform: scale(1);
+    padding: 0 30px 0 30px;
+}
