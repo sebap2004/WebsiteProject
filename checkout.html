@@ -5,7 +5,7 @@
     <link href="css/style.css" rel="stylesheet">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <meta content="Long Shot" property="og:title" />
-    <meta content="Products Page for Long Shot Website" property="og:description" />
+    <meta content="Checkout Page for Long Shot Website" property="og:description" />
     <meta content="https://longshotgame.netlify.app/index.html" property="og:url" />
     <meta content="https://cdn.discordapp.com/attachments/765315376203431939/1031347393456787486/title.png" property="og:image" />
     <meta content="#7315d6" data-react-helmet="true" name="theme-color" />
@@ -55,7 +55,7 @@
 </div>
 <div class="bodycontainer">
     <div class="bodyrow">
-        <div class="bodyitemcolumn" style="width: 80%">
+        <div class="bodyitemcolumn" style="width: 50%">
            <h1>Checkout</h1>
             <h2>Delivery Address</h2>
             <form>
@@ -70,7 +70,7 @@
                 <label for="county">County</label><br>
                 <input style="width:100%" type="text" id="county" placeholder="County" name="county" value=""><br><br>
             </form>
-            <h2>Delivery Address</h2>
+            <h2>Payment information</h2>
             <form>
                 <label for="cardname">Name on card</label><br>
                 <input style="width:100%" type="text" id="cardname" placeholder="John Doe" name="cardname" value=""><br><br>
@@ -81,53 +81,45 @@
                 <label for="expirydate">Date of expiry</label><br>
                 <input style="width:100%" type="text" id="expirydate" placeholder="05/26" name="expirydate" value="">
             </form>
-            <h2>Basket Summary</h2>
+            <h2>Basket Summary (4 Items)</h2>
             <div class="basketitemsummary">
-                <div class="basketelementsummary">
-                    <embed class="basketimagesummary" src="media/products/Ryzen97900X.jpg">
-                </div>
-                <div class="basketelementsummary">
+                <embed class="basketimagesummary" src="media/products/Ryzen97900X.jpg">
+                <div class="baskettitlesummary">
                     <h2>Ryzen 9 7900X</h2>
                     
                 </div>
-                <div class="basketelementsummary" style="width: 20%; text-align: right">
+                <div class="basketpricesummary">
                     <p>$999.99</p>
                     <p>QTY: 1</p>
                 </div>
             </div>
             <div class="basketitemsummary">
-                <div class="basketelementsummary">
-                    <embed class="basketimagesummary" src="media/products/Ryzen53600XT.jpg">
-                </div>
-                <div class="basketelementsummary">
+                <embed class="basketimagesummary" src="media/products/Ryzen53600XT.jpg">
+                <div class="baskettitlesummary">
                     <h2>Ryzen 5 3600XT</h2>
                     
                 </div>
-                <div class="basketelementsummary" style="width: 20%; text-align: right">
+                <div class="basketpricesummary">
                     <p>$341.54</p>
                     <p>QTY: 1</p>
                 </div>
             </div>
             <div class="basketitemsummary">
-                <div class="basketelementsummary">
-                    <embed class="basketimagesummary" src="media/products/ryzen31200.jpg">
-                </div>
-                <div class="basketelementsummary">
+                <embed class="basketimagesummary" src="media/products/ryzen31200.jpg">
+                <div class="baskettitlesummary">
                     <h2>Ryzen 3 1200</h2>
                 </div>
-                <div class="basketelementsummary" style="width: 20%; float: right; text-align: right">
+                <div class="basketpricesummary">
                     <p>$99.99</p>
                     <p>QTY: 1</p>
                 </div>
             </div>
             <div class="basketitemsummary">
-                <div class="basketelementsummary">
-                    <embed class="basketimagesummary" src="media/products/ryzen72700.jpg">
-                </div>
-                <div class="basketelementsummary">
+                <embed class="basketimagesummary" src="media/products/ryzen72700.jpg">
+                <div class="baskettitlesummary">
                     <h2>Ryzen 7 2700</h2>   
                 </div>
-                <div class="basketelementsummary" style="width: 20%;">
+                <div class="basketpricesummary">
                     <p>$277.43</p>
                     <p>QTY: 1</p>
                 </div>
@@ -140,7 +132,7 @@
                 <p class="closep">Delivery cost: <span style="float: right">$5.00</span></p>
                 <br><br><hr style="height:2px;border-width:0;color:#b37ee5;background-color:#b37ee5">
                 <p class="closep"> Total <span style="float: right">$1723.95</span></p>
-                <a class="aButton" style="width: 50%" href="checkout.html">Pay now</a>
+                <button onClick="document.location='orderconfirmation.html'">Pay Now</button>
             </div>
         </div>
         </div>
