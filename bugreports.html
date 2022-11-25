@@ -24,8 +24,8 @@
         </div>
 
         <div class="header-item header-right" style="display: flex; flex-direction: row">
-            <a class="basketlink" href="checkout.html"> <img class="basket"src="media/basket.png"></a>
-            <p style="margin: 0">Basket: 0 items</p>
+            <a class="basketlink" href="basket.html"> <img class="basket" alt="basket" src="media/basket.png"></a>
+            <p style="margin: 0">Basket: 4 items</p>
 
         </div>
 
@@ -57,7 +57,8 @@
 <div class="body" style="justify-content: start; flex-direction: column; width:100%;">
     <div class="bodyitemcolumn" style="margin: auto; flex-direction: column; text-align: center">
         <h1>Found a bug?</h1>
-        <p>You wouldn't be the first. Fill out this form and I might get back to you and sort it out when I get the time.</p>
+        <p class="closep">You wouldn't be the first. Fill out this form and I might get back to you and sort it out when I get the time.</p>
+        <p class="closep">Company information can be found on the contact page if needed.</p>
     </div>
     <div class="bodyitemrow">
         <div class="bodyitemcolumn" style="margin: 10%">
@@ -71,11 +72,11 @@
         <div class="form">
         <form name="bugreport" method="post" data-netlify="true">
             <label for="fname">First name:</label><br>
-            <input style="width: 100%" type="text" id="fname" name="fname" value=""><br><br>
+            <input style="width: 100%" type="text" id="fname" placeholder="John" name="fname" value=""><br><br>
             <label for="lname">Last name:</label><br>
-            <input style="width: 100%" type="text" id="lname" name="lname" value=""><br><br>
+            <input style="width: 100%" type="text" id="lname" placeholder="Doe" name="lname" value=""><br><br>
             <label for="lname">Email</label><br>
-            <input style="width: 100%" type="text" id="email" name="email" value=""><br><br>
+            <input style="width: 100%" type="text" id="email" placeholder="example@example.com" name="email" value=""><br><br>
             <label for="lname">Was it perhaps a skill issue?</label><br><br>
             <input class="inputsmall" type="radio" id="skill-issue-yes" name="skill-issue" value="Yes">
             <label for="skill-issue-yes"> Yes</label><br>
@@ -91,15 +92,19 @@
             </select><br><br>
             <label for="bugtype">Bug type</label><br>
             <select style="width: 100%" id="bugtype" name="bugtype">
-                <option value="visual">Visual</option>
-                <option value="gameplay">Gameplay</option>
-                <option value="serious">Serious</option>
-                <option value="gamebreak">Game breaking</option>
-                <option value="save">Save state issue</option>
+                <optgroup label="Low Priority">
+                    <option value="visual">Visual</option>
+                    <option value="gameplay">Gameplay</option>
+                    <option value="save">Save state issue</option>
+                </optgroup>
+                <optgroup label="High Priority">
+                    <option value="serious">Serious</option>
+                    <option value="gamebreak">Game breaking</option>
+                </optgroup>
                 <option value="other">Other</option>
             </select><br><br>
             <label for="message">Explain in detail:</label><br>
-            <textarea id="message" name="message" rows="15" cols="100" style="resize: none; width:100%"></textarea>
+            <textarea id="message" name="message" rows="15" placeholder="Your message here..." cols="100" style="resize: none; width:100%"></textarea>
 
             <button style="width: 100%" type="submit" onclick="alert('Form submitted!')">Submit Form</button>
         </form>

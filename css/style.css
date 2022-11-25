@@ -336,7 +336,6 @@ textarea
     display: flex;
     background-color: #34254b;
     flex-direction: row;
-    flex-direction: column;
     align-content: center;
     justify-content: center;
     padding: 0;
@@ -408,7 +407,7 @@ border-color: #600BA8;
 }
 .compact
 {
-    margin: 8px 0px;
+    margin: 8px 0;
 }
 
 .product,.product:visited
@@ -435,4 +434,49 @@ font-size: 18px;
 .pricefraction
 {
 font-size: 20px;
+}
+.basketitem
+{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0 10px 0;
+    padding: 20px 0 20px 0;
+    border-bottom: #b37ee5 2px solid;
+    border-top: #b37ee5 2px solid;
+}
+.basketelement
+{
+    display: flex;
+    flex-direction: column;
+}
+.basketimage
+{
+    width: 200px;
+    transform: scale(1);
+    padding: 0 30px 0 30px;
+}
+.remove,.remove:visited
+{
+    text-decoration: none;
+    color: #bb7aea;
+}
+.remove:hover
+{
+    color: white;
+}
+.remove:active
+{
+    color: black;
+}
+
+.cost
+{
+    border: outset 2px #bb7aea;
+    padding: 10px;
+    background-color: #600BA8;
+}
+.compacth2
+{
+  margin: 0 0 8px 0;
 }

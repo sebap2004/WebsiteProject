@@ -25,8 +25,8 @@
                 </div>
 
                 <div class="header-item header-right" style="display: flex; flex-direction: row">
-                    <a class="basketlink" href="checkout.html"> <img class="basket" src="media/basket.png"></a>
-                    <p style="margin: 0">Basket: 0 items</p>
+                    <a class="basketlink" href="basket.html"> <img class="basket" src="media/basket.png"></a>
+                    <p style="margin: 0">Basket: 4 items</p>
 
                 </div>
 
@@ -60,11 +60,11 @@
             <div class="bodyitemcolumn bodyshort">
             <form name="contact" method="post" data-netlify="true">
                 <label for="fname">First name:</label><br>
-                <input style="width:100%" type="text" id="fname" name="fname" value=""><br><br>
+                <input style="width:100%" type="text" id="fname" placeholder="First name" name="fname" value=""><br><br>
                 <label for="lname">Last name:</label><br>
-                <input style="width:100%" type="text" id="lname" name="lname" value=""><br><br>
+                <input style="width:100%" type="text" id="lname" placeholder="Last name" name="lname" value=""><br><br>
                 <label for="email">Email</label><br>
-                <input style="width:100%" type="text" id="email" name="email" value=""><br><br>
+                <input style="width:100%" type="text" id="email" placeholder="example@example.com" name="email" value=""><br><br>
                 <label for="reason">Reason for contacting:</label><br>
                 <select style="width: 100%" id="reason" name="reason">
                     <option value="no-answer">Select...</option>
@@ -75,7 +75,7 @@
                     <option value="other">Other</option>
                 </select><br><br>
                 <label for="message">Message:</label><br>
-                <textarea style="width: 100%; resize: none" id="message" name="message" rows="15" cols="100" ></textarea><br><br>
+                <textarea style="width: 100%; resize: none" id="message" name="message" placeholder="Enter message here..." rows="15" cols="100" ></textarea><br><br>
                 <button type="submit" onclick="alert('Form submitted!')">Submit Form</button>
             </form>
 
@@ -87,6 +87,10 @@
 
                 <p>Use this form to contact me and I'll try to get back to you as soon as i can.
                     No promises, though, as i am very busy :p</p>
+
+                <h2>Company information</h2>
+                <p>Location:</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4819.415181336974!2d-0.5333760453070681!3d52.84565383008363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487824e71ad50b5f%3A0xa752a4b51c35fc3e!2sBitchfield%2C%20Grantham!5e0!3m2!1sen!2suk!4v1669384537680!5m2!1sen!2suk" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
 
 
