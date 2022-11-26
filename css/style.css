@@ -58,14 +58,25 @@ h1{
 .header-left
 {
     display: flex;
+    padding: 5px 5px 5px 50px;
+    width: 25%;
     text-align: left;
     flex-direction: column;
     justify-content: flex-end;
     flex-wrap: wrap;
 }
+.header-center
+{
+    display: flex;
+    padding: 5px;
+    width: 50%;
+    justify-content: center;
+}
 .header-right
 {
-    display: flex !important;
+    display: flex;
+    padding: 5px 50px 5px 5px;
+    width: 25%;
     text-align: right !important;
     flex-direction: column;
     justify-content: flex-end;
@@ -533,8 +544,6 @@ font-size: 20px;
 }
 .basketimagesummary
 {
-    height: 100%;
-    width: 20%;
     transform: scale(1);
     padding: 0 30px 0 30px;
 }

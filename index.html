@@ -13,27 +13,31 @@
 </head>
 <body>
 
-<div class="header-container">
+<header class="header-container">
     <!-- Header container includes the logo in the center, a basket icon which links to the checkout page, and TODO ADD LEFT ELEMENT OR REMOVE ENTIRELY -->
     <div class="header">
-        <div class="header-item header-left">
-            Left element
-        </div>
-        <div style="justify-self: center;" class="header-item">
-            <a href="index.html">
-                <img alt="Title Logo" src="media/titleLarge.png">
-            </a>
-        </div>
 
-        <div class="header-item header-right" style="display: flex; flex-direction: row">
-            <a class="basketlink" href="basket.html"> <img class="basket" src="media/basket.png" alt="basket"></a>
-            <p style="margin: 0">Basket: 4 items</p>
+        <div class="header">
+            <div class="header-item header-left">
+                Left element
+            </div>
+            <div class="header-center">
+                <a href="index.html">
+                    <img alt="Title Logo" src="media/titleLarge.png">
+                </a>
+            </div>
+
+            <div class="header-right" style="display: flex; flex-direction: row">
+                <a class="basketlink" href="basket.html"> <img class="basket" src="media/basket.png" alt="basket"></a>
+                <p style="margin: 0">Basket: 4 items</p>
+
+            </div>
 
         </div>
 
     </div>
-</div>
-<div class="navcontainer">
+</header>
+<nav class="navcontainer">
     <!-- Navigation bar contains buttons to all pages, apart from the checkout page. -->
     <div class="nav">
         <div class="navitem navbar">
@@ -55,9 +59,9 @@
             <a style="flex-grow: 2" href="bugreports.html">Bug Reports</a>
         </div>
     </div>
-</div>
+</nav>
 <br>
-<div class="homecontainer">
+<main class="homecontainer">
     <div class="home">
         <div style="flex-basis: 150vw" class="homeitem">
             <embed alt="lol" class="homeitem" src="media/wallpaper.jpg">
@@ -77,8 +81,8 @@
     </div>
     </div>
 
-</div>
-<div class="footercontainer">
+</main>
+<footer class="footercontainer">
     <!-- Footer container contains extra external links for the user to click on if interested. TODO REPLACE JOKE LINKS WITH IMPORTANT LINKS -->
     <div class="footer">
         <div class="footeritem footertext">
@@ -99,7 +103,7 @@
             <a href="https://shebbgames.itch.io/long-shot/devlog/" target="_blank"><p class="closep">Devlog</p></a>
         </div>
     </div>
-</div>
+</footer>
 
 
 </body>
