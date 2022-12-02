@@ -1,8 +1,54 @@
+:root
+{
+    /* COLOR SCHEME */
+        /* Core elements */
+            --gradientTop: #600BA8;
+            --gradientBottom: #2a0649;
+            --fontColor: #e0d7f3;
+            --blockquote: #c569ff;
+        /* Navbar and Button Elements */
+            --buttonBackground: #2a0649;
+            --buttonText: white;
+            --buttonBorder: #b37ee5;
+            --buttonBackgroundHover: white;
+            --buttonTextHover: black;
+            --buttonBackgroundActive: #2a0649;
+            --buttonTextActive: white;
+        /* Input Elements */
+            --inputColor: white;
+            --inputBackground: #2a0649;
+            --inputBorder: darkgray;
+        /* Footer Elements */
+            --footerBackground: #34254b;
+            --footerTitle: #ad70f5;
+            --footerText: #c5b0f5;
+            --footerTextHover: white;
+            --footerTextActive: black;
+        /* Game Window Elements */
+            --gameWindowBorder: #600BA8;
+            --gameWindowActive: #d2e70f;
+        /* Product Elements */
+            --productText: #bb7aea;
+            --productTextHover: white;
+            --productTextActive: black;
+        /* Basket Elements */
+            --basketBorder: #b37ee5;
+            --removeText: #bb7aea;
+            --removeTextHover: white;
+            --removeTextActive: black;
+            --costBorder: #bb7aea;
+            --costBackground: #600BA8;
+    /* END OF COLOR SCHEME */
+}
+@font-face {
+    font-family: pixelFont;
+    src:url(../font/Silkscreen-Regular.ttf)
+}
 body
 {
-    background-image: linear-gradient(to bottom, #600BA8, #2a0649);
+    background-image: linear-gradient(to bottom, var(--gradientTop), var(--gradientBottom));
     font-family: pixelFont, serif;
-    color: #e0d7f3;
+    color: var(--fontColor);
     padding: 0;
     margin: 0;
 }
@@ -11,7 +57,7 @@ blockquote
     font-style: normal;
     font-size: 16px;
     margin-left: 32px;
-    border-left: 4px solid #c569ff;
+    border-left: 4px solid var(--blockquote);
     padding-left: 12px;
 }
 img{
@@ -31,10 +77,7 @@ h1{
     font-size: 60px;
     margin: 0px;
 }
-@font-face {
-    font-family: pixelFont;
-    src:url(../font/Silkscreen-Regular.ttf)
-}
+
 .header-container
 {
     display: flex;
@@ -71,6 +114,7 @@ h1{
     padding: 5px;
     width: 50%;
     justify-content: center;
+    align-content: center;
 }
 .header-right
 {
@@ -97,21 +141,21 @@ h1{
 }
 .navbar {
     overflow: hidden;
-    background-color: #2a0649;
-    color: white;
+    background-color: var(--buttonBackground);
+    color: var(--buttonText);
 
 
 }
 .navbar a {
     float: left;
     display: flex;
-    color: white;
+    color: var(--buttonText);
     text-align: center;
     width: 100px;
     text-decoration: none;
     font-size: 17px;
     justify-content: center;
-    border: 4px outset #b37ee5;
+    border: 4px outset var(--buttonBorder);
     align-content: space-around;
     flex-direction: column;
 
@@ -119,8 +163,8 @@ h1{
 }
 
 .navbar a:hover {
-    background-color: white;
-    color: black;
+    background-color: var(--buttonBackgroundHover);
+    color: var(--buttonTextHover);
 }
 .navbar a:active {
     float: left;
@@ -130,11 +174,11 @@ h1{
     text-decoration: none;
     font-size: 17px;
     justify-content: center;
-    border: 4px inset #b37ee5;
+    border: 4px inset var(--buttonBorder);
     align-content: space-around;
     flex-direction: column;
-	background-color: #2a0649;
-	color:white;
+	background-color: var(--buttonBackgroundActive);
+	color:var(--buttonTextActive);
 
 
 }
@@ -256,22 +300,22 @@ h1{
  button
  {
      float: left;
-     color: white;
+     color: var(--buttonText);
      text-align: center;
      font-family: pixelFont;
      width: 100%;
      text-decoration: none;
      font-size: 17px;
      justify-content: center;
-     border: 4px outset #b37ee5;
+     border: 4px outset var(--buttonBorder);
      align-content: space-around;
-     background-color: #2a0649;
+     background-color: var(--buttonBackground);
      margin-top: 10px;
 
  }
 button:hover {
-    background-color: white;
-    color: black;
+    background-color: var(--buttonBackgroundHover);
+    color: var(--buttonTextHover);
 }
 button:active {
     float: left;
@@ -280,72 +324,72 @@ button:active {
     text-decoration: none;
     font-size: 17px;
     justify-content: center;
-    border: 4px inset #b37ee5;
+    border: 4px inset var(--buttonBorder);
     align-content: space-around;
-	background-color: #2a0649;
-	color:white;
+	background-color: var(--buttonBackgroundActive);
+	color:var(--buttonTextActive);
 
 }
 input
 {
     float: left;
-    color: white;
+    color: var(--inputColor);
     text-align: left;
     font-family: pixelFont;
     width: auto;
     text-decoration: none;
     font-size: 17px;
     justify-content: center;
-    border: 2px inset darkgray;
+    border: 2px inset var(--inputBorder);
     align-content: space-around;
-    background-color: #2a0649
+    background-color: var(--inputBackground);
 }
 .inputsmall
 {
     width:auto;
     float: left;
-    color: white;
+    color: var(--inputColor);
     text-align: left;
     font-family: pixelFont;
     text-decoration: none;
     font-size: 17px;
     justify-content: center;
-    border: 2px inset darkgray;
+    border: 2px inset var(--inputBorder);
     align-content: space-around;
-    background-color: #2a0649
+    background-color: var(--inputBackground);
 }
 select
 {
     float: left;
-    color: white;
+    color: var(--inputColor);
     text-align: left;
     font-family: pixelFont;
     width: 100%;
     text-decoration: none;
     font-size: 17px;
     justify-content: center;
-    border: 2px inset darkgray;
+    border: 2px inset var(--inputBorder);
     align-content: space-around;
-    background-color: #2a0649
+    background-color: var(--inputBackground);
 }
 textarea
 {
     float: left;
-    color: white;
+    color: var(--inputColor);
     text-align: left;
     font-family: pixelFont;
     width: 300px;
     text-decoration: none;
     font-size: 17px;
     justify-content: center;
-    border: 2px inset darkgray;
+    border: 2px inset var(--inputBorder);
     align-content: space-around;
-    background-color: #2a0649
+    background-color: var(--inputBackground);
 }
 .footercontainer
 {
     display: flex;
-    background-color: #34254b;
+    background-color: var(--footerBackground);
     flex-direction: row;
     align-content: center;
     justify-content: center;
@@ -374,18 +418,23 @@ textarea
 {
     margin: 3px;
 }
+.footerTitle
+{
+    font-size: 20px;
+    color: var(--footerTitle);
+}
 .footertext a,.footertext a:visited
 {
     text-decoration: none;
-    color: #c5b0f5
+    color: var(--footerText);
 }
 .footertext a:hover
 {
-    color: white;
+    color: var(--footerTextHover);
 }
 .footertext a:active
 {
-    color: black;
+    color: var(--footerTextActive);
 }
 .basket
 {
@@ -410,11 +459,11 @@ textarea
 }
 .gamewindow
 {
-border-color: #600BA8;
+    border-color: var(--gameWindowBorder);
 }
 .gamewindow:active
 {
-    border-color: #d2e70f;
+    border-color: var(--gameWindowActive);
 }
 .compact
 {
@@ -424,15 +473,15 @@ border-color: #600BA8;
 .product,.product:visited
 {
     text-decoration: none;
-    color: #bb7aea
+    color: var(--productText);
 }
 .product:hover
 {
-    color: white;
+    color: var(--productTextHover);
 }
 .product:active
 {
-    color: black;
+    color: var(--productTextActive);
 }
 .symbol
 {
@@ -453,8 +502,8 @@ font-size: 20px;
     flex-direction: row;
     margin: 10px 0 10px 0;
     padding: 20px 0 20px 0;
-    border-bottom: #b37ee5 2px solid;
-    border-top: #b37ee5 2px solid;
+    border-bottom: var(--basketBorder) 2px solid;
+    border-top: var(--basketBorder) 2px solid;
 }
 .basketelement
 {
@@ -470,36 +519,38 @@ font-size: 20px;
 .remove,.remove:visited
 {
     text-decoration: none;
-    color: #bb7aea;
+    color: var(--removeText);
 }
 .remove:hover
 {
-    color: white;
+    color: var(--removeTextHover);
 }
 .remove:active
 {
-    color: black;
+    color: var(--removeTextActive);
 }
 
 .cost
 {
-    border: outset 2px #bb7aea;
+    border: outset 2px var(--costBorder);
     padding: 10px;
-    background-color: #600BA8;
+    background-color: var(--costBackground);
 }
 .compacth2
 {
   margin: 0 0 8px 0;
 }
+
+/* aButton class not really used, only here in case buttons don't work. */
 .aButton{
     float: left;
-    color: white;
+    color: var(--buttonText);
     text-align: center;
-    background-color: #2a0649;
+    background-color: var(--buttonBackground);
     text-decoration: none;
     font-size: 17px;
     justify-content: center;
-    border: 4px outset #b37ee5;
+    border: 4px outset var(--buttonBorder);
     align-content: space-around;
     flex-direction: column;
     padding: 10px;
@@ -508,8 +559,8 @@ font-size: 20px;
 
 }
 .aButton:hover {
-    background-color: white;
-    color: black;
+    background-color: var(--buttonBackgroundHover);
+    color: var(--buttonTextHover);
 }
 .aButton:active {
     float: left;
@@ -517,23 +568,21 @@ font-size: 20px;
     text-decoration: none;
     font-size: 17px;
     justify-content: center;
-    border: 4px inset #b37ee5;
+    border: 4px inset var(--buttonBorder);
     align-content: space-around;
     flex-direction: column;
-    background-color: #2a0649;
-    color:white;
-
-
+    background-color: var(--buttonBackgroundActive);
+    color:var(--buttonTextActive);
 }
 .basketitemsummary
 {
-    width: 80%;
+    width: 100%;
     height: 100px;
     display: flex;
     flex-direction: row;
     margin: 10px 0 10px 0;
     padding: 10px 0 10px 0;
-    border: #b37ee5 2px solid;
+    border: var(--basketBorder) 2px solid;
 }
 .baskettitlesummary
 {
@@ -554,4 +603,8 @@ font-size: 20px;
     padding: 0 20px 0 0;
     height: 100%;
     width: 20%
+}
+.headerLogo
+{
+
 }
