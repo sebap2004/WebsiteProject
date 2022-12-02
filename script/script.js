@@ -18,3 +18,9 @@ var monitor = setInterval(function(){
 
     }
 }, 100);
+
+function toggleLightMode()
+{
+    const element = document.body;
+    element.classList.toggle("lightMode");
+}

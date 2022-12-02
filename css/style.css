@@ -52,6 +52,12 @@ body
     padding: 0;
     margin: 0;
 }
+.lightMode
+{
+    --gradientBottom: white;
+    --gradientTop: gray;
+    --buttonBackground: #ffffff;
+}
 blockquote
 {
     font-style: normal;
@@ -442,6 +448,7 @@ textarea
     height: 32px;
     width: 32px;
     display: block;
+    color: var(--buttonText);
 
 }
 .basket:hover
@@ -451,6 +458,7 @@ textarea
     width: 32px;
     display: block;
     filter: brightness(0%);
+    color: var(--buttonTextHover);
 
 }
 .basketlink a, .basketlink a:visited
@@ -607,4 +615,38 @@ font-size: 20px;
 .headerLogo
 {
 
+}
+.buttonicon,.buttonicon:active
+{
+    image-rendering: pixelated;
+    width: 100%;
+    margin: 0;
+}
+.buttonicon:hover
+{
+    filter: brightness(0%);
+}
+.headerbutton, .headerbutton:active
+{
+    width: 45px;
+    height: 45px;
+    padding: 0;
+}
+/* Slidehow CSS TODO REFERENCE W3 SCHOOLS FOR SLIDESHOW CODE */
+
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 768px)
+{
+    [class*="body"]
+    {
+        flex-direction: column;
+        width: 100%;
+    }
+    [class*="home"]
+    {
+        flex-direction: column;
+        width: 100%;
+    }
 }
