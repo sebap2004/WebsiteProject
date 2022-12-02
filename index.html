@@ -13,7 +13,7 @@
     <script src="script/slideshow.js" defer></script>
     <script src="script/script.js" defer></script>
 </head>
-<body>
+<body onload="printTheme()">
 
 <header class="header-container">
     <!-- Header container includes the logo in the center, a basket icon which links to the checkout page, and TODO ADD LEFT ELEMENT OR REMOVE ENTIRELY -->
@@ -30,7 +30,7 @@
             </div>
 
             <div class="header-right" style="display: flex; flex-direction: row">
-                <a class="basketlink" href="basket.html"> <img class="basket" src="media/basket.png" alt="basket"></a>
+                <a class="basketlink" href="basket.html"> <img class="basket" style="margin-left: 10px; margin-right: 10px;" src="media/basket.png" alt="basket"></a>
                 <p style="margin: 0">Basket: 4 items</p>
 
             </div>
@@ -112,6 +112,7 @@
         fighting the goons from "The Bad Guys" gang in an attempt to avenge your fallen fishy friend. I'm developing
         this game as a hobby, and I am using this course to further develop the game and learn more HTML as a result.
         </aside>
+            <button onclick="document.location='debug.html'">debug page</button>
         </div>
     </div>
     </div>

@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en-GB" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <!-- Header includes title for the page, meta content for embeds on other websites, and links to an external stylesheet. -->
+    <title>Debug Page</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <meta content="Long Shot" property="og:title" />
+    <meta content="Home Page for Long Shot Website" property="og:description" />
+    <meta content="https://longshotgame.netlify.app/index.html" property="og:url" />
+    <meta content="https://cdn.discordapp.com/attachments/765315376203431939/1031347393456787486/title.png" property="og:image" />
+    <meta content="#7315d6" data-react-helmet="true" name="theme-color" />
+    <link href="css/style.css" rel="stylesheet">
+    <script src="script/slideshow.js" defer></script>
+    <script src="script/script.js" defer></script>
+</head>
+<body onload="printTheme()">
+
+<header class="header-container">
+    <!-- Header container includes the logo in the center, a basket icon which links to the checkout page, and TODO ADD LEFT ELEMENT OR REMOVE ENTIRELY -->
+    <div class="header">
+
+        <div class="header">
+            <div class="header-item header-left">
+                <button class="headerbutton" onclick="toggleLightMode()"><span><img alt="moon" class="buttonicon" id="darkmodeicon" src="media/sun.png"></span></button>
+            </div>
+            <div class="header-center">
+                <a href="index.html">
+                    <img class="headerLogo" alt="Title Logo" src="media/titleLarge.png">
+                </a>
+            </div>
+
+            <div class="header-right" style="display: flex; flex-direction: row">
+                <a class="basketlink" href="basket.html"> <img class="basket" style="margin-left: 10px; margin-right: 10px;" src="media/basket.png" alt="basket"></a>
+                <p style="margin: 0">Basket: 4 items</p>
+
+            </div>
+
+        </div>
+
+    </div>
+</header>
+<nav class="navcontainer">
+    <!-- Navigation bar contains buttons to all pages, apart from the checkout page. -->
+    <div class="nav">
+        <div class="navitem navbar">
+            <a style="flex-grow: 2" href="index.html">Home</a>
+        </div>
+        <div class="navitem navbar">
+            <a style="flex-grow: 2" href="game.html">Game</a>
+        </div>
+        <div class="navitem navbar">
+            <a style="flex-grow: 2" href="products.html">Products</a>
+        </div>
+        <div class="navitem navbar">
+            <a style="flex-grow: 2" href="about.html">About</a>
+        </div>
+        <div class="navitem navbar">
+            <a style="flex-grow: 2" href="contact.html">Contact</a>
+        </div>
+        <div class="navitem navbar">
+            <a style="flex-grow: 2" href="bugreports.html">Bug Reports</a>
+        </div>
+    </div>
+</nav>
+<br>
+<main class="homecontainer">
+    <div class="home">
+        <div style="flex-basis: 150vw" class="homeitem">
+            <!-- Slideshow container -->
+            <div class="slideshow-container">
+
+                <!-- Full-width images with number and caption text -->
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 3</div>
+                    <img src="media/img1.jpg" style="width:100%">
+                    <div class="text">Cool image to be replaced</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 3</div>
+                    <img src="media/img2.png" style="width:100%">
+                    <div class="text">Other cool image to be replaced</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 3</div>
+                    <img src="media/img3.jpg" style="width:100%">
+                    <div class="text">Third cool image to be replaced</div>
+                </div>
+
+                <!-- Next and previous buttons -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+
+            <!-- The dots/circles -->
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+        <div class="homeitem">
+        <div style="flex-basis: 20%" class="homeitemvertical">
+        <h1>Welcome to Long Shot</h1>
+        </div>
+        <div style="flex-basis: 100%; justify-content: flex-start " class="homeitemvertical">
+        <aside>Long shot is a 2D Top down shooter style game, similar to enter the gungeon. You play
+        as a man who has been robbed by a group called "The Bad Guys", who have brutally flushed your beloved pet fish,
+        <strong>Dr. Gumba "Mario Balls" Shoelace</strong>, PhD, down the toilet. Filled with rage, you travel the world
+        fighting the goons from "The Bad Guys" gang in an attempt to avenge your fallen fishy friend. I'm developing
+        this game as a hobby, and I am using this course to further develop the game and learn more HTML as a result.
+        </aside>
+            <div class="bodyitemrow">
+                <button onclick="theme1()">Theme 1</button>
+                <button onclick="theme2()">Theme 2</button>
+                <button onclick="theme3()">Theme 3</button>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</main>
+<main class="bodycontainer">
+    <div class="bodycolumn" style="justify-content: center">
+        <div class="bodyitemrow" style="justify-content: center">
+            <h1>About me and my game</h1>
+        </div>
+        <div class="bodyitemrow">
+            <div class="bodyitemcolumn">
+                <p>My name is Seba, and I am an amateur developer. Since I was young, I've always had a great fascination for computers, and use them on a daily basis. Ive been told stories of how when I was about 6 years old I mastered using a portable DVD player (honestly debatable, I don't buy it). That kickstarted my interest in computers, and I would always be super excited when new tech entered the household, like with my dad getting the iPhone 4, new computers, and stuff like that. I'd always ask to set them up for my parents. I've also unfortunately been guilty of bricking many family computers due to pumping them with viruses trying to get Minecraft for free. Luckily I've perfected the art of getting games for free but I won't tell ;)</p>
+            </div>
+            <div class="bodyitemcolumn">
+                <blockquote> "Fuck yourself bro Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi autem eveniet perferendis praesentium quisquam? Ad alias at autem blanditiis corporis cupiditate deleniti doloremque eum excepturi explicabo, fuga in itaque laborum laudantium libero modi neque perspiciatis quibusdam quidem quos reiciendis repellat sapiente sit soluta suscipit tempora veritatis voluptatum? Ab aliquid commodi deserunt ducimus excepturi exercitationem fugit in nemo neque nihil nisi nobis odio, perspiciatis porro, quasi recusandae sed sit ullam veniam?"
+                    <br><br>
+                    -Your Mom 2022
+                </blockquote>
+
+            </div>
+        </div>
+    </div>
+    <div class="bodyitemrow">
+        <div style="width: 50%" class="bodyitemcolumn">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet atque cupiditate eum fugiat ipsum natus numquam quos ratione temporibus? Accusamus alias aperiam assumenda atque beatae blanditiis consequuntur deserunt earum est et excepturi exercitationem facilis fugit iste, maiores optio porro sed, sint, sit temporibus vero vitae voluptatum? Eos explicabo facilis ipsam minus modi odio pariatur placeat quos ullam voluptate. Ea maiores minima modi nesciunt odio saepe ullam velit vero voluptas?</p>
+        </div>
+        <div style="width: 50%" class="bodyitemcolumn">
+            <embed style="width:100%" src="media/img1.jpg">
+        </div>
+    </div>
+    <div class="bodyitemrow">
+        <div style="width: 50%" class="bodyitemcolumn">
+            <embed style="width:100%" src="media/img1.jpg">
+        </div>
+        <div style="width: 50%" class="bodyitemcolumn">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet atque cupiditate eum fugiat ipsum natus numquam quos ratione temporibus? Accusamus alias aperiam assumenda atque beatae blanditiis consequuntur deserunt earum est et excepturi exercitationem facilis fugit iste, maiores optio porro sed, sint, sit temporibus vero vitae voluptatum? Eos explicabo facilis ipsam minus modi odio pariatur placeat quos ullam voluptate. Ea maiores minima modi nesciunt odio saepe ullam velit vero voluptas?</p>
+        </div>
+    </div>
+</main>
+<main class="bodycontainer">
+    <div class="bodycolumn" >
+        <div class="bodyitemcolumn" style="padding: 0; ">
+            <h2 style="margin: 0">Filter</h2>
+            <div class="navcontainer" style="flex-direction: column;">
+                <div class="nav">
+                    <div class="navitem navbar">
+                        <a style="flex-grow: 2" href="#">All Products</a>
+                    </div>
+                    <div class="navitem navbar">
+                        <a style="flex-grow: 2" href="#">Game DLC</a>
+                    </div>
+                    <div class="navitem navbar">
+                        <a style="flex-grow: 2" href="#">Computer Parts</a>
+                    </div>
+                    <div class="navitem navbar">
+                        <a style="flex-grow: 2" href="#">Prebuilts</a>
+                    </div>
+                    <div class="navitem navbar">
+                        <a style="flex-grow: 2" href="#">Games</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bodyrow" style="flex-direction: row; flex-wrap: wrap">
+        <div class="bodyitemrow" style="width: 47%; padding: 0">
+            <embed style="width:400px; transform:scale(1); " src="media/products/ryzen72700.jpg">
+            <div class="bodyitemcolumn">
+                <a href="ExampleProductPage.html" class="product"><h2 class="product">Ryzen 7 2700</h2></a>
+                <p>The Ryzen 7 2700X has the highest multiprocessing performance you can get on a mainstream desktop PC</p>
+                <p>$277.43</p>
+                <button>Add to cart</button>
+            </div>
+        </div>
+        <div class="bodyitemrow" style="width: 47%; padding: 0">
+            <embed style="width:400px; transform:scale(1); " src="media/products/Ryzen53600XT.jpg">
+            <div class="bodyitemcolumn">
+                <h2>Ryzen 5 3600XT</h2>
+                <p>Award-winning performance and optimized technology. For gamers. For creators. For everyone</p>
+                <p>$341.54</p>
+                <button>Add to cart</button>
+            </div>
+        </div>
+        <div class="bodyitemrow" style="width: 47%; padding: 0">
+            <embed style="width:400px; transform:scale(1); " src="media/products/ryzen31200.jpg">
+            <div class="bodyitemcolumn">
+                <h2>Ryzen 3 1200</h2>
+                <p>10MB Cache ; AMD VR Ready Processors, AVX2, FMA3, XFR Extended Frequency Range</p>
+                <p>$99.99</p>
+                <button>Add to cart</button>
+            </div>
+        </div>
+        <div class="bodyitemrow" style="width: 47%; padding: 0">
+            <embed style="width:400px; transform:scale(1); " src="media/products/Ryzen97900X.jpg">
+            <div class="bodyitemcolumn">
+                <h2>Ryzen 9 7900X</h2>
+                <p>Really really like really fast guys </p>
+                <p>$999.99</p>
+                <button>Add to cart</button>
+            </div>
+        </div>
+
+    </div>
+</main>
+<main class="bodycontainer">
+    <div class="bodyrow">
+        <div class="bodyitemcolumn" style="width:50%;">
+            <embed style="width:100%; transform:scale(1); justify-content: flex-start" src="media/products/ryzen72700.jpg">
+        </div>
+        <div class="bodyitemcolumn" style="width: 50%">
+            <h1>Ryzen 7 2700</h1>
+            <p><span class="symbol"><sup>$</sup></span><span class="price">279</span><span class="pricefraction"><sup>99</sup></span></p>
+
+            <button onclick="alert('Item added to cart')" style="width:20%; height: 50px;">Add to cart</button>
+            <ul>
+                <li>The Ryzen 7 2700X has the highest multiprocessing performance you can get on a mainstream desktop PC</li>
+                <li>Frequency: Base Clock Speed 3.7 GHz, 4.3 GHz Max Boost</li>
+                <li>Includes Wraith Prism Cooler with LED</li>
+                <li>20MB of Combined Cache</li>
+                <li>Socket AM4 Motherboard Required</li>
+                <li>Built for gamers, creators, and PC enthusiasts</li>
+                <li>Featuring True Machine Intelligence to optimize responsiveness every millisecond</li>
+                <li>Max Temperature is 85 degree Celsius. Thermal Solution (PIB) Wraith Prism with RGB Light Emitting Diode</li>
+            </ul>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquid amet aperiam architecto atque autem culpa cum dignissimos dolor dolore earum est et fugiat iusto laborum minima nam numquam, officia pariatur quaerat quam quas quasi, ratione repellat sit ut voluptates! Amet minima rerum sint soluta suscipit veniam. Aliquam asperiores consectetur dolorem, facere quis tempora voluptates! Aut blanditiis delectus deserunt, dicta doloremque, doloribus ducimus eius explicabo facere ipsum iure laborum nemo non officia quam quia quibusdam quidem repellat. Accusantium amet dolore dolorum eius incidunt nam nostrum quam soluta unde ut. Alias animi deserunt eaque est eum incidunt inventore libero odit quae quasi, qui ratione sit vero? Dicta dolorum eligendi esse incidunt minus obcaecati officia tempora. Ad commodi cupiditate eos error eveniet odio quidem saepe sit. Animi atque consequuntur corporis delectus eligendi error expedita illo illum ipsum iusto labore, laborum magnam minus molestiae mollitia necessitatibus neque nihil nobis non perferendis quae quo recusandae saepe, sit, soluta totam vero voluptate. A consequatur cupiditate eius eligendi expedita, harum, itaque, libero omnis porro praesentium quasi quod repellendus similique velit veritatis! Accusamus adipisci amet animi consectetur dicta doloremque, dolorum eos esse est id incidunt iusto laudantium maiores modi molestiae molestias necessitatibus obcaecati officia quaerat quas rerum.
+            </p>
+        </div>
+    </div>
+</main>
+<main class="bodycontainer">
+    <div class="bodyrow" >
+        <div class="bodyitemcolumn bodyshort">
+            <form name="contact" method="post" data-netlify="true">
+                <label for="fname">First name:</label><br>
+                <input style="width:100%" type="text" id="fname" placeholder="First name" name="fname" value=""><br><br>
+                <label for="lname">Last name:</label><br>
+                <input style="width:100%" type="text" id="lname" placeholder="Last name" name="lname" value=""><br><br>
+                <label for="email">Email</label><br>
+                <input style="width:100%" type="text" id="email" placeholder="example@example.com" name="email" value=""><br><br>
+                <label for="reason">Reason for contacting:</label><br>
+                <select style="width: 100%" id="reason" name="reason">
+                    <option value="no-answer">Select...</option>
+                    <option value="inquiry">Inquiry</option>
+                    <option value="bug">Game Bug</option>
+                    <option value="collab">Collaboration</option>
+                    <option value="DT">Death Threat</option>
+                    <option value="other">Other</option>
+                </select><br><br>
+                <label for="message">Message:</label><br>
+                <textarea style="width: 100%; resize: none" id="message" name="message" placeholder="Enter message here..." rows="15" cols="100" ></textarea><br><br>
+                <button type="submit" onclick="alert('Form submitted!')">Submit Form</button>
+            </form>
+
+        </div>
+        <div class="bodyitemcolumn bodyshort">
+            <h2>
+                Need to contact me?
+            </h2>
+
+            <p>Use this form to contact me and I'll try to get back to you as soon as i can.
+                No promises, though, as i am very busy :p</p>
+
+            <h2>Company information</h2>
+            <p>Location:</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4819.415181336974!2d-0.5333760453070681!3d52.84565383008363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487824e71ad50b5f%3A0xa752a4b51c35fc3e!2sBitchfield%2C%20Grantham!5e0!3m2!1sen!2suk!4v1669384537680!5m2!1sen!2suk" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+
+    </div>
+</main>
+<main class="bodycontainer">
+    <div class="body" style="justify-content: start; flex-direction: column; width:100%;">
+        <div class="bodyitemcolumn" style="margin: auto; flex-direction: column; text-align: center">
+            <h1>Found a bug?</h1>
+            <p class="closep">You wouldn't be the first. Fill out this form and I might get back to you and sort it out when I get the time.</p>
+            <p class="closep">Company information can be found on the contact page if needed.</p>
+        </div>
+        <div class="bodyitemrow">
+            <div class="bodyitemcolumn" style="margin: 10%">
+
+            </div>
+
+
+
+            <br>
+            <div class="bodyitemrow"style="margin: auto; flex-direction: row; width: 40%">
+                <div class="form">
+                    <form name="bugreport" method="post" data-netlify="true">
+                        <label for="fname">First name:</label><br>
+                        <input style="width: 100%" type="text" id="fname2" placeholder="John" name="fname" value=""><br><br>
+                        <label for="lname">Last name:</label><br>
+                        <input style="width: 100%" type="text" id="lname2" placeholder="Doe" name="lname" value=""><br><br>
+                        <label for="lname">Email</label><br>
+                        <input style="width: 100%" type="text" id="email2" placeholder="example@example.com" name="email" value=""><br><br>
+                        <label for="lname">Was it perhaps a skill issue?</label><br><br>
+                        <input class="inputsmall" type="radio" id="skill-issue-yes" name="skill-issue" value="Yes">
+                        <label for="skill-issue-yes"> Yes</label><br>
+                        <input class="inputsmall" type="radio" id="skill-issue-no" name="skill-issue" value="no">
+                        <label for="skill-issue-no"> No</label><br>
+                        <input class="inputsmall" type="radio" id="skill-issue-cops" name="skill-issue" value="cops">
+                        <label for="skill-issue-cops">I'm calling the cops</label><br><br>
+                        <label for="bug">Does this bug need an urgent fix?</label><br>
+                        <select style="width: 100%" id="bug" name="bug">
+                            <option value="no-answer">Select...</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select><br><br>
+                        <label for="bugtype">Bug type</label><br>
+                        <select style="width: 100%" id="bugtype" name="bugtype">
+                            <optgroup label="Low Priority">
+                                <option value="visual">Visual</option>
+                                <option value="gameplay">Gameplay</option>
+                                <option value="save">Save state issue</option>
+                            </optgroup>
+                            <optgroup label="High Priority">
+                                <option value="serious">Serious</option>
+                                <option value="gamebreak">Game breaking</option>
+                            </optgroup>
+                            <option value="other">Other</option>
+                        </select><br><br>
+                        <label for="message">Explain in detail:</label><br>
+                        <textarea id="message2" name="message" rows="15" placeholder="Your message here..." cols="100" style="resize: none; width:100%"></textarea>
+
+                        <button style="width: 100%" type="submit" onclick="alert('Form submitted!')">Submit Form</button>
+                    </form>
+                </div>
+
+            </div>
+            <div class="bodyitemrow" style="margin: 10%">
+
+            </div>
+
+
+        </div>
+
+
+
+
+    </div>
+</main>
+<main class="bodycontainer">
+    <div class="bodyrow">
+        <div class="bodyitemcolumn" style="width: 60%">
+            <h1>Shopping basket</h1>
+            <h2>4 items</h2>
+            <div class="basketitem">
+                <div class="basketelement">
+                    <embed class="basketimage" src="media/products/Ryzen97900X.jpg">
+                </div>
+                <div class="basketelement">
+                    <h2>Ryzen 9 7900X</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto asperiores consectetur corporis cupiditate dolores laborum veniam. At blanditiis ipsum nemo.</p>
+                    <a class="remove" href="#">Remove from basket</a>
+                </div>
+                <div class="basketelement" style="width: 20%; text-align: right">
+                    <p>$999.99</p>
+                    <p>QTY: 1</p>
+                </div>
+            </div>
+            <div class="basketitem">
+                <div class="basketelement">
+                    <embed class="basketimage" src="media/products/Ryzen53600XT.jpg">
+                </div>
+                <div class="basketelement">
+                    <h2>Ryzen 5 3600XT</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto asperiores consectetur corporis cupiditate dolores laborum veniam. At blanditiis ipsum nemo.</p>
+                    <a class="remove" href="#">Remove from basket</a>
+                </div>
+                <div class="basketelement" style="width: 20%; text-align: right">
+                    <p>$341.54</p>
+                    <p>QTY: 1</p>
+                </div>
+            </div>
+            <div class="basketitem">
+                <div class="basketelement">
+                    <embed class="basketimage" src="media/products/ryzen31200.jpg">
+                </div>
+                <div class="basketelement">
+                    <h2>Ryzen 3 1200</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto asperiores consectetur corporis cupiditate dolores laborum veniam. At blanditiis ipsum nemo.</p>
+                    <a class="remove" href="#">Remove from basket</a>
+                </div>
+                <div class="basketelement" style="width: 20%; text-align: right">
+                    <p>$99.99</p>
+                    <p>QTY: 1</p>
+                </div>
+            </div>
+            <div class="basketitem">
+                <div class="basketelement">
+                    <embed class="basketimage" src="media/products/ryzen72700.jpg">
+                </div>
+                <div class="basketelement">
+                    <h2>Ryzen 7 2700</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto asperiores consectetur corporis cupiditate dolores laborum veniam. At blanditiis ipsum nemo.</p>
+                    <a class="remove" href="#">Remove from basket</a>
+                </div>
+                <div class="basketelement" style="width: 20%;">
+                    <p>$277.43</p>
+                    <p>QTY: 1</p>
+                </div>
+            </div>
+        </div>
+        <div class="bodyitemcolumn" style="width: 20%;">
+            <div class="cost">
+                <h2 class="compacth2">Costs</h2>
+                <p class="closep">Subtotal: <span style="float: right">$1718.95</span></p>
+                <p class="closep">Delivery cost: <span style="float: right">$5.00</span></p>
+                <br><br><hr style="height:2px;border-width:0;color:#b37ee5;background-color:#b37ee5">
+                <p class="closep"> Total <span style="float: right">$1723.95</span></p>
+                <button onclick="document.location='checkout.html'">Go to checkout</button>
+            </div>
+
+
+        </div>
+    </div>
+</main>
+<main class="bodycontainer">
+    <div class="bodyrow">
+        <div class="bodyitemcolumn" style="width: 50%">
+            <h1>Checkout</h1>
+            <h2>Delivery Address</h2>
+            <form>
+                <label for="fullname">Full name</label><br>
+                <input style="width:100%" type="text" id="fullname" placeholder="Full Name" name="fullname" value=""><br><br>
+                <label for="phoneNumber">Phone number</label><br>
+                <input style="width:100%" type="text" id="phoneNumber" placeholder="Phone Number" name="phoneNumber" value=""><br><br>
+                <label for="addressline1">Address Line 1</label><br>
+                <input style="width:100%" type="text" id="addressline1" placeholder="Address Line 1" name="addressline1" value=""><br><br>
+                <label for="addressline2">Address Line 2 (optional)</label><br>
+                <input style="width:100%" type="text" id="addressline2" placeholder="Address Line 2 (optional)" name="addressline2" value=""><br><br>
+                <label for="county">County</label><br>
+                <input style="width:100%" type="text" id="county" placeholder="County" name="county" value=""><br><br>
+            </form>
+            <h2>Payment information</h2>
+            <form>
+                <label for="cardname">Name on card</label><br>
+                <input style="width:100%" type="text" id="cardname" placeholder="John Doe" name="cardname" value=""><br><br>
+                <label for="phoneNumber">Card number</label><br>
+                <input style="width:100%" type="text" id="cardnumber" placeholder="1234 5678 9012 3456" name="cardnumber" value=""><br><br>
+                <label for="securitynumber">Security number</label><br>
+                <input style="width:100%" type="text" id="securitynumber" placeholder="123" name="securitynumber" value=""><br><br>
+                <label for="expirydate">Date of expiry</label><br>
+                <input style="width:100%" type="text" id="expirydate" placeholder="05/26" name="expirydate" value="">
+            </form>
+            <h2>Basket Summary (4 Items)</h2>
+            <div class="basketitemsummary">
+                <embed class="basketimagesummary" src="media/products/Ryzen97900X.jpg">
+                <div class="baskettitlesummary">
+                    <h2>Ryzen 9 7900X</h2>
+
+                </div>
+                <div class="basketpricesummary">
+                    <p>$999.99</p>
+                    <p>QTY: 1</p>
+                </div>
+            </div>
+            <div class="basketitemsummary">
+                <embed class="basketimagesummary" src="media/products/Ryzen53600XT.jpg">
+                <div class="baskettitlesummary">
+                    <h2>Ryzen 5 3600XT</h2>
+
+                </div>
+                <div class="basketpricesummary">
+                    <p>$341.54</p>
+                    <p>QTY: 1</p>
+                </div>
+            </div>
+            <div class="basketitemsummary">
+                <embed class="basketimagesummary" src="media/products/ryzen31200.jpg">
+                <div class="baskettitlesummary">
+                    <h2>Ryzen 3 1200</h2>
+                </div>
+                <div class="basketpricesummary">
+                    <p>$99.99</p>
+                    <p>QTY: 1</p>
+                </div>
+            </div>
+            <div class="basketitemsummary">
+                <embed class="basketimagesummary" src="media/products/ryzen72700.jpg">
+                <div class="baskettitlesummary">
+                    <h2>Ryzen 7 2700</h2>
+                </div>
+                <div class="basketpricesummary">
+                    <p>$277.43</p>
+                    <p>QTY: 1</p>
+                </div>
+            </div>
+        </div>
+        <div class="bodyitemcolumn" style="width: 20%;">
+            <div class="cost">
+                <h2 class="compacth2">Costs</h2>
+                <p class="closep">Subtotal: <span style="float: right">$1718.95</span></p>
+                <p class="closep">Delivery cost: <span style="float: right">$5.00</span></p>
+                <br><br><hr style="height:2px;border-width:0;color:#b37ee5;background-color:#b37ee5">
+                <p class="closep"> Total <span style="float: right">$1723.95</span></p>
+                <button onClick="document.location='orderconfirmation.html'">Pay Now</button>
+            </div>
+        </div>
+    </div>
+
+
+
+</main>
+<footer class="footercontainer">
+    <!-- Footer container contains extra external links for the user to click on if interested. TODO REPLACE JOKE LINKS WITH IMPORTANT LINKS -->
+    <div class="footer">
+        <div class="footeritem footertext">
+            <p class="closep footerTitle"><u>Social media links</u></p>
+            <a href="https://www.instagram.com/" target="_blank"><p class="closep">Instagram</p></a>
+            <a href="https://twitter.com/home" target="_blank"><p class="closep">Twitter</p></a>
+            <a href="https://www.youtube.com/" target="_blank"><p class="closep">Youtube</p></a>
+        </div>
+        <div class="footeritem footertext">
+            <p class="closep footerTitle"><u>Other links</u></p>
+            <a href="https://www.youtube.com/watch?v=fcZXfoB2f70" target="_blank"><p class="closep">Hot singles near you!</p></a>
+            <a href="https://www.rd.com/wp-content/uploads/2019/01/shutterstock_673465372.jpg?fit=700,467" target="_blank"><p class="closep">Image of a cute cat</p></a>
+            <a href="https://open.spotify.com/playlist/48F3Mkwelt0aepdluNBPUy?si=0c401048ebd3495e" target="_blank"><p class="closep">my mixtape (spotify)</p></a>
+        </div>
+        <div class="footeritem footertext">
+            <p class="closep footerTitle"><u>Game related links</u></p>
+            <a href="https://shebbgames.itch.io/long-shot" target="_blank"><p class="closep">itch.io page</p></a>
+            <a href="https://shebbgames.itch.io/long-shot/devlog/" target="_blank"><p class="closep">Devlog</p></a>
+        </div>
+    </div>
+</footer>
+
+
+</body>
+</html>

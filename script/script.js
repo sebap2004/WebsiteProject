@@ -1,4 +1,37 @@
 var gamewindow = document.getElementsByClassName("gamewindow")[0];
+let theme;
+const pagetheme = document.body;
+function printTheme()
+{
+    console.log("theme applied:" + theme);
+}
+
+
+if (theme === "1")
+{
+    pagetheme.classList.add("theme1");
+    pagetheme.classList.remove("theme2");
+    pagetheme.classList.remove("theme3");
+}
+else if (theme === "2")
+{
+    pagetheme.classList.remove("theme1");
+    pagetheme.classList.add("theme2");
+    pagetheme.classList.remove("theme3");
+}
+else if (theme === "3")
+{
+    pagetheme.classList.remove("theme1");
+    pagetheme.classList.remove("theme2");
+    pagetheme.classList.add("theme3");
+}
+else
+{
+    pagetheme.classList.remove("theme1");
+    pagetheme.classList.remove("theme2");
+    pagetheme.classList.remove("theme3");
+}
+
 function openFullscreen()
 {
     if (gamewindow.requestFullscreen) {
@@ -9,7 +42,7 @@ function openFullscreen()
 var elem = document.activeElement;
 var monitor = setInterval(function(){
     var elem = document.activeElement;
-    if(elem && elem.id == 'game'){
+    if(elem && elem.id === 'game'){
         document.body.style.setProperty("overflow", "hidden")
 
     }
@@ -36,4 +69,30 @@ function toggleLightMode()
         icon = "../media/sun.png";
     }
     document.getElementById("darkmodeicon").src=icon;
+}
+
+function theme1()
+{
+    pagetheme.classList.add("theme1");
+    pagetheme.classList.remove("theme2");
+    pagetheme.classList.remove("theme3");
+    localStorage.setItem("theme","1");
+    console.log("Theme: "+theme);
+}
+
+function theme2()
+{
+    pagetheme.classList.remove("theme1");
+    pagetheme.classList.add("theme2");
+    pagetheme.classList.remove("theme3");
+    localStorage.setItem("theme","2");
+    console.log("Theme: "+theme);
+}
+function theme3()
+{
+    pagetheme.classList.remove("theme1");
+    pagetheme.classList.remove("theme2");
+    pagetheme.classList.add("theme3");
+    localStorage.setItem("theme","3");
+    console.log("Theme: "+theme);
 }
