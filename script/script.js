@@ -21,6 +21,19 @@ var monitor = setInterval(function(){
 
 function toggleLightMode()
 {
+    let icon;
+    let isOn = 0;
     const element = document.body;
     element.classList.toggle("lightMode");
+    if (element.classList.contains("lightMode")) {
+        isOn=1;
+        console.log("Toggled light mode: Light mode is on");
+        icon = "../media/moon.png";
+    }
+    else {
+        isOn = 0;
+        console.log("Toggled light mode: Light mode is off");
+        icon = "../media/sun.png";
+    }
+    document.getElementById("darkmodeicon").src=icon;
 }
