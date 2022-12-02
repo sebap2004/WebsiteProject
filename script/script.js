@@ -1,36 +1,6 @@
-var gamewindow = document.getElementsByClassName("gamewindow")[0];
-let theme;
+const gamewindow = document.getElementsByClassName("gamewindow")[0];
+const theme = localStorage.getItem("theme");
 const pagetheme = document.body;
-function printTheme()
-{
-    console.log("theme applied:" + theme);
-}
-
-
-if (theme === "1")
-{
-    pagetheme.classList.add("theme1");
-    pagetheme.classList.remove("theme2");
-    pagetheme.classList.remove("theme3");
-}
-else if (theme === "2")
-{
-    pagetheme.classList.remove("theme1");
-    pagetheme.classList.add("theme2");
-    pagetheme.classList.remove("theme3");
-}
-else if (theme === "3")
-{
-    pagetheme.classList.remove("theme1");
-    pagetheme.classList.remove("theme2");
-    pagetheme.classList.add("theme3");
-}
-else
-{
-    pagetheme.classList.remove("theme1");
-    pagetheme.classList.remove("theme2");
-    pagetheme.classList.remove("theme3");
-}
 
 function openFullscreen()
 {
@@ -77,7 +47,6 @@ function theme1()
     pagetheme.classList.remove("theme2");
     pagetheme.classList.remove("theme3");
     localStorage.setItem("theme","1");
-    console.log("Theme: "+theme);
 }
 
 function theme2()
@@ -86,7 +55,6 @@ function theme2()
     pagetheme.classList.add("theme2");
     pagetheme.classList.remove("theme3");
     localStorage.setItem("theme","2");
-    console.log("Theme: "+theme);
 }
 function theme3()
 {
@@ -94,5 +62,11 @@ function theme3()
     pagetheme.classList.remove("theme2");
     pagetheme.classList.add("theme3");
     localStorage.setItem("theme","3");
-    console.log("Theme: "+theme);
+}
+function reset()
+{
+    pagetheme.classList.remove("theme1");
+    pagetheme.classList.remove("theme2");
+    pagetheme.classList.remove("theme3");
+    localStorage.setItem("theme","0");
 }

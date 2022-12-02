@@ -12,8 +12,9 @@
     <link href="css/style.css" rel="stylesheet">
     <script src="script/slideshow.js" defer></script>
     <script src="script/script.js" defer></script>
+    <script src="script/themechange.js"></script>
 </head>
-<body onload="printTheme()">
+<body onload="changeTheme()">
 
 <header class="header-container">
     <!-- Header container includes the logo in the center, a basket icon which links to the checkout page, and TODO ADD LEFT ELEMENT OR REMOVE ENTIRELY -->
@@ -116,6 +117,7 @@
                 <button onclick="theme1()">Theme 1</button>
                 <button onclick="theme2()">Theme 2</button>
                 <button onclick="theme3()">Theme 3</button>
+                <button onclick="reset()">reset</button>
             </div>
         </div>
     </div>
