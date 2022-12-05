@@ -2,24 +2,24 @@
 {
     /* COLOR SCHEME */
         /* Core elements */
-            --gradientTop: #600BA8;
-            --gradientBottom: #2a0649;
+            --gradientTop: #5c0673;
+            --gradientBottom: #3d064b;
             --fontColor: #e0d7f3;
-            --blockquote: #c569ff;
+            --blockquote: #9600BF;
         /* Navbar and Button Elements */
-            --buttonBackground: #2a0649;
+            --buttonBackground: #3f0b64;
             --buttonText: white;
-            --buttonBorder: #b37ee5;
+            --buttonBorder: #9149d7;
             --buttonBackgroundHover: white;
             --buttonTextHover: black;
-            --buttonBackgroundActive: #2a0649;
+            --buttonBackgroundActive: #3f0b64;
             --buttonTextActive: white;
         /* Input Elements */
             --inputColor: white;
             --inputBackground: #2a0649;
-            --inputBorder: darkgray;
+            --inputBorder: #ffffff;
         /* Footer Elements */
-            --footerBackground: #34254b;
+            --footerBackground: #39055d;
             --footerTitle: #ad70f5;
             --footerText: #c5b0f5;
             --footerTextHover: white;
@@ -37,7 +37,7 @@
             --removeTextHover: white;
             --removeTextActive: black;
             --costBorder: #bb7aea;
-            --costBackground: #600BA8;
+            --costBackground: #580d75;
     /* END OF COLOR SCHEME */
 }
 @font-face {
@@ -52,136 +52,55 @@ body
     padding: 0;
     margin: 0;
 }
+.theme1
+{
+    /* COLOR SCHEME */
+    /* Core elements */
+    --gradientTop: #600BA8;
+    --gradientBottom: #2a0649;
+    --fontColor: #e0d7f3;
+    --blockquote: #c569ff;
+    /* Navbar and Button Elements */
+    --buttonBackground: #2a0649;
+    --buttonText: white;
+    --buttonBorder: #b37ee5;
+    --buttonBackgroundHover: white;
+    --buttonTextHover: black;
+    --buttonBackgroundActive: #2a0649;
+    --buttonTextActive: white;
+    /* Input Elements */
+    --inputColor: white;
+    --inputBackground: #2a0649;
+    --inputBorder: darkgray;
+    /* Footer Elements */
+    --footerBackground: #34254b;
+    --footerTitle: #ad70f5;
+    --footerText: #c5b0f5;
+    --footerTextHover: white;
+    --footerTextActive: black;
+    /* Game Window Elements */
+    --gameWindowBorder: #600BA8;
+    --gameWindowActive: #d2e70f;
+    /* Product Elements */
+    --productText: #bb7aea;
+    --productTextHover: white;
+    --productTextActive: black;
+    /* Basket Elements */
+    --basketBorder: #b37ee5;
+    --removeText: #bb7aea;
+    --removeTextHover: white;
+    --removeTextActive: black;
+    --costBorder: #bb7aea;
+    --costBackground: #600BA8;
+    /* END OF COLOR SCHEME */
+}
 .lightMode
 {
     --gradientBottom: white;
     --gradientTop: gray;
     --buttonBackground: #ffffff;
 }
-.theme1
-{
-    /* Default Color Scheme */
-    /* Core elements */
-    --gradientTop: #cb7474;
-    --gradientBottom: #2a0649;
-    --fontColor: #e0d7f3;
-    --blockquote: #c569ff;
-    /* Navbar and Button Elements */
-    --buttonBackground: #2a0649;
-    --buttonText: white;
-    --buttonBorder: #b37ee5;
-    --buttonBackgroundHover: white;
-    --buttonTextHover: black;
-    --buttonBackgroundActive: #2a0649;
-    --buttonTextActive: white;
-    /* Input Elements */
-    --inputColor: white;
-    --inputBackground: #2a0649;
-    --inputBorder: darkgray;
-    /* Footer Elements */
-    --footerBackground: #34254b;
-    --footerTitle: #ad70f5;
-    --footerText: #c5b0f5;
-    --footerTextHover: white;
-    --footerTextActive: black;
-    /* Game Window Elements */
-    --gameWindowBorder: #600BA8;
-    --gameWindowActive: #d2e70f;
-    /* Product Elements */
-    --productText: #bb7aea;
-    --productTextHover: white;
-    --productTextActive: black;
-    /* Basket Elements */
-    --basketBorder: #b37ee5;
-    --removeText: #bb7aea;
-    --removeTextHover: white;
-    --removeTextActive: black;
-    --costBorder: #bb7aea;
-    --costBackground: #600BA8;
-    /* END OF COLOR SCHEME */
-}
-.theme2
-{
-    /* Core elements */
-    --gradientTop: #94e898;
-    --gradientBottom: #2a0649;
-    --fontColor: #e0d7f3;
-    --blockquote: #c569ff;
-    /* Navbar and Button Elements */
-    --buttonBackground: #2a0649;
-    --buttonText: white;
-    --buttonBorder: #b37ee5;
-    --buttonBackgroundHover: white;
-    --buttonTextHover: black;
-    --buttonBackgroundActive: #2a0649;
-    --buttonTextActive: white;
-    /* Input Elements */
-    --inputColor: white;
-    --inputBackground: #2a0649;
-    --inputBorder: darkgray;
-    /* Footer Elements */
-    --footerBackground: #34254b;
-    --footerTitle: #ad70f5;
-    --footerText: #c5b0f5;
-    --footerTextHover: white;
-    --footerTextActive: black;
-    /* Game Window Elements */
-    --gameWindowBorder: #600BA8;
-    --gameWindowActive: #d2e70f;
-    /* Product Elements */
-    --productText: #bb7aea;
-    --productTextHover: white;
-    --productTextActive: black;
-    /* Basket Elements */
-    --basketBorder: #b37ee5;
-    --removeText: #bb7aea;
-    --removeTextHover: white;
-    --removeTextActive: black;
-    --costBorder: #bb7aea;
-    --costBackground: #600BA8;
-    /* END OF COLOR SCHEME */
-}
-.theme3
-{
-    /* Core elements */
-    --gradientTop: #0046f8;
-    --gradientBottom: #2a0649;
-    --fontColor: #e0d7f3;
-    --blockquote: #c569ff;
-    /* Navbar and Button Elements */
-    --buttonBackground: #2a0649;
-    --buttonText: white;
-    --buttonBorder: #b37ee5;
-    --buttonBackgroundHover: white;
-    --buttonTextHover: black;
-    --buttonBackgroundActive: #2a0649;
-    --buttonTextActive: white;
-    /* Input Elements */
-    --inputColor: white;
-    --inputBackground: #2a0649;
-    --inputBorder: darkgray;
-    /* Footer Elements */
-    --footerBackground: #34254b;
-    --footerTitle: #ad70f5;
-    --footerText: #c5b0f5;
-    --footerTextHover: white;
-    --footerTextActive: black;
-    /* Game Window Elements */
-    --gameWindowBorder: #600BA8;
-    --gameWindowActive: #d2e70f;
-    /* Product Elements */
-    --productText: #bb7aea;
-    --productTextHover: white;
-    --productTextActive: black;
-    /* Basket Elements */
-    --basketBorder: #b37ee5;
-    --removeText: #bb7aea;
-    --removeTextHover: white;
-    --removeTextActive: black;
-    --costBorder: #bb7aea;
-    --costBackground: #600BA8;
-    /* END OF COLOR SCHEME */
-}
+
 blockquote
 {
     font-style: normal;
