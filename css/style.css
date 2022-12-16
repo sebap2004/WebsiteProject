@@ -2,42 +2,42 @@
 {
     /* COLOR SCHEME */
         /* Core elements */
-            --gradientTop: #1647e1;
-            --gradientBottom: #0c0c91;
-            --fontColor: #e0d7f3;
-            --blockquote: #00e2ff;
+            --gradientTop: #FA9601;
+            --gradientBottom: #FF190A;
+            --fontColor: #ffffff;
+            --blockquote: #ff0000;
         /* Navbar and Button Elements */
-            --buttonBackground: #021b70;
-            --buttonText: white;
-            --buttonBorder: #0b0bc4;
-            --buttonBackgroundHover: white;
-            --buttonTextHover: black;
-            --buttonBackgroundActive: #0b0bc4;
-            --buttonTextActive: white;
+         --buttonBackground: #e8670b;
+         --buttonText: white;
+         --buttonBorder: #984604;
+         --buttonBackgroundHover: white;
+         --buttonTextHover: black;
+         --buttonBackgroundActive: #e8670b;
+         --buttonTextActive: white;
         /* Input Elements */
             --inputColor: white;
-            --inputBackground: #061b49;
-            --inputBorder: #2b5ecb;
+            --inputBackground: #492006;
+            --inputBorder: #cb5327;
         /* Footer Elements */
-            --footerBackground: #051a5d;
-            --footerTitle: #707bf5;
-            --footerText: #c5b0f5;
+            --footerBackground: #5d1f05;
+            --footerTitle: #fab89d;
+            --footerText: #ffa08a;
             --footerTextHover: white;
             --footerTextActive: black;
         /* Game Window Elements */
-            --gameWindowBorder: #0b25a8;
+            --gameWindowBorder: #a8420b;
             --gameWindowActive: #d2e70f;
         /* Product Elements */
-            --productText: #7ab2ea;
+            --productText: #eaa97a;
             --productTextHover: white;
             --productTextActive: black;
         /* Basket Elements */
-            --basketBorder: #7ed2e5;
-            --removeText: #7ac8ea;
+            --basketBorder: #e59d7e;
+            --removeText: #ffaf83;
             --removeTextHover: white;
             --removeTextActive: black;
-            --costBorder: #7aeae1;
-            --costBackground: #0d6275;
+            --costBorder: #eaa57a;
+            --costBackground: #ce771b;
     /* END OF COLOR SCHEME */
 }
 @font-face {
@@ -133,42 +133,42 @@
 {
     /* COLOR SCHEME */
     /* Core elements */
-    --gradientTop: #600BA8;
-    --gradientBottom: #2a0649;
+    --gradientTop: #1647e1;
+    --gradientBottom: #0c0c91;
     --fontColor: #e0d7f3;
-    --blockquote: #c569ff;
+    --blockquote: #00e2ff;
     /* Navbar and Button Elements */
-    --buttonBackground: #2a0649;
+    --buttonBackground: #021b70;
     --buttonText: white;
-    --buttonBorder: #b37ee5;
+    --buttonBorder: #0b0bc4;
     --buttonBackgroundHover: white;
     --buttonTextHover: black;
-    --buttonBackgroundActive: #2a0649;
+    --buttonBackgroundActive: #0b0bc4;
     --buttonTextActive: white;
     /* Input Elements */
     --inputColor: white;
-    --inputBackground: #2a0649;
-    --inputBorder: darkgray;
+    --inputBackground: #061b49;
+    --inputBorder: #2b5ecb;
     /* Footer Elements */
-    --footerBackground: #34254b;
-    --footerTitle: #ad70f5;
+    --footerBackground: #051a5d;
+    --footerTitle: #707bf5;
     --footerText: #c5b0f5;
     --footerTextHover: white;
     --footerTextActive: black;
     /* Game Window Elements */
-    --gameWindowBorder: #600BA8;
+    --gameWindowBorder: #0b25a8;
     --gameWindowActive: #d2e70f;
     /* Product Elements */
-    --productText: #bb7aea;
+    --productText: #7ab2ea;
     --productTextHover: white;
     --productTextActive: black;
     /* Basket Elements */
-    --basketBorder: #b37ee5;
-    --removeText: #bb7aea;
+    --basketBorder: #7ed2e5;
+    --removeText: #7ac8ea;
     --removeTextHover: white;
     --removeTextActive: black;
-    --costBorder: #bb7aea;
-    --costBackground: #600BA8;
+    --costBorder: #7aeae1;
+    --costBackground: #0d6275;
     /* END OF COLOR SCHEME */
 }
 body
