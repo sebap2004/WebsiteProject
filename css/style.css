@@ -1,95 +1,6 @@
 :root
 {
     /* COLOR SCHEME */
-        /* Core elements */
-            --gradientTop: #ffa400;
-            --gradientBottom: #93140a;
-            --fontColor: #ffffff;
-            --blockquote: #ff0000;
-        /* Navbar and Button Elements */
-         --buttonBackground: #8D3F07;
-         --buttonText: white;
-         --buttonBorder: #693002;
-         --buttonBackgroundHover: white;
-         --buttonTextHover: black;
-         --buttonBackgroundActive: #e8670b;
-         --buttonTextActive: white;
-        /* Input Elements */
-            --inputColor: white;
-            --inputBackground: #492006;
-            --inputBorder: #cb5327;
-        /* Footer Elements */
-            --footerBackground: #5d1f05;
-            --footerTitle: #fab89d;
-            --footerText: #ffa08a;
-            --footerTextHover: white;
-            --footerTextActive: black;
-        /* Game Window Elements */
-            --gameWindowBorder: #a8420b;
-            --gameWindowActive: #d2e70f;
-        /* Product Elements */
-            --productText: #eaa97a;
-            --productTextHover: white;
-            --productTextActive: black;
-        /* Basket Elements */
-            --basketBorder: #e59d7e;
-            --removeText: #ffaf83;
-            --removeTextHover: white;
-            --removeTextActive: black;
-            --costBorder: #eaa57a;
-            --costBackground: #ce771b;
-    /* END OF COLOR SCHEME */
-}
-@font-face {
-    font-family: pixelFont;
-    src:url(../font/Silkscreen-Regular.ttf)
-}
-
-.theme1
-{
-    /* COLOR SCHEME */
-    /* Core elements */
-    --gradientTop: #600BA8;
-    --gradientBottom: #2a0649;
-    --fontColor: #e0d7f3;
-    --blockquote: #c569ff;
-    /* Navbar and Button Elements */
-    --buttonBackground: #2a0649;
-    --buttonText: white;
-    --buttonBorder: #b37ee5;
-    --buttonBackgroundHover: white;
-    --buttonTextHover: black;
-    --buttonBackgroundActive: #2a0649;
-    --buttonTextActive: white;
-    /* Input Elements */
-    --inputColor: white;
-    --inputBackground: #2a0649;
-    --inputBorder: darkgray;
-    /* Footer Elements */
-    --footerBackground: #34254b;
-    --footerTitle: #ad70f5;
-    --footerText: #c5b0f5;
-    --footerTextHover: white;
-    --footerTextActive: black;
-    /* Game Window Elements */
-    --gameWindowBorder: #600BA8;
-    --gameWindowActive: #d2e70f;
-    /* Product Elements */
-    --productText: #bb7aea;
-    --productTextHover: white;
-    --productTextActive: black;
-    /* Basket Elements */
-    --basketBorder: #b37ee5;
-    --removeText: #bb7aea;
-    --removeTextHover: white;
-    --removeTextActive: black;
-    --costBorder: #bb7aea;
-    --costBackground: #600BA8;
-    /* END OF COLOR SCHEME */
-}
-.theme2
-{
-    /* COLOR SCHEME */
     /* Core elements */
     --gradientTop: #5c0673;
     --gradientBottom: #3d064b;
@@ -129,53 +40,17 @@
     --costBackground: #580d75;
     /* END OF COLOR SCHEME */
 }
-.theme3
-{
-    /* COLOR SCHEME */
-    /* Core elements */
-    --gradientTop: #1647e1;
-    --gradientBottom: #0c0c91;
-    --fontColor: #e0d7f3;
-    --blockquote: #00e2ff;
-    /* Navbar and Button Elements */
-    --buttonBackground: #021b70;
-    --buttonText: white;
-    --buttonBorder: #0b0bc4;
-    --buttonBackgroundHover: white;
-    --buttonTextHover: black;
-    --buttonBackgroundActive: #0b0bc4;
-    --buttonTextActive: white;
-    /* Input Elements */
-    --inputColor: white;
-    --inputBackground: #061b49;
-    --inputBorder: #2b5ecb;
-    /* Footer Elements */
-    --footerBackground: #051a5d;
-    --footerTitle: #707bf5;
-    --footerText: #c5b0f5;
-    --footerTextHover: white;
-    --footerTextActive: black;
-    /* Game Window Elements */
-    --gameWindowBorder: #0b25a8;
-    --gameWindowActive: #d2e70f;
-    /* Product Elements */
-    --productText: #7ab2ea;
-    --productTextHover: white;
-    --productTextActive: black;
-    /* Basket Elements */
-    --basketBorder: #7ed2e5;
-    --removeText: #7ac8ea;
-    --removeTextHover: white;
-    --removeTextActive: black;
-    --costBorder: #7aeae1;
-    --costBackground: #0d6275;
-    /* END OF COLOR SCHEME */
+@font-face {
+    font-family: pixelFont;
+    src:url(../font/04B03.ttf)
 }
+
 body
 {
     background-image: linear-gradient(to bottom, var(--gradientTop), var(--gradientBottom));
     font-family: pixelFont, serif;
     color: var(--fontColor);
+    font-size: 16px;
     padding: 0;
     margin: 0;
 }
@@ -305,7 +180,7 @@ h1{
     text-align: center;
     width: 100%;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 16px;
     justify-content: center;
     border: 4px inset var(--buttonBorder);
     align-content: space-around;
@@ -542,6 +417,7 @@ textarea
 }
 .footeritem
 {
+    font-size: 16px;
     display: flex;
     flex-direction: column;
     margin: 10px 30px 10px 30px;
