@@ -2,42 +2,42 @@
 {
     /* COLOR SCHEME */
         /* Core elements */
-            --gradientTop: #5c0673;
-            --gradientBottom: #3d064b;
+            --gradientTop: #1647e1;
+            --gradientBottom: #0c0c91;
             --fontColor: #e0d7f3;
-            --blockquote: #9600BF;
+            --blockquote: #00e2ff;
         /* Navbar and Button Elements */
-            --buttonBackground: #3f0b64;
+            --buttonBackground: #021b70;
             --buttonText: white;
-            --buttonBorder: #9149d7;
+            --buttonBorder: #0b0bc4;
             --buttonBackgroundHover: white;
             --buttonTextHover: black;
-            --buttonBackgroundActive: #3f0b64;
+            --buttonBackgroundActive: #0b0bc4;
             --buttonTextActive: white;
         /* Input Elements */
             --inputColor: white;
-            --inputBackground: #2a0649;
-            --inputBorder: #5527cb;
+            --inputBackground: #061b49;
+            --inputBorder: #2b5ecb;
         /* Footer Elements */
-            --footerBackground: #39055d;
-            --footerTitle: #ad70f5;
+            --footerBackground: #051a5d;
+            --footerTitle: #707bf5;
             --footerText: #c5b0f5;
             --footerTextHover: white;
             --footerTextActive: black;
         /* Game Window Elements */
-            --gameWindowBorder: #600BA8;
+            --gameWindowBorder: #0b25a8;
             --gameWindowActive: #d2e70f;
         /* Product Elements */
-            --productText: #bb7aea;
+            --productText: #7ab2ea;
             --productTextHover: white;
             --productTextActive: black;
         /* Basket Elements */
-            --basketBorder: #b37ee5;
-            --removeText: #bb7aea;
+            --basketBorder: #7ed2e5;
+            --removeText: #7ac8ea;
             --removeTextHover: white;
             --removeTextActive: black;
-            --costBorder: #bb7aea;
-            --costBackground: #580d75;
+            --costBorder: #7aeae1;
+            --costBackground: #0d6275;
     /* END OF COLOR SCHEME */
 }
 @font-face {
@@ -89,25 +89,26 @@
 }
 .theme2
 {
+    /* COLOR SCHEME */
     /* Core elements */
-    --gradientTop: #94e898;
-    --gradientBottom: #2a0649;
+    --gradientTop: #5c0673;
+    --gradientBottom: #3d064b;
     --fontColor: #e0d7f3;
-    --blockquote: #c569ff;
+    --blockquote: #9600BF;
     /* Navbar and Button Elements */
-    --buttonBackground: #2a0649;
+    --buttonBackground: #3f0b64;
     --buttonText: white;
-    --buttonBorder: #b37ee5;
+    --buttonBorder: #9149d7;
     --buttonBackgroundHover: white;
     --buttonTextHover: black;
-    --buttonBackgroundActive: #2a0649;
+    --buttonBackgroundActive: #3f0b64;
     --buttonTextActive: white;
     /* Input Elements */
     --inputColor: white;
     --inputBackground: #2a0649;
-    --inputBorder: darkgray;
+    --inputBorder: #5527cb;
     /* Footer Elements */
-    --footerBackground: #34254b;
+    --footerBackground: #39055d;
     --footerTitle: #ad70f5;
     --footerText: #c5b0f5;
     --footerTextHover: white;
@@ -125,7 +126,7 @@
     --removeTextHover: white;
     --removeTextActive: black;
     --costBorder: #bb7aea;
-    --costBackground: #600BA8;
+    --costBackground: #580d75;
     /* END OF COLOR SCHEME */
 }
 .theme3
@@ -283,7 +284,7 @@ h1{
     display: flex;
     color: var(--buttonText);
     text-align: center;
-    width: 100px;
+    width: 100%;
     text-decoration: none;
     font-size: 17px;
     justify-content: center;
@@ -302,7 +303,7 @@ h1{
     float: left;
     display: flex;
     text-align: center;
-    width: 100px;
+    width: 100%;
     text-decoration: none;
     font-size: 17px;
     justify-content: center;
