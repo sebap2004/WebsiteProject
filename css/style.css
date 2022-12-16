@@ -2,14 +2,14 @@
 {
     /* COLOR SCHEME */
         /* Core elements */
-            --gradientTop: #FA9601;
-            --gradientBottom: #FF190A;
+            --gradientTop: #ffa400;
+            --gradientBottom: #93140a;
             --fontColor: #ffffff;
             --blockquote: #ff0000;
         /* Navbar and Button Elements */
-         --buttonBackground: #e8670b;
+         --buttonBackground: #8D3F07;
          --buttonText: white;
-         --buttonBorder: #984604;
+         --buttonBorder: #693002;
          --buttonBackgroundHover: white;
          --buttonTextHover: black;
          --buttonBackgroundActive: #e8670b;
