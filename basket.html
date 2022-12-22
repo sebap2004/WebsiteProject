@@ -13,19 +13,24 @@
 </head>
 <body>
 <header class="header-container">
+    <!-- Header container includes the logo in the center, a basket icon which links to the checkout page, and TODO ADD LEFT ELEMENT OR REMOVE ENTIRELY -->
     <div class="header">
-        <div class="header-left">
-            Left element
-        </div>
-        <div style="justify-self: center;" class="header-center">
-            <a href="index.html">
-                <img class="headerLogo" alt="Title Logo" src="media/titleLarge.png">
-            </a>
-        </div>
 
-        <div class="header-right" style="display: flex; flex-direction: row">
-            <a class="basketlink" href="basket.html"> <img class="basket" src="media/basket.png"></a>
-            <p style="margin: 0">Basket: 4 items</p>
+        <div class="header">
+            <div class="header-item header-left">
+                <button class="headerbutton" onclick="toggleLightMode()"><span><img alt="moon" class="buttonicon" id="darkmodeicon" src="media/sun.png"></span></button>
+            </div>
+            <div class="header-center">
+                <a href="index.html">
+                    <img class="headerLogo" alt="Title Logo" src="media/titleLarge.png">
+                </a>
+            </div>
+
+            <div class="header-right" style="display: flex; flex-direction: row">
+                <a class="basketlink" href="basket.html"> <img class="basket" style="margin-left: 10px; margin-right: 10px;" src="media/basket.png" alt="basket"></a>
+                <p style="margin: 0">Basket: 4 items</p>
+
+            </div>
 
         </div>
 
