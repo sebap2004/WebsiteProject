@@ -50,9 +50,14 @@ body
     background-image: linear-gradient(to bottom, var(--gradientTop), var(--gradientBottom));
     font-family: pixelFont, serif;
     color: var(--fontColor);
-    font-size: 16px;
+    font-size: 17px;
+
     padding: 0;
     margin: 0;
+}
+p
+{
+    line-height: 18px;
 }
 
 .lightMode
