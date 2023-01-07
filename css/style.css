@@ -62,11 +62,55 @@ p
 
 .lightMode
 {
-    --gradientBottom: white;
-    --gradientTop: gray;
-    --buttonBackground: #ffffff;
+    /* COLOR SCHEME */
+    /* Core elements */
+    --gradientTop: #f6c2ff;
+    --gradientBottom: #bf7dda;
+    --fontColor: #000000;
+    --blockquote: #9600BF;
+    /* Navbar and Button Elements */
+    --buttonBackground: #9e56ce;
+    --buttonText: white;
+    --buttonBorder: #d8adff;
+    --buttonBackgroundHover: white;
+    --buttonTextHover: black;
+    --buttonBackgroundActive: #3f0b64;
+    --buttonTextActive: white;
+    /* Input Elements */
+    --inputColor: white;
+    --inputBackground: #a161d9;
+    --inputBorder: #5527cb;
+    /* Footer Elements */
+    --footerBackground: #8b6caf;
+    --footerTitle: #863ce3;
+    --footerText: #413373;
+    --footerTextHover: white;
+    --footerTextActive: black;
+    /* Game Window Elements */
+    --gameWindowBorder: #600BA8;
+    --gameWindowActive: #d2e70f;
+    /* Product Elements */
+    --productText: #bb7aea;
+    --productTextHover: white;
+    --productTextActive: black;
+    /* Basket Elements */
+    --basketBorder: #b37ee5;
+    --removeText: #bb7aea;
+    --removeTextHover: white;
+    --removeTextActive: black;
+    --costBorder: #bb7aea;
+    --costBackground: #bc6fe1;
+    /* END OF COLOR SCHEME */
 }
-
+.textshadow
+{
+    color: white;
+    text-shadow:
+            -1px -1px 0 #000,
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+            1px 1px 0 #000;
+}
 blockquote
 {
     font-style: normal;
