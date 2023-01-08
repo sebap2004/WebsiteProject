@@ -15,7 +15,7 @@
 </head>
 <body>
 <header class="header-container">
-    <!-- Header container includes the logo in the center, a basket icon which links to the checkout page, and TODO ADD LEFT ELEMENT OR REMOVE ENTIRELY -->
+    <!-- Header container includes the logo in the center, a basket icon which links to the checkout page on the right, and a button to toggle light mode on the left. -->
     <div class="header">
 
         <div class="header">
@@ -56,7 +56,7 @@
             <a style="flex-grow: 2" href="contact.html">Contact</a>
         </div>
         <div class="navitem navbar">
-            <a style="flex-grow: 2" href="bugreports.html">Bug Reports</a>
+            <a style="flex-grow: 2" href="bugreports.html" class="buttonactive">Bug Reports</a>
         </div>
     </div>
 </nav>
@@ -75,22 +75,22 @@
 
 
         <br>
-        <div class="bodyitemrow"style="margin: auto; flex-direction: row; width: 40%">
+        <div class="bodyitemrow" style="margin: auto; flex-direction: row; width: 40%">
         <div class="form">
+            <!-- Large form that provides a comprehensive way to document a bug that would be sent to me for testing and trying to fix. Email is provided, as well as a large text box for the user
+            to provide a detailed report of the bug. Useful tool for me to be able to track bug reports. -->
         <form name="bugreport" method="post" data-netlify="true">
             <label for="fname">First name:</label><br>
             <input style="width: 100%" type="text" id="fname" placeholder="John" name="fname" value=""><br><br>
             <label for="lname">Last name:</label><br>
             <input style="width: 100%" type="text" id="lname" placeholder="Doe" name="lname" value=""><br><br>
-            <label for="lname">Email</label><br>
+            <label for="email">Email</label><br>
             <input style="width: 100%" type="text" id="email" placeholder="example@example.com" name="email" value=""><br><br>
-            <label for="lname">Was it perhaps a skill issue?</label><br><br>
-            <input class="inputsmall" type="radio" id="skill-issue-yes" name="skill-issue" value="Yes">
-            <label for="skill-issue-yes"> Yes</label><br>
-            <input class="inputsmall" type="radio" id="skill-issue-no" name="skill-issue" value="no">
-            <label for="skill-issue-no"> No</label><br>
-            <input class="inputsmall" type="radio" id="skill-issue-cops" name="skill-issue" value="cops">
-            <label for="skill-issue-cops">I'm calling the cops</label><br><br>
+            <label>Are you able to recreate the bug?</label><br><br>
+            <input class="inputsmall" type="radio" id="recreate-yes" name="recreate" value="Yes">
+            <label for="recreate-yes"> Yes</label><br><br>
+            <input class="inputsmall" type="radio" id="recreate-no" name="recreate" value="no">
+            <label for="recreate-no"> No</label><br><br>
             <label for="bug">Does this bug need an urgent fix?</label><br>
             <select style="width: 100%" id="bug" name="bug">
                 <option value="no-answer">Select...</option>

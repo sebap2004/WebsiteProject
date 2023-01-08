@@ -211,7 +211,7 @@ h1{
     text-align: center;
     width: 100%;
     text-decoration: none;
-    font-size: 0.8vw;
+    font-size: 0.9vw;
     justify-content: center;
     border: 4px outset var(--buttonBorder);
     align-content: space-around;
@@ -273,6 +273,7 @@ h1{
     display: flex;
     justify-content: center;
     align-content: space-between;
+    flex-direction: column;
 
 }
 .home
@@ -545,15 +546,15 @@ textarea
 }
 .symbol
 {
-font-size: 18px;
+    font-size: 1.4vw;
 }
 .price
 {
- font-size: 30px;
+ font-size: 2vw;
 }
 .pricefraction
 {
-font-size: 20px;
+font-size: 1.4vw;
 }
 .basketitem
 {
@@ -787,4 +788,29 @@ font-size: 20px;
         flex-direction: column;
         width: 100%;
     }
+}
+.buttonactive
+{
+    background-color: #a505bb;
+}
+.checked {
+    color: #ae51fc;
+}
+.fa-star{
+    display: inline-block;
+    margin: 1px;
+}
+.ratingbox
+{
+    display: flex;
+    margin: 0px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+}
+.ratingtext
+{
+    margin: 3px 3px 0px 10px;
 }

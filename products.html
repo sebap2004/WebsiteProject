@@ -15,7 +15,7 @@
 </head>
 <body>
 <header class="header-container">
-    <!-- Header container includes the logo in the center, a basket icon which links to the checkout page, and TODO ADD LEFT ELEMENT OR REMOVE ENTIRELY -->
+    <!-- Header container includes the logo in the center, a basket icon which links to the checkout page on the right, and a button to toggle light mode on the left. -->
     <div class="header">
 
         <div class="header">
@@ -47,7 +47,7 @@
             <a style="flex-grow: 2" href="game.html">Game</a>
         </div>
         <div class="navitem navbar">
-            <a style="flex-grow: 2" href="products.html">Products</a>
+            <a style="flex-grow: 2" href="products.html" class="buttonactive">Products</a>
         </div>
         <div class="navitem navbar">
             <a style="flex-grow: 2" href="about.html">About</a>
@@ -61,6 +61,7 @@
     </div>
 </nav>
 <main class="bodycontainer">
+    <!-- This code block is a filter for the products. As I develop this website I will add more products and create a working filter that filters out products -->
     <div class="bodycolumn" >
         <div class="bodyitemcolumn" style="padding: 0; ">
             <h2 style="margin: 0">Filter</h2>
@@ -85,7 +86,9 @@
             </div>
         </div>
     </div>
+    <!-- Div for encapsulating all the products -->
     <div class="bodyrow" style="flex-direction: row; flex-wrap: wrap">
+        <!-- Each of these divs represents a product. The product has an image, a price and a brief overview. currently all of them lead to one example product, more will be added. -->
         <div class="bodyitemrow" style="width: 47%; padding: 0">
             <embed style="width:400px; transform:scale(1); " src="media/products/ryzen72700.jpg">
             <div class="bodyitemcolumn">
@@ -98,7 +101,7 @@
         <div class="bodyitemrow" style="width: 47%; padding: 0">
             <embed style="width:400px; transform:scale(1); " src="media/products/Ryzen53600XT.jpg">
             <div class="bodyitemcolumn">
-                <h2>Ryzen 5 3600XT</h2>
+                <a href="ExampleProductPage.html" class="product"><h2 class="product">Ryzen 5 3600XT</h2></a>
                 <p>Award-winning performance and optimized technology. For gamers. For creators. For everyone</p>
                 <p>$341.54</p>
                 <button>Add to cart</button>
@@ -107,7 +110,7 @@
         <div class="bodyitemrow" style="width: 47%; padding: 0">
             <embed style="width:400px; transform:scale(1); " src="media/products/ryzen31200.jpg">
             <div class="bodyitemcolumn">
-                <h2>Ryzen 3 1200</h2>
+                <a href="ExampleProductPage.html" class="product"><h2 class="product">Ryzen 3 1200</h2></a>
                 <p>10MB Cache ; AMD VR Ready Processors, AVX2, FMA3, XFR Extended Frequency Range</p>
                 <p>$99.99</p>
                 <button>Add to cart</button>
@@ -116,8 +119,8 @@
         <div class="bodyitemrow" style="width: 47%; padding: 0">
             <embed style="width:400px; transform:scale(1); " src="media/products/Ryzen97900X.jpg">
             <div class="bodyitemcolumn">
-                <h2>Ryzen 9 7900X</h2>
-                <p>Really really like really fast guys </p>
+                <a href="ExampleProductPage.html" class="product"><h2 class="product">Ryzen 9 7900X</h2></a>
+                <p>Top of the line performance.</p>
                 <p>$999.99</p>
                 <button>Add to cart</button>
             </div>
@@ -136,7 +139,7 @@
         </div>
         <div class="footeritem footertext">
             <p class="closep footerTitle"><u>Other links</u></p>
-            <a href="https://www.youtube.com/watch?v=fcZXfoB2f70" target="_blank"><p class="closep">Hot singles near you!</p></a>
+            <a href="https://www.youtube.com/watch?v=fcZXfoB2f70" target="_blank"><p class="closep">Random Youtube Video</p></a>
             <a href="https://www.rd.com/wp-content/uploads/2019/01/shutterstock_673465372.jpg?fit=700,467" target="_blank"><p class="closep">Image of a cute cat</p></a>
             <a href="https://open.spotify.com/playlist/48F3Mkwelt0aepdluNBPUy?si=0c401048ebd3495e" target="_blank"><p class="closep">my mixtape (spotify)</p></a>
         </div>

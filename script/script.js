@@ -41,32 +41,9 @@ function toggleLightMode()
     document.getElementById("darkmodeicon").src=icon;
 }
 
-function theme1()
-{
-    pagetheme.classList.add("theme1");
-    pagetheme.classList.remove("theme2");
-    pagetheme.classList.remove("theme3");
-    localStorage.setItem("theme","1");
-}
+const navbar = document.querySelector('.nav');
+const buttons = navbar.querySelectorAll('.navitem');
 
-function theme2()
-{
-    pagetheme.classList.remove("theme1");
-    pagetheme.classList.add("theme2");
-    pagetheme.classList.remove("theme3");
-    localStorage.setItem("theme","2");
-}
-function theme3()
-{
-    pagetheme.classList.remove("theme1");
-    pagetheme.classList.remove("theme2");
-    pagetheme.classList.add("theme3");
-    localStorage.setItem("theme","3");
-}
-function reset()
-{
-    pagetheme.classList.remove("theme1");
-    pagetheme.classList.remove("theme2");
-    pagetheme.classList.remove("theme3");
-    localStorage.setItem("theme","0");
-}
+
+
+

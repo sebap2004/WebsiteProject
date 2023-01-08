@@ -17,7 +17,7 @@
 <body>
 
 <header class="header-container">
-    <!-- Header container includes the logo in the center, a basket icon which links to the checkout page, and TODO ADD LEFT ELEMENT OR REMOVE ENTIRELY -->
+    <!-- Header container includes the logo in the center, a basket icon which links to the checkout page on the right, and a button to toggle light mode on the left. -->
     <div class="header">
 
         <div class="header">
@@ -44,7 +44,7 @@
     <!-- Navigation bar contains buttons to all pages, apart from the checkout page. -->
     <div class="nav">
         <div class="navitem navbar">
-            <a href="index.html">Home</a>
+            <a href="index.html" class="buttonactive">Home</a>
         </div>
         <div class="navitem navbar">
             <a href="game.html">Game</a>
@@ -73,19 +73,19 @@
                 <!-- Full-width images with number and caption text -->
                 <div class="mySlides fade">
                     <div class="numbertext textshadow">1 / 3</div>
-                    <img src="media/screenshot5.png" style="width:100%">
+                    <img src="media/screenshot5.png" alt="Screenshot of the game" style="width:100%">
                     <div class="text" style="color: white; font-size: 30px">Picture of the game's hub</div>
                 </div>
 
                 <div class="mySlides fade">
                     <div class="numbertext textshadow">2 / 3</div>
-                    <img src="media/screenshot3.png" style="width:100%">
+                    <img src="media/screenshot3.png" alt="Screenshot of the game"  style="width:100%">
                     <div class="text textshadow" style="color: white; text-shadow: black; font-size: 30px">Breakneck action!</div>
                 </div>
 
                 <div class="mySlides fade">
                     <div class="numbertext textshadow">3 / 3</div>
-                    <img src="media/screenshot4.png" style="width:100%">
+                    <img src="media/screenshot4.png" alt="Screenshot of the game"  style="width:100%">
                     <div class="text textshadow" style="color: white; font-size: 30px">Variety of guns at your disposal!</div>
                 </div>
 
@@ -101,25 +101,59 @@
                 <span class="dot" onclick="currentSlide(2)"></span>
                 <span class="dot" onclick="currentSlide(3)"></span>
             </div>
+
         </section>
-        <div class="homeitem">
+        <!-- Side content next to the slide show. Provides the user a brief rundown of the game's story. -->
+        <aside class="homeitem">
         <div style="flex-basis: 20%" class="homeitemvertical">
         <h1>Welcome to Long Shot</h1>
         </div>
-        <div style="flex-basis: 100%; justify-content: flex-start " class="homeitemvertical">
-        <aside><p>Long shot is a 2D Top down shooter style game, similar to enter the gungeon. You play
+        <div style="flex-basis: 100%; justify-content: flex-start" class="homeitemvertical">
+        <p>Long shot is a 2D Top down shooter style game, similar to enter the gungeon. You play
         as a man who has been robbed by a group called "The Bad Guys", who have brutally flushed your beloved pet fish,
         <strong>Dr. Gumba "Mario Balls" Shoelace</strong>, PhD, down the toilet. Filled with rage, you travel the world
         fighting the goons from "The Bad Guys" gang in an attempt to avenge your fallen fishy friend. I'm developing
         this game as a hobby, and I am using this course to further develop the game and learn more HTML as a result.</p>
-        </aside>
+            <br><br>
+            <p>Hope you enjoy the game! :)</p>
         </div>
+    </aside>
     </div>
+    <div>
+        <article>
+            <div class="bodycolumn" style="justify-content: center;">
+                <div class="bodyitemrow">
+                    <!-- Blockquote used as a way to create a stylised quote. Will soon have actual text. -->
+                    <div class="bodyitemcolumn" style="width: 50vw;">
+                        <blockquote> "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi autem eveniet perferendis praesentium quisquam? Ad alias at autem blanditiis corporis cupiditate deleniti doloremque eum excepturi explicabo, fuga in itaque laborum laudantium libero modi neque perspiciatis quibusdam quidem quos reiciendis repellat sapiente sit soluta suscipit tempora veritatis voluptatum? Ab aliquid commodi deserunt ducimus excepturi exercitationem fugit in nemo neque nihil nisi nobis odio, perspiciatis porro, quasi recusandae sed sit ullam veniam?"
+                            <br><br>
+                            -Reviewer 1, 2022
+                        </blockquote>
+
+                    </div>
+                    <div class="bodyitemcolumn" style="width: 50vw;">
+                        <blockquote> "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi autem eveniet perferendis praesentium quisquam? Ad alias at autem blanditiis corporis cupiditate deleniti doloremque eum excepturi explicabo, fuga in itaque laborum laudantium libero modi neque perspiciatis quibusdam quidem quos reiciendis repellat sapiente sit soluta suscipit tempora veritatis voluptatum? Ab aliquid commodi deserunt ducimus excepturi exercitationem fugit in nemo neque nihil nisi nobis odio, perspiciatis porro, quasi recusandae sed sit ullam veniam?"
+                            <br><br>
+                            -Reviewer 2, 2022
+                        </blockquote>
+
+                    </div>
+                    <div class="bodyitemcolumn" style="width: 50vw;">
+                        <blockquote> "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi autem eveniet perferendis praesentium quisquam? Ad alias at autem blanditiis corporis cupiditate deleniti doloremque eum excepturi explicabo, fuga in itaque laborum laudantium libero modi neque perspiciatis quibusdam quidem quos reiciendis repellat sapiente sit soluta suscipit tempora veritatis voluptatum? Ab aliquid commodi deserunt ducimus excepturi exercitationem fugit in nemo neque nihil nisi nobis odio, perspiciatis porro, quasi recusandae sed sit ullam veniam?"
+                            <br><br>
+                            Reviewer 3, 2022
+                        </blockquote>
+
+                    </div>
+                </div>
+            </div>
+
+        </article>
     </div>
 
 </main>
 <footer class="footercontainer">
-    <!-- Footer container contains extra external links for the user to click on if interested. TODO REPLACE JOKE LINKS WITH IMPORTANT LINKS -->
+    <!-- Footer container contains extra external links for the user to click on if interested. Links include social medias, development logs, and a YouTube channel. Currently just placeholder links. -->
     <div class="footer">
         <div class="footeritem footertext">
             <p class="closep footerTitle"><u>Social media links</u></p>
@@ -129,7 +163,7 @@
         </div>
         <div class="footeritem footertext">
             <p class="closep footerTitle"><u>Other links</u></p>
-            <a href="https://www.youtube.com/watch?v=fcZXfoB2f70" target="_blank"><p class="closep">Hot singles near you!</p></a>
+            <a href="https://www.youtube.com/watch?v=fcZXfoB2f70" target="_blank"><p class="closep">Random Youtube Video</p></a>
             <a href="https://www.rd.com/wp-content/uploads/2019/01/shutterstock_673465372.jpg?fit=700,467" target="_blank"><p class="closep">Image of a cute cat</p></a>
             <a href="https://open.spotify.com/playlist/48F3Mkwelt0aepdluNBPUy?si=0c401048ebd3495e" target="_blank"><p class="closep">my mixtape (spotify)</p></a>
         </div>
