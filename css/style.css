@@ -50,14 +50,14 @@ body
     background-image: linear-gradient(to bottom, var(--gradientTop), var(--gradientBottom));
     font-family: pixelFont, serif;
     color: var(--fontColor);
-    font-size: 17px;
+    font-size: 0.85vw;
 
     padding: 0;
     margin: 0;
 }
 p
 {
-    line-height: 18px;
+    line-height: 1vw;
 }
 
 .lightMode
@@ -114,7 +114,8 @@ p
 blockquote
 {
     font-style: normal;
-    font-size: 16px;
+    font-size: 0.85vw;
+    line-height: 1vw;
     margin-left: 32px;
     border-left: 4px solid var(--blockquote);
     padding-left: 12px;
@@ -131,7 +132,7 @@ iframe
 }
 
 h1{
-    font-size: 60px;
+    font-size: 3.3vw;
     margin: 0px;
 }
 
@@ -210,7 +211,7 @@ h1{
     text-align: center;
     width: 100%;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 0.8vw;
     justify-content: center;
     border: 4px outset var(--buttonBorder);
     align-content: space-around;
@@ -229,7 +230,6 @@ h1{
     text-align: center;
     width: 100%;
     text-decoration: none;
-    font-size: 16px;
     justify-content: center;
     border: 4px inset var(--buttonBorder);
     align-content: space-around;
@@ -497,8 +497,8 @@ textarea
 .basket
 {
     image-rendering: pixelated;
-    height: 32px;
-    width: 32px;
+    height: 1.6vw;
+    width: 1.6vw;
     display: block;
     color: var(--buttonText);
 
@@ -506,8 +506,8 @@ textarea
 .basket:hover
 {
     image-rendering: pixelated;
-    height: 32px;
-    width: 32px;
+    height: 1.6vw;
+    width: 1.6vw;
     display: block;
     filter: brightness(0%);
     color: var(--buttonTextHover);
@@ -740,7 +740,7 @@ font-size: 20px;
 /* Number text (1/3 etc) */
 .numbertext {
     color: #f2f2f2;
-    font-size: 12px;
+    font-size: 0.9vw;
     padding: 8px 12px;
     position: absolute;
     top: 0;
