@@ -1,39 +1,39 @@
-var products = [
-    {
-        name: "Ryzen 7 2700",
-        price: 277.43,
-        tags: ["dlc"],
-        url: "ExampleProductPage.html",
-        image: "media/products/ryzen72700.jpg",
-        description: "The Ryzen 7 2700X has the highest multiprocessing performance you can get on a mainstream desktop PC"
-    },
-    {
-        name: "Ryzen 5 3600XT",
-        price: 341.54,
-        tags: ["computer"],
-        url: "ExampleProductPage.html",
-        image: "media/products/Ryzen53600XT.jpg",
-        description: "Award-winning performance and optimized technology. For gamers. For creators. For everyone"
-    },
-    {
-        name: "Ryzen 3 1200",
-        price: 99.99,
-        tags: ["prebuilt"],
-        url: "ExampleProductPage.html",
-        image: "media/products/ryzen31200.jpg",
-        description: "10MB Cache ; AMD VR Ready Processors, AVX2, FMA3, XFR Extended Frequency Range"
-    },
-    {
-        name: "Ryzen 9 7900X",
-        price: 999.99,
-        tags: ["games"],
-        url: "ExampleProductPage.html",
-        image: "media/products/Ryzen97900X.jpg",
-        description: "Top of the line performance."
-    }
-]
+    var products = [
+        {
+            name: "Ryzen 7 2700",
+            price: 277.43,
+            tags: ["dlc"],
+            url: "ExampleProductPage.html",
+            image: "media/products/ryzen72700.jpg",
+            description: "The Ryzen 7 2700X has the highest multiprocessing performance you can get on a mainstream desktop PC"
+        },
+        {
+            name: "Ryzen 5 3600XT",
+            price: 341.54,
+            tags: ["computer"],
+            url: "ExampleProductPage.html",
+            image: "media/products/Ryzen53600XT.jpg",
+            description: "Award-winning performance and optimized technology. For gamers. For creators. For everyone"
+        },
+        {
+            name: "Ryzen 3 1200",
+            price: 99.99,
+            tags: ["prebuilt"],
+            url: "ExampleProductPage.html",
+            image: "media/products/ryzen31200.jpg",
+            description: "10MB Cache ; AMD VR Ready Processors, AVX2, FMA3, XFR Extended Frequency Range"
+        },
+        {
+            name: "Ryzen 9 7900X",
+            price: 999.99,
+            tags: ["games"],
+            url: "ExampleProductPage.html",
+            image: "media/products/Ryzen97900X.jpg",
+            description: "Top of the line performance."
+        }
+    ]
 
-let basket;
+let basket = [];
 
 function displayContent(tag) {
     let productGrid = document.querySelector(".productcontainer");
@@ -92,7 +92,9 @@ function createProductElement(product) {
 
     let button = document.createElement("button");
     button.textContent = "Add to cart";
-    button.onclick = addTobasket(product)
+    button.onclick = function(){
+        addTobasket(product)
+    }
     infoContainer.appendChild(button);
 
     return productElement;
@@ -102,6 +104,9 @@ function addTobasket(product)
 {
     basket.push(product);
     console.log(basket);
+    const basketString = JSON.stringify(basket);
+    localStorage.setItem("basket", basketString);
+    console.log(basketString);
 }
 
 
