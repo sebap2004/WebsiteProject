@@ -11,6 +11,7 @@
     <meta content="#7315d6" data-react-helmet="true" name="theme-color" />
     <link href="css/style.css" rel="stylesheet">
     <script src="script/script.js" defer></script>
+    <script src="script/productload.js" defer></script>
 
 </head>
 <body>
@@ -63,69 +64,32 @@
 <main class="bodycontainer">
     <!-- This code block is a filter for the products. As I develop this website I will add more products and create a working filter that filters out products -->
     <div class="bodycolumn" >
-        <div class="bodyitemcolumn" style="padding: 0; ">
+        <div class="bodyitemcolumn" style="padding: 0;">
             <h2 style="margin: 0">Filter</h2>
-            <div class="navcontainer" style="flex-direction: column;">
+            <div class="navcontainer" >
                 <div class="nav">
-                    <div class="navitem navbar">
-                        <a style="flex-grow: 2" href="#">All Products</a>
+                    <div class="navitem navbar allproductsbutton">
+                        <button style="flex-grow: 2" type="button" onclick="displayContent('all')">All Products</button>
                     </div>
-                    <div class="navitem navbar">
-                        <a style="flex-grow: 2" href="#">Game DLC</a>
+                    <div class="navitem navbar gamedlcbutton">
+                        <button style="flex-grow: 2" type="button" onclick="displayContent('dlc')">Game DLC</button>
                     </div>
-                    <div class="navitem navbar">
-                        <a style="flex-grow: 2" href="#">Computer Parts</a>
+                    <div class="navitem navbar computerpartsbutton">
+                        <button style="flex-grow: 2" type="button" onclick="displayContent('computer')">Computer Parts</button>
                     </div>
-                    <div class="navitem navbar">
-                        <a style="flex-grow: 2" href="#">Prebuilts</a>
+                    <div class="navitem navbar prebuiltsbutton">
+                        <button style="flex-grow: 2" type="button" onclick="displayContent('prebuilt')">Prebuilts</button>
                     </div>
-                    <div class="navitem navbar">
-                        <a style="flex-grow: 2" href="#">Games</a>
+                    <div class="navitem navbar gamesbutton">
+                        <button style="flex-grow: 2" type="button" onclick="displayContent('games')">Games</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Div for encapsulating all the products -->
-    <div class="bodyrow" style="flex-direction: row; flex-wrap: wrap">
-        <!-- Each of these divs represents a product. The product has an image, a price and a brief overview. currently all of them lead to one example product, more will be added. -->
-        <section class="bodyitemrow" style="width: 47%; padding: 0">
-            <embed style="width:400px; transform:scale(1); " src="media/products/ryzen72700.jpg">
-            <div class="bodyitemcolumn">
-                <a href="ExampleProductPage.html" class="product"><h2 class="product">Ryzen 7 2700</h2></a>
-                <p>The Ryzen 7 2700X has the highest multiprocessing performance you can get on a mainstream desktop PC</p>
-                <p>$277.43</p>
-                <button>Add to cart</button>
-            </div>
-        </section>
-        <section class="bodyitemrow" style="width: 47%; padding: 0">
-            <embed style="width:400px; transform:scale(1); " src="media/products/Ryzen53600XT.jpg">
-            <div class="bodyitemcolumn">
-                <a href="ExampleProductPage.html" class="product"><h2 class="product">Ryzen 5 3600XT</h2></a>
-                <p>Award-winning performance and optimized technology. For gamers. For creators. For everyone</p>
-                <p>$341.54</p>
-                <button>Add to cart</button>
-            </div>
-        </section>
-        <section class="bodyitemrow" style="width: 47%; padding: 0">
-            <embed style="width:400px; transform:scale(1); " src="media/products/ryzen31200.jpg">
-            <div class="bodyitemcolumn">
-                <a href="ExampleProductPage.html" class="product"><h2 class="product">Ryzen 3 1200</h2></a>
-                <p>10MB Cache ; AMD VR Ready Processors, AVX2, FMA3, XFR Extended Frequency Range</p>
-                <p>$99.99</p>
-                <button>Add to cart</button>
-            </div>
-        </section>
-        <section class="bodyitemrow" style="width: 47%; padding: 0">
-            <embed style="width:400px; transform:scale(1); " src="media/products/Ryzen97900X.jpg">
-            <div class="bodyitemcolumn">
-                <a href="ExampleProductPage.html" class="product"><h2 class="product">Ryzen 9 7900X</h2></a>
-                <p>Top of the line performance.</p>
-                <p>$999.99</p>
-                <button>Add to cart</button>
-            </div>
-        </section>
-
+    <div class="bodyrow productcontainer" style="flex-direction: row; flex-wrap: wrap">
+        <!-- The product has an image, a price and a brief overview. All products are currently added to the document by a script. -->
     </div>
 </main>
 
