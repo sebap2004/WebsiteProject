@@ -823,3 +823,29 @@ font-size: 1.4vw;
 {
     margin: 3px 3px 0px 10px;
 }
+
+@media (max-width: 768px) {
+    /* Modify the header */
+    .header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .logo {
+        margin-bottom: 20px;
+    }
+
+    /* Modify the main content area */
+    .content {
+        padding: 20px;
+    }
+
+    /* Modify the footer */
+    .footer {
+        position: static;
+        margin-top: 20px;
+        padding: 20px;
+        text-align: center;
+    }
+}

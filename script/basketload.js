@@ -1,8 +1,13 @@
 const basketload = localStorage.getItem("basket");
 const basket = JSON.parse(basketload);
 
+
 function displayContent(tag) {
-    let productGrid = document.querySelector(".bodyitemcolumn");
+    let productGrid = document.querySelector(".baskets");
+    const subtotal = document.querySelector(".subtotal");
+    const total = document.querySelector(".total");
+    const amountText = document.querySelector(".basketamount");
+    let subtotalvalue = 0; // Initialize subtotalvalue to zero
 
     while (productGrid.firstChild) {
         productGrid.removeChild(productGrid.firstChild);
@@ -10,12 +15,22 @@ function displayContent(tag) {
 
     for (let i = 0; i < basket.length; i++) {
         let product = basket[i];
+        console.log(product.price);
+        subtotalvalue += product.price;
         let productElement = createBasketItemElement(product);
         productGrid.appendChild(productElement);
     }
+
+    subtotal.textContent = "$"+subtotalvalue.toFixed(2);
+    let totalValue = (subtotalvalue + 5).toFixed(2);
+    total.textContent = "$"+totalValue;
+    console.log(totalValue);
+    console.log(subtotalvalue);
+    amountText.textContent= basket.length + " Items";
 }
 
-function createBasketItemElement(product) {
+
+function createBasketItemElement(product, index) {
     let basketItemElement = document.createElement("div");
     basketItemElement.classList.add("basketitem");
 
@@ -46,8 +61,10 @@ function createBasketItemElement(product) {
     removeLink.textContent = "Remove from basket";
     removeLink.addEventListener('click', function(event) {
         event.preventDefault();
-        const basketItem = this.parentElement.parentElement;
-        basketItem.remove();
+        basket.splice(index, 1);
+        localStorage.setItem("basket", JSON.stringify(basket));
+        displayContent("all");
+        UpdateBasketNumberText();
     });
     titleContainer.appendChild(removeLink);
 
@@ -63,6 +80,7 @@ function createBasketItemElement(product) {
 
     return basketItemElement;
 }
+
 
 
 

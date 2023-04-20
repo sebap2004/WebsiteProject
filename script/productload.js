@@ -29,11 +29,25 @@
             tags: ["games"],
             url: "ExampleProductPage.html",
             image: "media/products/Ryzen97900X.jpg",
-            description: "Top of the line performance."
+            description: "Top of the line performance. Also slightly overpriced but it's whatever"
         }
     ]
+let Basket;
 
-let basket = [];
+    const basketload = localStorage.getItem("basket");
+if (basketload === null)
+{
+    console.log("Created new empty basket");
+    Basket = [];
+}
+else
+{
+    console.log("Basket detected");
+    Basket = JSON.parse(basketload);
+    console.log(Basket);
+}
+
+
 
 function displayContent(tag) {
     let productGrid = document.querySelector(".productcontainer");
@@ -102,11 +116,12 @@ function createProductElement(product) {
 
 function addTobasket(product)
 {
-    basket.push(product);
-    console.log(basket);
-    const basketString = JSON.stringify(basket);
+    Basket.push(product);
+    console.log(Basket);
+    const basketString = JSON.stringify(Basket);
     localStorage.setItem("basket", basketString);
     console.log(basketString);
+    UpdateBasketNumberText();
 }
 
 
