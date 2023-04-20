@@ -45,13 +45,14 @@
     src:url(../font/04B03.ttf)
 }
 
+
 body
 {
     background-image: linear-gradient(to bottom, var(--gradientTop), var(--gradientBottom));
     font-family: pixelFont, serif;
     color: var(--fontColor);
     font-size: 0.85vw;
-
+    height: 100%;
     padding: 0;
     margin: 0;
 }
@@ -130,11 +131,6 @@ img{
 .productimage
 {
     width:400px; transform:scale(1);
-}
-
-iframe
-{
-
 }
 
 h1{
@@ -527,14 +523,7 @@ textarea
 {
     text-decoration: none;
 }
-.gamewindow
-{
-    border-color: var(--gameWindowBorder);
-}
-.gamewindow:active
-{
-    border-color: var(--gameWindowActive);
-}
+
 .compact
 {
     margin: 8px 0;
