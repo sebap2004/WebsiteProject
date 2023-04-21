@@ -727,6 +727,8 @@ font-size: 1.4vw;
 
 /* Caption text */
 .text {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
     color: #f2f2f2;
     font-size: 15px;
     padding: 8px 12px;
@@ -734,6 +736,10 @@ font-size: 1.4vw;
     bottom: 8px;
     width: 100%;
     text-align: center;
+}
+
+.mySlides:hover .text {
+    opacity: 1;
 }
 
 /* Number text (1/3 etc) */
