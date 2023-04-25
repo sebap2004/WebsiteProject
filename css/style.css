@@ -181,7 +181,7 @@ h1{
     display: flex;
     padding: 5px 50px 5px 5px;
     width: 25%;
-    text-align: right !important;
+    text-align: right;
     flex-direction: column;
     justify-content: flex-end;
     flex-wrap: wrap;
@@ -600,6 +600,13 @@ font-size: 1.4vw;
   margin: 0 0 8px 0;
 }
 
+.formContainer
+{
+    margin: auto;
+    flex-direction: row;
+    width: 40%;
+}
+
 /* aButton class not really used, only here in case buttons don't work. */
 .aButton{
     float: left;
@@ -650,6 +657,9 @@ font-size: 1.4vw;
     display: flex;
     flex-direction: column;
 }
+.aboutHalf{
+    width: 50vw;
+}
 .basketimagesummary
 {
     transform: scale(1);
@@ -683,6 +693,12 @@ font-size: 1.4vw;
     height: 45px;
     padding: 0;
 }
+
+.homeSlideshow
+{
+    flex-basis: auto;
+}
+
 /* Slidehow CSS TODO REFERENCE W3 SCHOOLS FOR SLIDESHOW CODE */
 * {box-sizing:border-box}
 
@@ -782,14 +798,104 @@ font-size: 1.4vw;
 
 @media only screen and (max-width: 768px)
 {
-    [class*="body"]
+    [class*="body"], blockquote
     {
         flex-direction: column;
+        justify-content: center;
         width: 100%;
+        display: flex;
+        height: auto;
+        align-content: center;
+        align-self: center; /* centers items horizontally */
+        align-items: center;
+        font-size: calc(13px + (18 - 16) * ((100vw - 320px) / (768 - 320)));
+        line-height: normal;
+    }
+    p{
+        line-height: normal;
+    }
+    .headerLogoContainer
+    {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+    .navbar a{
+        font-size: 100%;
+    }
+    .basketlink
+    {
+        width: 50%;
+    }
+    .formContainer{
+        width: 100%;
+    }
+    .basketContainer
+    {
+        width: 60%;
+    }
+    .basketlink img
+    {
+        width: 50%;
+        height: 50%;
+    }
+    .basketlink:hover img:hover
+    {
+        width: 50%;
+        height: 50%;
+    }
+    .basketNumber
+    {
+        font-size: x-small;
+        width: 50%;
+    }
+    .headerLogo
+    {
+        width: 100%;
+        height: 100%;
+        transform:scale(1);
+    }
+    .headerbutton
+    {
+        width: 30px;
+        height: 30px;
+    }
+    .header-right
+    {
+        padding: 5px;
+        justify-content: center;
+        text-align: center;
+    }
+    .header-left
+    {
+        padding: 5px;
+        justify-content: center;
     }
     [class*="home"]
     {
+        display: flex;
         flex-direction: column;
+        height: auto;
+        justify-content: center;
+        align-content: center;
+        align-self: center; /* centers items horizontally */
+        align-items: center;
+        width: 100%;
+        font-size: calc(13px + (18 - 16) * ((100vw - 320px) / (768 - 320)));
+        line-height: normal;
+    }
+    .homeSlideshow
+    {
+        flex-basis: auto;
+    }
+    .homeitem{
+        width: 80%;
+    }
+    [class*="footer"]
+    {
+        font-size: 8px;
+    }
+    .basketContainer{
         width: 100%;
     }
 }
@@ -819,28 +925,3 @@ font-size: 1.4vw;
     margin: 3px 3px 0px 10px;
 }
 
-@media (max-width: 768px) {
-    /* Modify the header */
-    .header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .logo {
-        margin-bottom: 20px;
-    }
-
-    /* Modify the main content area */
-    .content {
-        padding: 20px;
-    }
-
-    /* Modify the footer */
-    .footer {
-        position: static;
-        margin-top: 20px;
-        padding: 20px;
-        text-align: center;
-    }
-}
