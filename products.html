@@ -3,12 +3,13 @@
 <head>
     <title>Product Page</title>
     <link href="css/style.css" rel="stylesheet">
-    <link rel="shortcut icon" type="image/x-icon" href="logo.ico" />
-    <meta content="Long Shot" property="og:title" />
-    <meta content="Products Page for Long Shot Website" property="og:description" />
-    <meta content="https://longshotgame.netlify.app/index.html" property="og:url" />
-    <meta content="https://cdn.discordapp.com/attachments/765315376203431939/1031347393456787486/title.png" property="og:image" />
-    <meta content="#7315d6" data-react-helmet="true" name="theme-color" />
+    <link rel="shortcut icon" type="image/x-icon" href="logo.ico"/>
+    <meta content="Long Shot" property="og:title"/>
+    <meta content="Products Page for Long Shot Website" property="og:description"/>
+    <meta content="https://longshotgame.netlify.app/index.html" property="og:url"/>
+    <meta content="https://cdn.discordapp.com/attachments/765315376203431939/1031347393456787486/title.png"
+          property="og:image"/>
+    <meta content="#7315d6" data-react-helmet="true" name="theme-color"/>
     <link href="css/style.css" rel="stylesheet">
     <script src="script/lightmode.js" defer></script>
     <script src="script/productload.js" defer></script>
@@ -21,7 +22,9 @@
 
         <div class="header">
             <div class="header-item header-left">
-                <button class="headerbutton" onclick="toggleLightMode()"><span><img alt="moon" class="buttonicon" id="darkmodeicon" src="media/sun.png"></span></button>
+                <button class="headerbutton" onclick="toggleLightMode()"><span><img alt="moon" class="buttonicon"
+                                                                                    id="darkmodeicon"
+                                                                                    src="media/sun.png"></span></button>
             </div>
             <div class="header-center">
                 <a href="index.html">
@@ -30,7 +33,9 @@
             </div>
 
             <div class="header-right" style="display: flex; flex-direction: row">
-                <a class="basketlink" href="basket.html"> <img class="basket" style="margin-left: 10px; margin-right: 10px;" src="media/basket.png" alt="basket"></a>
+                <a class="basketlink" href="basket.html"> <img class="basket"
+                                                               style="margin-left: 10px; margin-right: 10px;"
+                                                               src="media/basket.png" alt="basket"></a>
                 <p class="basketNumber" style="margin: 0">Basket: 4 items</p>
 
             </div>
@@ -63,33 +68,35 @@
 </nav>
 <main class="bodycontainer">
     <!-- This code block is a filter for the products. As I develop this website I will add more products and create a working filter that filters out products -->
-    <div class="bodycolumn" >
+    <div class="bodycolumn">
         <div class="bodyitemcolumn" style="padding: 0;">
             <h2 style="margin: 0">Filter</h2>
-            <div class="navcontainer" >
+            <div class="navcontainer">
                 <div class="nav">
                     <div class="navitem navbar allproductsbutton">
-                        <button style="flex-grow: 2" type="button" onclick="displayContent('all')">All Products</button>
-                    </div>
-                    <div class="navitem navbar gamedlcbutton">
-                        <button style="flex-grow: 2" type="button" onclick="displayContent('dlc')">Game DLC</button>
-                    </div>
-                    <div class="navitem navbar computerpartsbutton">
-                        <button style="flex-grow: 2" type="button" onclick="displayContent('computer')">Computer Parts</button>
-                    </div>
-                    <div class="navitem navbar prebuiltsbutton">
-                        <button style="flex-grow: 2" type="button" onclick="displayContent('prebuilt')">Prebuilts</button>
+                        <a href="#" onclick="displayContent('all')">All Products</a>
                     </div>
                     <div class="navitem navbar gamesbutton">
-                        <button style="flex-grow: 2" type="button" onclick="displayContent('games')">Games</button>
+                        <a href="#" onclick="displayContent('games')">Games</a>
+                    </div>
+                    <div class="navitem navbar computerpartsbutton">
+                        <a href="#" onclick="displayContent('computer')">Computer Parts</a>
+                    </div>
+                    <div class="navitem navbar gamedlcbutton">
+                        <a href="#" onclick="displayContent('prebuilts')">Prebuilts</a>
+                    </div>
+                    <div class="navitem navbar prebuiltsbutton">
+                        <a href="#" onclick="displayContent('consoles')">Consoles</a>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
     <!-- Div for encapsulating all the products -->
     <div class="bodyrow productcontainer" style="flex-direction: row; flex-wrap: wrap">
         <!-- The product has an image, a price and a brief overview. All products are currently added to the document by a script. -->
+
     </div>
 </main>
 
@@ -103,9 +110,12 @@
         </div>
         <div class="footeritem footertext">
             <p class="closep footerTitle"><u>Other links</u></p>
-            <a href="https://www.youtube.com/watch?v=fcZXfoB2f70" target="_blank"><p class="closep">Random Youtube Video</p></a>
-            <a href="https://www.rd.com/wp-content/uploads/2019/01/shutterstock_673465372.jpg?fit=700,467" target="_blank"><p class="closep">Image of a cute cat</p></a>
-            <a href="https://open.spotify.com/playlist/48F3Mkwelt0aepdluNBPUy?si=0c401048ebd3495e" target="_blank"><p class="closep">my mixtape (spotify)</p></a>
+            <a href="https://www.youtube.com/watch?v=fcZXfoB2f70" target="_blank"><p class="closep">Random Youtube
+                Video</p></a>
+            <a href="https://www.rd.com/wp-content/uploads/2019/01/shutterstock_673465372.jpg?fit=700,467"
+               target="_blank"><p class="closep">Image of a cute cat</p></a>
+            <a href="https://open.spotify.com/playlist/48F3Mkwelt0aepdluNBPUy?si=0c401048ebd3495e" target="_blank"><p
+                    class="closep">my mixtape (spotify)</p></a>
         </div>
         <div class="footeritem footertext">
             <p class="closep footerTitle"><u>Game related links</u></p>

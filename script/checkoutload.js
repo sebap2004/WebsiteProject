@@ -38,6 +38,11 @@ function displayContent(tag) {
     total.textContent = "$"+totalValue;
     console.log(totalValue);
     console.log(subtotalvalue);
+    let basketAmount = document.querySelector(".summaryamount");
+    if (Basket === []) {
+        basketAmount.textContent = "Basket Summary (0 Items)";
+        return;
+    }
     basketAmount.textContent = "Basket Summary (" + Basket.length + " Items)";
 }
 
