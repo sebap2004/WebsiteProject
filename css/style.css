@@ -715,7 +715,7 @@ font-size: 1.4vw;
 
 .homeSlideshow
 {
-    flex-basis: auto;
+    flex-basis: 150vw;
 }
 
 /* Slidehow CSS TODO REFERENCE W3 SCHOOLS FOR SLIDESHOW CODE */
