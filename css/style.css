@@ -667,7 +667,7 @@ font-size: 1.4vw;
     flex-direction: column;
 }
 .aboutHalf{
-    width: 50vw;
+    width: 45vw;
 }
 .basketimagesummary
 {
@@ -803,6 +803,11 @@ font-size: 1.4vw;
     to {opacity: 1}
 }
 
+.gameaside
+{
+    width: 20%;
+}
+
 /* MEDIA QUERIES */
 
 @media only screen and (max-width: 768px)
@@ -820,6 +825,11 @@ font-size: 1.4vw;
         font-size: calc(13px + (18 - 16) * ((100vw - 320px) / (768 - 320)));
         line-height: normal;
     }
+    #game
+    {
+        display: none;
+    }
+
     p{
         line-height: normal;
     }
