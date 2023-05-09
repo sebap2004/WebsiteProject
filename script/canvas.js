@@ -2,37 +2,39 @@
 const canvas = document.getElementById('animationCanvas');
 const context = canvas.getContext('2d');
 
-const min = -5;
-const max = 5;
-const circleRadius = 10;
-const lineWidth = 8;
+const min = -2;
+const max = 2;
+const squareRadius = 10;
+const lineWidth = 0;
 
-const firstLinesColor = "#bd3baf";
-const firstCirclesColor = "#8f0686";
-const firstFillColor = "#d651cd";
+const firstLinesColor = "#A32CC4";
+const firstSquareColor = "#6B1A92";
+const firstFillColorStart = "#A32CC4";
+const firstFillColorEnd = "#D079FF";
 
-const secondLinesColor = "#C0FF4D";
-const secondCirclesColor = "#73A811";
-const secondFillColor = "#B0F531";
+const secondLinesColor = "#1ECFC6";
+const secondSquareColor = "#0E697A";
+const secondFillColorStart = "#1ECFC6";
+const secondFillColorEnd = "#66FFF8";
 
 // Set the initial position of the circle
-let x1 = Math.random() * (canvas.width - 2 * circleRadius) + circleRadius;
-let y1 = Math.random() * (canvas.height - 2 * circleRadius) + circleRadius;
+let x1 = Math.random() * (canvas.width - 2 * squareRadius) + squareRadius;
+let y1 = Math.random() * (canvas.height - 2 * squareRadius) + squareRadius;
 
-let x2 = Math.random() * (canvas.width - 2 * circleRadius) + circleRadius;
-let y2 = Math.random() * (canvas.height - 2 * circleRadius) + circleRadius;
+let x2 = Math.random() * (canvas.width - 2 * squareRadius) + squareRadius;
+let y2 = Math.random() * (canvas.height - 2 * squareRadius) + squareRadius;
 
-let x3 = Math.random() * (canvas.width - 2 * circleRadius) + circleRadius;
-let y3 = Math.random() * (canvas.height - 2 * circleRadius) + circleRadius;
+let x3 = Math.random() * (canvas.width - 2 * squareRadius) + squareRadius;
+let y3 = Math.random() * (canvas.height - 2 * squareRadius) + squareRadius;
 
-let x4 = Math.random() * (canvas.width - 2 * circleRadius) + circleRadius;
-let y4 = Math.random() * (canvas.height - 2 * circleRadius) + circleRadius;
+let x4 = Math.random() * (canvas.width - 2 * squareRadius) + squareRadius;
+let y4 = Math.random() * (canvas.height - 2 * squareRadius) + squareRadius;
 
-let x5 = Math.random() * (canvas.width - 2 * circleRadius) + circleRadius;
-let y5 = Math.random() * (canvas.height - 2 * circleRadius) + circleRadius;
+let x5 = Math.random() * (canvas.width - 2 * squareRadius) + squareRadius;
+let y5 = Math.random() * (canvas.height - 2 * squareRadius) + squareRadius;
 
-let x6 = Math.random() * (canvas.width - 2 * circleRadius) + circleRadius;
-let y6 = Math.random() * (canvas.height - 2 * circleRadius) + circleRadius;
+let x6 = Math.random() * (canvas.width - 2 * squareRadius) + squareRadius;
+let y6 = Math.random() * (canvas.height - 2 * squareRadius) + squareRadius;
 
 // Set the speed and direction of the circle
 let dx1 = Math.floor(Math.random() * (max - min + 1) + min);
@@ -53,105 +55,91 @@ function animate() {
     // First set of lines
     context.beginPath();
     context.strokeStyle = firstLinesColor;
-    context.fillStyle = firstFillColor; // set fill color
+
+    // Set up gradient fill for first shape
+    let gradient1 = context.createLinearGradient(x1, y1, x3, y3);
+    gradient1.addColorStop(0, firstFillColorStart);
+    gradient1.addColorStop(1, firstFillColorEnd);
+    context.fillStyle = gradient1;
+
     context.lineWidth = lineWidth;
     context.moveTo(x1, y1);
     context.lineTo(x2, y2);
-    context.lineTo(x3, y3); // add a line to close the shape
+    context.lineTo(x3, y3);
     context.closePath();
-    context.fill(); // fill the shape
+    context.fill();
     context.stroke();
+
+    // First set of squares
+    context.fillStyle = firstSquareColor;
+    context.fillRect(x1 - squareRadius, y1 - squareRadius, squareRadius * 2, squareRadius * 2);
+    context.fillRect(x2 - squareRadius, y2 - squareRadius, squareRadius * 2, squareRadius * 2);
+    context.fillRect(x3 - squareRadius, y3 - squareRadius, squareRadius * 2, squareRadius * 2);
 
 // Second set of lines
     context.beginPath();
     context.strokeStyle = secondLinesColor;
-    context.fillStyle = secondFillColor; // set fill color
+
+    // Set up gradient fill for second shape
+    let gradient2 = context.createLinearGradient(x4, y4, x6, y6);
+    gradient2.addColorStop(0, secondFillColorStart); // start color
+    gradient2.addColorStop(1, secondFillColorEnd); // end color
+    context.fillStyle = gradient2;
+
     context.lineWidth = lineWidth;
     context.moveTo(x4, y4);
     context.lineTo(x5, y5);
-    context.lineTo(x6, y6); // add a line to close the shape
+    context.lineTo(x6, y6);
     context.closePath();
-    context.fill(); // fill the shape
+    context.fill();
     context.stroke();
 
+    // Second set of squares
+    context.fillStyle = secondSquareColor;
+    context.fillRect(x4 - squareRadius, y4 - squareRadius, squareRadius * 2, squareRadius * 2);
+    context.fillRect(x5 - squareRadius, y5 - squareRadius, squareRadius * 2, squareRadius * 2);
+    context.fillRect(x6 - squareRadius, y6 - squareRadius, squareRadius * 2, squareRadius * 2);
 
-    // First set of circles
-    context.beginPath();
-    context.arc(x1, y1, circleRadius, 0, 2 * Math.PI);
-    context.fillStyle = firstCirclesColor;
-    context.fill();
-    context.closePath();
-
-    context.beginPath();
-    context.arc(x2, y2, circleRadius, 0, 2 * Math.PI);
-    context.fillStyle = firstCirclesColor;
-    context.fill();
-    context.closePath();
-
-    context.beginPath();
-    context.arc(x3, y3, circleRadius, 0, 2 * Math.PI);
-    context.fillStyle = firstCirclesColor;
-    context.fill();
-    context.closePath();
-
-    // Second set of circles
-    context.beginPath();
-    context.arc(x4, y4, circleRadius, 0, 2 * Math.PI);
-    context.fillStyle = secondCirclesColor;
-    context.fill();
-    context.closePath();
-
-    context.beginPath();
-    context.arc(x5, y5, circleRadius, 0, 2 * Math.PI);
-    context.fillStyle = secondCirclesColor;
-    context.fill();
-    context.closePath();
-
-    context.beginPath();
-    context.arc(x6, y6, circleRadius, 0, 2 * Math.PI);
-    context.fillStyle = secondCirclesColor;
-    context.fill();
-    context.closePath();
 
     // Check if the first set of lines has hit the edge of the canvas
-    if (x1 + dx1 > canvas.width - circleRadius || x1 + dx1 < circleRadius) {
+    if (x1 + dx1 > canvas.width - squareRadius || x1 + dx1 < squareRadius) {
         dx1 = -dx1;
     }
-    if (y1 + dy1 > canvas.height - circleRadius || y1 + dy1 < circleRadius) {
+    if (y1 + dy1 > canvas.height - squareRadius || y1 + dy1 < squareRadius) {
         dy1 = -dy1;
     }
 
-    if (x2 + dx2 > canvas.width - circleRadius || x2 + dx2 < circleRadius) {
+    if (x2 + dx2 > canvas.width - squareRadius || x2 + dx2 < squareRadius) {
         dx2 = -dx2;
     }
-    if (y2 + dy2 > canvas.height - circleRadius || y2 + dy2 < circleRadius) {
+    if (y2 + dy2 > canvas.height - squareRadius || y2 + dy2 < squareRadius) {
         dy2 = -dy2;
     }
 
-    if (x3 + dx3 > canvas.width - circleRadius || x3 + dx3 < circleRadius) {
+    if (x3 + dx3 > canvas.width - squareRadius || x3 + dx3 < squareRadius) {
         dx3 = -dx3;
     }
-    if (y3 + dy3 > canvas.height - circleRadius || y3 + dy3 < circleRadius) {
+    if (y3 + dy3 > canvas.height - squareRadius || y3 + dy3 < squareRadius) {
         dy3 = -dy3;
     }
-    if (x4 + dx4 > canvas.width - circleRadius || x4 + dx4 < circleRadius) {
+    if (x4 + dx4 > canvas.width - squareRadius || x4 + dx4 < squareRadius) {
         dx4 = -dx4;
     }
-    if (y4 + dy4 > canvas.height - circleRadius || y4 + dy4 < circleRadius) {
+    if (y4 + dy4 > canvas.height - squareRadius || y4 + dy4 < squareRadius) {
         dy4 = -dy4;
     }
 
-    if (x5 + dx5 > canvas.width - circleRadius || x5 + dx5 < circleRadius) {
+    if (x5 + dx5 > canvas.width - squareRadius || x5 + dx5 < squareRadius) {
         dx5 = -dx5;
     }
-    if (y5 + dy5 > canvas.height - circleRadius || y5 + dy5 < circleRadius) {
+    if (y5 + dy5 > canvas.height - squareRadius || y5 + dy5 < squareRadius) {
         dy5 = -dy5;
     }
 
-    if (x6 + dx6 > canvas.width - circleRadius || x6 + dx6 < circleRadius) {
+    if (x6 + dx6 > canvas.width - squareRadius || x6 + dx6 < squareRadius) {
         dx6 = -dx6;
     }
-    if (y6 + dy6 > canvas.height - circleRadius || y6 + dy6 < circleRadius) {
+    if (y6 + dy6 > canvas.height - squareRadius || y6 + dy6 < squareRadius) {
         dy6 = -dy6;
     }
 
