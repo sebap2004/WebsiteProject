@@ -4,7 +4,10 @@ let basket;
 try { basket = JSON.parse(getBasket); }
 catch (error) {
     basket = [];
+    console.log("plonker");
 }
+
+
 
 function displayContent() {
     let productGrid = document.querySelector(".baskets");
@@ -17,11 +20,11 @@ function displayContent() {
         productGrid.removeChild(productGrid.firstChild);
     }
 
-    if (basket.length === 0 || basket.length === null)
+    if (basket === null || basket.length === 0)
     {
+        amountText.textContent = "0 items";
         let noitems = document.createElement("h3");
         noitems.textContent = "No items in basket";
-        console.log("no items in le basket");
         return;
     }
 
@@ -38,7 +41,17 @@ function displayContent() {
     total.textContent = "$"+totalValue;
     console.log(totalValue);
     console.log(subtotalvalue);
-    amountText.textContent= basket.length + " Items";
+
+    if (basket !== null)
+    {
+        if (basket.length === 0) {
+            amountText.textContent = "0 items";
+            console.log("basket is null");
+            return;
+        }
+        amountText.textContent= basket.length + " Items";
+        console.log("basket is not null");
+    }
 }
 
 function createBasketItemElement(product, index) {
@@ -72,10 +85,20 @@ function createBasketItemElement(product, index) {
     removeLink.textContent = "Remove from basket";
     removeLink.addEventListener('click', function(event) {
         event.preventDefault();
+        if (basket.length <= 1)
+        {
+            basket = null;
+            console.log(basket);
+            localStorage.removeItem("basket");
+            UpdateBasketNumberText();
+            displayContent()
+            return;
+        }
         basket.splice(index, 1);
         localStorage.setItem("basket", JSON.stringify(basket));
-        displayContent("all");
+        displayContent();
         UpdateBasketNumberText();
+        console.log(basket);
     });
     titleContainer.appendChild(removeLink);
 
@@ -94,7 +117,7 @@ function createBasketItemElement(product, index) {
 
 function clearbasket()
 {
-    basket = [];
+    basket = null;
     localStorage.removeItem("basket");
     console.log("basket cleared");
     UpdateBasketNumberText();

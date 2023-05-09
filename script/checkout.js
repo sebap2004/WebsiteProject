@@ -26,7 +26,16 @@ formSubmitButton.addEventListener('click', function(event) {
     const securitynumberRegex = /^[0-9]{3}$/;
     const expiryDateRegex = /^(0[1-9]|1[0-2])\/\d{2}$/;
 
-    if (basketload === null || basketload.length < 1)
+    if (basketload === null)
+    {
+        messageText.innerText = "Basket is empty.";
+        messageText.classList.remove("checkoutHidden");
+        messageText.classList.add("checkoutError");
+        messageText.classList.remove("checkoutSuccess");
+        return;
+    }
+
+    if (basketload.length === 0)
     {
         messageText.innerText = "Basket is empty.";
         messageText.classList.remove("checkoutHidden");
@@ -164,7 +173,8 @@ function displayContent() {
     console.log(totalValue);
     console.log(subtotalvalue);
     let basketAmount = document.querySelector("#itemamount");
-    if (CheckoutBasket === []) {
+    console.log(basketAmount);
+    if (CheckoutBasket === [] || CheckoutBasket === null) {
         basketAmount.textContent = "Basket Summary (0 Items)";
         return;
     }
