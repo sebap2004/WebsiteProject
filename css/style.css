@@ -62,47 +62,6 @@ p
     line-height: 1vw;
 }
 
-.lightMode1 {
-    --gradientTop: #f44336;
-    --gradientBottom: #673ab7;
-    --fontColor: #8bc34a;
-    --blockquote: #ff5722;
-    --buttonBackground: #4caf50;
-    --buttonText: #e91e63;
-    --buttonBorder: #ffeb3b;
-    --buttonBackgroundHover: #f44336;
-    --buttonTextHover: #8bc34a;
-    --buttonBackgroundActive: #673ab7;
-    --buttonTextActive: #ff5722;
-
-    --inputColor: #ffeb3b;
-    --inputBackground: #2196f3;
-    --inputBorder: #9c27b0;
-
-    --footerBackground: #00bcd4;
-    --footerTitle: #ff5722;
-    --footerText: #607d8b;
-    --footerTextHover: #ffeb3b;
-    --footerTextActive: #9c27b0;
-
-    --gameWindowBorder: #8bc34a;
-    --gameWindowActive: #f44336;
-
-    --productText: #9e9e9e;
-    --productTextHover: #2196f3;
-    --productTextActive: #ff5722;
-    --productSelected: #4caf50;
-
-    --basketBorder: #673ab7;
-    --removeText: #ffeb3b;
-    --removeTextHover: #f44336;
-    --removeTextActive: #8bc34a;
-    --costBorder: #9c27b0;
-    --costBackground: #607d8b;
-}
-
-
-
 .lightMode {
     /* COLOR SCHEME */
     /* Core elements */
