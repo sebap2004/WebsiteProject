@@ -41,6 +41,7 @@
     --costBackground: #580d75;
     /* END OF COLOR SCHEME */
 }
+
 @font-face {
     font-family: pixelFont;
     src:url(../font/04B03.ttf)
