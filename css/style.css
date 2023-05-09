@@ -831,6 +831,7 @@ font-size: 1.4vw;
         font-size: calc(13px + (18 - 16) * ((100vw - 320px) / (768 - 320)));
         line-height: normal;
     }
+    /* Removes the game from mobile devices */
     #game
     {
         display: none;

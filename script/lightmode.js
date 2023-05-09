@@ -28,17 +28,19 @@ function loadLightMode()
     let icon;
     let isOn = 0;
     const element = document.body;
+    if (lightmode === null)
+    {
+        console.log("light mode token is null, light mode is off")
+        icon = "../media/sun.png";
+        element.classList.remove("lightMode");
+    }
     if (lightmode === "1") {
-        isOn=1;
         console.log("Loaded light mode: Light mode is on");
         icon = "../media/moon.png";
         element.classList.add("lightMode");
     }
     else {
-        isOn = 0;
-        console.log("Loaded light mode: Light mode is off");
-        icon = "../media/sun.png";
-        element.classList.remove("lightMode");
+
     }
     document.getElementById("darkmodeicon").src=icon;
 }
