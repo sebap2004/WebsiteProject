@@ -305,7 +305,8 @@ width: 47%;
     width: 100%;
     padding: 0px 0px;
     margin: 10px;
-}.homeitemvertical
+}
+.homeitemvertical
  {
      display: flex;
      align-content: center;
@@ -322,7 +323,7 @@ width: 47%;
      justify-content: center;
      align-content: space-around;
      flex-direction: column;
-     flex-wrap: nowrap;
+     flex-wrap: wrap;
      padding: 20px;
      margin: auto;
  }
