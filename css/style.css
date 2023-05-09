@@ -62,49 +62,90 @@ p
     line-height: 1vw;
 }
 
-.lightMode
-{
+.lightMode1 {
+    --gradientTop: #f44336;
+    --gradientBottom: #673ab7;
+    --fontColor: #8bc34a;
+    --blockquote: #ff5722;
+    --buttonBackground: #4caf50;
+    --buttonText: #e91e63;
+    --buttonBorder: #ffeb3b;
+    --buttonBackgroundHover: #f44336;
+    --buttonTextHover: #8bc34a;
+    --buttonBackgroundActive: #673ab7;
+    --buttonTextActive: #ff5722;
+
+    --inputColor: #ffeb3b;
+    --inputBackground: #2196f3;
+    --inputBorder: #9c27b0;
+
+    --footerBackground: #00bcd4;
+    --footerTitle: #ff5722;
+    --footerText: #607d8b;
+    --footerTextHover: #ffeb3b;
+    --footerTextActive: #9c27b0;
+
+    --gameWindowBorder: #8bc34a;
+    --gameWindowActive: #f44336;
+
+    --productText: #9e9e9e;
+    --productTextHover: #2196f3;
+    --productTextActive: #ff5722;
+    --productSelected: #4caf50;
+
+    --basketBorder: #673ab7;
+    --removeText: #ffeb3b;
+    --removeTextHover: #f44336;
+    --removeTextActive: #8bc34a;
+    --costBorder: #9c27b0;
+    --costBackground: #607d8b;
+}
+
+
+
+.lightMode {
     /* COLOR SCHEME */
     /* Core elements */
-    --gradientTop: #f6c2ff;
-    --gradientBottom: #bf7dda;
-    --fontColor: #000000;
-    --blockquote: #9600BF;
+    --gradientTop: #d6a0ff;
+    --gradientBottom: #9165d9;
+    --fontColor: #2d2d2d;
+    --blockquote: #7c37ad;
     /* Navbar and Button Elements */
-    --buttonBackground: #9e56ce;
+    --buttonBackground: #9165d9;
     --buttonText: white;
-    --buttonBorder: #d8adff;
-    --buttonBackgroundHover: white;
-    --buttonTextHover: black;
+    --buttonBorder: #b794ff;
+    --buttonBackgroundHover: #b794ff;
+    --buttonTextHover: white;
     --buttonBackgroundActive: #3f0b64;
     --buttonTextActive: white;
     /* Input Elements */
-    --inputColor: white;
-    --inputBackground: #a161d9;
-    --inputBorder: #5527cb;
+    --inputColor: #2d2d2d;
+    --inputBackground: #e2d1ff;
+    --inputBorder: #9165d9;
     /* Footer Elements */
-    --footerBackground: #8b6caf;
-    --footerTitle: #863ce3;
-    --footerText: #413373;
+    --footerBackground: #b794ff;
+    --footerTitle: #7c37ad;
+    --footerText: #2d2d2d;
     --footerTextHover: white;
-    --footerTextActive: black;
+    --footerTextActive: #9165d9;
     /* Game Window Elements */
-    --gameWindowBorder: #600BA8;
-    --gameWindowActive: #d2e70f;
+    --gameWindowBorder: #7c37ad;
+    --gameWindowActive: #d6a0ff;
     /* Product Elements */
-    --productText: #bb7aea;
+    --productText: #7c37ad;
     --productTextHover: white;
-    --productTextActive: black;
-    --productSelected: #3f0b64;
+    --productTextActive: #2d2d2d;
+    --productSelected: #b794ff;
     /* Basket Elements */
-    --basketBorder: #b37ee5;
-    --removeText: #bb7aea;
+    --basketBorder: #b794ff;
+    --removeText: #7c37ad;
     --removeTextHover: white;
-    --removeTextActive: black;
-    --costBorder: #bb7aea;
-    --costBackground: #bc6fe1;
+    --removeTextActive: #2d2d2d;
+    --costBorder: #7c37ad;
+    --costBackground: #9165d9;
     /* END OF COLOR SCHEME */
 }
+
 .textshadow
 {
     color: white;
