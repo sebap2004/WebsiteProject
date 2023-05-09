@@ -830,7 +830,10 @@ font-size: 1.4vw;
     {
         display: none;
     }
-
+    .cost
+    {
+        width: 60%;
+    }
     p{
         line-height: normal;
     }
