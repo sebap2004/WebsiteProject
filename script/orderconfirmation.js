@@ -1,21 +1,17 @@
-let Basket;
-
-    const basketload = localStorage.getItem("basket");
-if (basketload === null)
+let OrderCheckoutBasket;
+const orderbasketload = localStorage.getItem("basket");
+if (orderbasketload === null)
 {
     console.log("Created new empty basket");
-    Basket = [];
+    OrderCheckoutBasket = [];
 }
 else
 {
     console.log("Basket detected");
-    Basket = JSON.parse(basketload);
-    console.log(Basket);
+    OrderCheckoutBasket = JSON.parse(orderbasketload);
+    console.log(OrderCheckoutBasket);
 }
-
-
-
-function displayContent(tag) {
+function displayContent() {
     let productGrid = document.querySelector(".basketsummary");
     const subtotal = document.querySelector(".subtotal");
     const total = document.querySelector(".total");
@@ -24,9 +20,14 @@ function displayContent(tag) {
     while (productGrid.firstChild) {
         productGrid.removeChild(productGrid.firstChild);
     }
+    let Summarytitle = document.createElement("h3");
+    Summarytitle.textContent = "You purchased:";
+    Summarytitle.style = 'margin-top: 0';
+    productGrid.appendChild(Summarytitle);
 
-    for (let i = 0; i < Basket.length; i++) {
-        let product = Basket[i];
+
+    for (let i = 0; i < OrderCheckoutBasket.length; i++) {
+        let product = OrderCheckoutBasket[i];
         console.log(product.price);
         subtotalvalue += product.price;
         let productElement = createBasketItemSummaryElement(product);
@@ -36,14 +37,12 @@ function displayContent(tag) {
     subtotal.textContent = "$"+subtotalvalue.toFixed(2);
     let totalValue = (subtotalvalue + 5).toFixed(2);
     total.textContent = "$"+totalValue;
-    console.log(totalValue);
-    console.log(subtotalvalue);
-    let basketAmount = document.querySelector(".summaryamount");
-    if (Basket === []) {
+    let basketAmount = document.querySelector("#itemamount");
+    if (OrderCheckoutBasket === []) {
         basketAmount.textContent = "Basket Summary (0 Items)";
         return;
     }
-    basketAmount.textContent = "Basket Summary (" + Basket.length + " Items)";
+    basketAmount.textContent = "Your " + OrderCheckoutBasket.length + " items will be arriving shortly.";
 }
 
 
@@ -72,11 +71,7 @@ function createBasketItemSummaryElement(product) {
     priceElement.textContent = "$" + product.price.toFixed(2);
     priceQtyElement.appendChild(priceElement);
 
-    const qtyElement = document.createElement("p");
-    qtyElement.textContent = "QTY: 1";
-    priceQtyElement.appendChild(qtyElement);
-
     return itemSummaryElement;
 }
 
-window.addEventListener("load", displayContent("all"))
+window.addEventListener("load", displayContent())

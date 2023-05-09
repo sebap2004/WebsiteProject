@@ -4,15 +4,23 @@ var products = [
         name: "Ryzen 7 2700",
         price: 277.43,
         tags: ["computer"],
-        url: "ExampleProductPage.html",
-        image: "media/products/ryzen72700.jpg",
+        url: "DynamicProductPage.html",
+        image: "media/products/ryzen72700/1.jpg",
         description: "The Ryzen 7 2700X has the highest multiprocessing performance you can get on a mainstream desktop PC"
+    },
+    {
+        name: "Xbox Wireless Controller",
+        price: 49.99,
+        tags: ["consoles"],
+        url: "InteractiveProductPage.html",
+        image: "media/products/xboxcontroller/black1.jpg",
+        description: "Award-winning performance and optimized technology. For gamers. For creators. For everyone"
     },
     {
         name: "Ryzen 5 3600XT",
         price: 341.54,
         tags: ["computer"],
-        url: "ExampleProductPage.html",
+        url: "DynamicProductPage.html",
         image: "media/products/Ryzen53600XT.jpg",
         description: "Award-winning performance and optimized technology. For gamers. For creators. For everyone"
     },
@@ -20,7 +28,7 @@ var products = [
         name: "Ryzen 9 7900X",
         price: 999.99,
         tags: ["computer"],
-        url: "ExampleProductPage.html",
+        url: "DynamicProductPage.html",
         image: "media/products/Ryzen97900X.jpg",
         description: "Top of the line performance. Also slightly overpriced but it's whatever"
     },
@@ -28,7 +36,7 @@ var products = [
         name: "AMD Radeon RX 6700 XT",
         price: 699.99,
         tags: ["computer"],
-        url: "ExampleProductPage.html",
+        url: "DynamicProductPage.html",
         image: "https://m.media-amazon.com/images/I/81ye21szIDL._AC_SL1500_.jpg",
         description: "Elevate your gaming experience with AMD Radeon RX 6700 XT graphics card"
     },
@@ -36,7 +44,7 @@ var products = [
         name: "AMD Ryzen 9 5950X",
         price: 1199.99,
         tags: ["computer"],
-        url: "ExampleProductPage.html",
+        url: "DynamicProductPage.html",
         image: "https://m.media-amazon.com/images/I/616VM20+AzL._AC_SL1384_.jpg",
         description: "The world's best desktop processor for gaming, content creation, and productivity"
     },
@@ -44,7 +52,7 @@ var products = [
         name: "AMD A10-9700",
         price: 79.99,
         tags: ["computer"],
-        url: "ExampleProductPage.html",
+        url: "DynamicProductPage.html",
         image: "https://m.media-amazon.com/images/I/514sZGy7NpL._AC_.jpg",
         description: "Get impressive computing and graphics performance without breaking the bank with AMD A10-9700 APU"
     },
@@ -85,7 +93,7 @@ var products = [
     {
         name: "The Last of Us Part II",
         price: 59.99,
-        tags: ["playstation", "games"],
+        tags: ["games"],
         url: "https://www.thelastofus.playstation.com/",
         image: "https://m.media-amazon.com/images/I/81OFTUvFX4L._AC_SL1500_.jpg",
         description: "Join Ellie on a journey of revenge in The Last of Us Part II. With stunning graphics, intense gameplay, and a gripping storyline, this game is a must-play for any PlayStation gamer.",
@@ -93,7 +101,7 @@ var products = [
     {
         name: "Hades",
         price: 24.99,
-        tags: ["computer", "games"],
+        tags: ["games"],
         url: "https://www.supergiantgames.com/games/hades/",
         image: "https://m.media-amazon.com/images/I/81yeI3PjF5L._AC_SL1500_.jpg",
         description: "Embark on a journey through the underworld in Hades. With its fast-paced action and beautifully rendered graphics, this game is a must-play for any fan of the roguelike genre.",
@@ -127,21 +135,24 @@ var products = [
 
 ]
 
-let Basket;
-
-    const basketload = localStorage.getItem("basket");
-if (basketload === null)
+let ProductBasket;
+console.log()
+const productBasketLoad = localStorage.getItem("basket");
+if (productBasketLoad === null)
 {
     console.log("Created new empty basket");
-    Basket = [];
+    ProductBasket = [];
 }
 else
 {
-    console.log("Basket detected");
-    Basket = JSON.parse(basketload);
-    console.log(Basket);
+    try {
+        ProductBasket = JSON.parse(productBasketLoad);
+        console.log("Basket detected");
+    } catch (error) {
+        console.log("Created new empty basket from error");
+        ProductBasket = [];
+    }
 }
-
 
 
 function displayContent(tag) {
@@ -166,6 +177,7 @@ function displayContent(tag) {
             }
         }
     }
+    console.log("Loaded with " + tag + " tag");
 }
 
 
@@ -175,6 +187,7 @@ function createProductElement(product) {
 
     let imageElement = document.createElement("embed");
     imageElement.setAttribute("src", product.image);
+    imageElement.setAttribute("href", product.url);
     imageElement.classList.add("productimage");
     productElement.appendChild(imageElement);
 
@@ -209,17 +222,13 @@ function createProductElement(product) {
     return productElement;
 }
 
-
 function addTobasket(product)
 {
-    Basket.push(product);
-    console.log(Basket);
-    const basketString = JSON.stringify(Basket);
+    ProductBasket.push(product);
+    const basketString = JSON.stringify(ProductBasket);
     localStorage.setItem("basket", basketString);
-    console.log(basketString);
     UpdateBasketNumberText();
 }
-
 
 window.addEventListener("load", displayContent("all"))
 

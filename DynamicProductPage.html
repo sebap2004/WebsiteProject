@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en-GB" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <!-- Header includes title for the page, meta content for embeds on other websites, and links to an external stylesheet. -->
+    <title>Example Product Page</title>
+    <link rel="shortcut icon" type="image/x-icon" href="logo.ico" />
+    <meta content="Long Shot" property="og:title" />
+    <meta content="Home Page for Long Shot Website" property="og:description" />
+    <meta content="https://longshotgame.netlify.app/index.html" property="og:url" />
+    <meta content="https://cdn.discordapp.com/attachments/765315376203431939/1031347393456787486/title.png" property="og:image" />
+    <meta content="#7315d6" data-react-helmet="true" name="theme-color" />
+    <link href="css/style.css" rel="stylesheet">
+    <script src="script/lightmode.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="script/basketnumber.js" defer></script>
+    <script src="script/productImageChange.js" defer></script>
+</head>
+<body>
+
+<header class="header-container">
+    <!-- Header container includes the logo in the center, a basket icon which links to the checkout page on the right, and a button to toggle light mode on the left. -->
+    <div class="header">
+
+        <div class="header">
+            <div class="header-item header-left">
+                <button class="headerbutton" onclick="toggleLightMode()"><span><img alt="moon" class="buttonicon" id="darkmodeicon" src="media/sun.png"></span></button>
+            </div>
+            <div class="header-center">
+                <a href="index.html">
+                    <img class="headerLogo" alt="Title Logo" src="media/titleLarge.png">
+                </a>
+            </div>
+
+            <div class="header-right" style="display: flex; flex-direction: row">
+                <a class="basketlink" href="basket.html"> <img class="basket" style="margin-left: 10px; margin-right: 10px;" src="media/basket.png" alt="basket"></a>
+                <p class="basketNumber" style="margin: 0">Basket: 0 items</p>
+
+            </div>
+
+        </div>
+
+    </div>
+</header>
+<nav class="navcontainer">
+    <!-- Navigation bar contains buttons to all pages, apart from the checkout page. -->
+    <div class="nav">
+        <div class="navitem navbar">
+            <a style="flex-grow: 2" href="index.html">Home</a>
+        </div>
+        <div class="navitem navbar">
+            <a style="flex-grow: 2" href="game.html">Game</a>
+        </div>
+        <div class="navitem navbar">
+            <a style="flex-grow: 2" href="products.html">Products</a>
+        </div>
+        <div class="navitem navbar">
+            <a style="flex-grow: 2" href="about.html">About</a>
+        </div>
+        <div class="navitem navbar">
+            <a style="flex-grow: 2" href="contact.html">Contact</a>
+        </div>
+        <div class="navitem navbar">
+            <a style="flex-grow: 2" href="bugreports.html">Bug Reports</a>
+        </div>
+    </div>
+</nav>
+<br>
+
+<main class="bodycontainer">
+    <div class="bodyrow">
+        <aside class="bodyitemcolumn" style="width:50%; flex-wrap: wrap; align-content: center">
+            <div class="galleryimage">
+                <div class="galleryImageContainer">
+                    <embed id="current-image" src="media/products/ryzen72700/1.jpg">
+                </div>
+            </div>
+            <div id="thumbnails">
+                <img class="thumbnail" src="media/products/ryzen72700/1.jpg" alt="">
+                <img class="thumbnail" src="media/products/ryzen72700/2.jpg" alt="">
+                <img class="thumbnail" src="media/products/ryzen72700/3.jpg" alt="">
+                <img class="thumbnail" src="media/products/ryzen72700/4.jpg" alt="">
+            </div>
+        </aside>
+        <section class="bodyitemcolumn" style="width: 50%">
+            <h1>Ryzen 7 2700</h1>
+            <p><span class="symbol"><sup>$</sup></span><span class="price">279</span><span class="pricefraction"><sup>99</sup></span></p>
+            <!-- Icon span classes which represent the rating of the product. Ideally would be active in the future when  -->
+            <div class="ratingbox">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <p class="ratingtext">4.8 (51,479 ratings)</p>
+            </div>
+            <button onclick="alert('Item added to cart')" style="width:20%; height: 50px;">Add to cart</button>
+            <!-- Summarising text of the product, including specifications of the device. -->
+            <ul>
+                <li>The Ryzen 7 2700X has the highest multiprocessing performance you can get on a mainstream desktop PC</li>
+                <li>Frequency: Base Clock Speed 3.7 GHz, 4.3 GHz Max Boost</li>
+                <li>Includes Wraith Prism Cooler with LED</li>
+                <li>20MB of Combined Cache</li>
+                <li>Socket AM4 Motherboard Required</li>
+                <li>Built for gamers, creators, and PC enthusiasts</li>
+                <li>Featuring True Machine Intelligence to optimize responsiveness every millisecond</li>
+                <li>Max Temperature is 85 degree Celsius. Thermal Solution (PIB) Wraith Prism with RGB Light Emitting Diode</li>
+            </ul>
+            <!-- Long description, to be replaced with real text. -->
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquid amet aperiam architecto atque autem culpa cum dignissimos dolor dolore earum est et fugiat iusto laborum minima nam numquam, officia pariatur quaerat quam quas quasi, ratione repellat sit ut voluptates! Amet minima rerum sint soluta suscipit veniam. Aliquam asperiores consectetur dolorem, facere quis tempora voluptates! Aut blanditiis delectus deserunt, dicta doloremque, doloribus ducimus eius explicabo facere ipsum iure laborum nemo non officia quam quia quibusdam quidem repellat. Accusantium amet dolore dolorum eius incidunt nam nostrum quam soluta unde ut. Alias animi deserunt eaque est eum incidunt inventore libero odit quae quasi, qui ratione sit vero? Dicta dolorum eligendi esse incidunt minus obcaecati officia tempora. Ad commodi cupiditate eos error eveniet odio quidem saepe sit. Animi atque consequuntur corporis delectus eligendi error expedita illo illum ipsum iusto labore, laborum magnam minus molestiae mollitia necessitatibus neque nihil nobis non perferendis quae quo recusandae saepe, sit, soluta totam vero voluptate. A consequatur cupiditate eius eligendi expedita, harum, itaque, libero omnis porro praesentium quasi quod repellendus similique velit veritatis! Accusamus adipisci amet animi consectetur dicta doloremque, dolorum eos esse est id incidunt iusto laudantium maiores modi molestiae molestias necessitatibus obcaecati officia quaerat quas rerum.
+            </p>
+        </section>
+    </div>
+</main>
+
+<footer class="footercontainer">
+    <!-- Footer container contains extra external links for the user to click on if interested. -->
+    <div class="footer">
+        <div class="footeritem footertext">
+            <p class="closep footerTitle"><u>Social media links</u></p>
+            <a href="https://www.instagram.com/" target="_blank"><p class="closep">Instagram</p></a>
+            <a href="https://twitter.com/home" target="_blank"><p class="closep">Twitter</p></a>
+            <a href="https://www.youtube.com/" target="_blank"><p class="closep">Youtube</p></a>
+        </div>
+        <div class="footeritem footertext">
+            <p class="closep footerTitle"><u>Other links</u></p>
+            <a href="https://www.youtube.com/watch?v=fcZXfoB2f70" target="_blank"><p class="closep">Random Youtube Video</p></a>
+            <a href="https://www.rd.com/wp-content/uploads/2019/01/shutterstock_673465372.jpg?fit=700,467" target="_blank"><p class="closep">Image of a cute cat</p></a>
+            <a href="https://open.spotify.com/playlist/48F3Mkwelt0aepdluNBPUy?si=0c401048ebd3495e" target="_blank"><p class="closep">my mixtape (spotify)</p></a>
+        </div>
+        <div class="footeritem footertext">
+            <p class="closep footerTitle"><u>Game related links</u></p>
+            <a href="https://shebbgames.itch.io/long-shot" target="_blank"><p class="closep">itch.io page</p></a>
+            <a href="https://shebbgames.itch.io/long-shot/devlog/" target="_blank"><p class="closep">Devlog</p></a>
+        </div>
+    </div>
+</footer>
+
+
+</body>
+</html>

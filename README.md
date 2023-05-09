@@ -85,7 +85,7 @@ Word limit: 1500 words (Flexible)
     2. Price
     3. Add to cart button
         1. Does not need to be functional
-        2. Can be left as a static site
+        2. Can be left as a  site
 20. Product page must be well structured and include...
     1. Product Image
     2. Product Variations

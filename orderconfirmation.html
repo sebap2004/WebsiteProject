@@ -12,6 +12,7 @@
     <link href="css/style.css" rel="stylesheet">
     <script src="script/lightmode.js" defer></script>
     <script src="script/basketnumber.js" defer></script>
+    <script src="script/orderconfirmation.js" defer></script>
 </head>
 <body>
 
@@ -31,7 +32,7 @@
 
             <div class="header-right" style="display: flex; flex-direction: row">
                 <a class="basketlink" href="basket.html"> <img class="basket" style="margin-left: 10px; margin-right: 10px;" src="media/basket.png" alt="basket"></a>
-                <p class="basketNumber" style="margin: 0">Basket: 4 items</p>
+                <p class="basketNumber" style="margin: 0">Basket: 0 items</p>
 
             </div>
 
@@ -65,7 +66,23 @@
 <br>
 <main class="bodycontainer">
     <div class="bodycolumn">
-        Order placed, thank you!
+        <h1>Your order has been placed. Thank you!</h1>
+        <h3 id="itemamount">Your 0 items will be arriving shortly.</h3>
+    </div>
+    <br>
+    <div class="bodyrow" style="justify-content: space-evenly">
+        <div style="width: 25%">
+            <div class="cost" style="width: 100%">
+                <h2 class="compacth2">Costs</h2>
+                <p class="closep">Subtotal: <span class="subtotal" style="float: right">$0</span></p>
+                <p class="closep">Delivery cost: <span style="float: right">$5.00</span></p>
+                <br><br><hr style="height:2px;border-width:0;color:#b37ee5;background-color:#b37ee5">
+                <p class="closep"> Total <span class="total" style="float: right">$0</span></p>
+            </div>
+        </div>
+        <div class="basketsummary" style="width: 70%">
+
+        </div>
     </div>
 </main>
 

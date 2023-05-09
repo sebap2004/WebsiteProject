@@ -1,8 +1,12 @@
-const basketload = localStorage.getItem("basket");
-const basket = JSON.parse(basketload);
+const getBasket = localStorage.getItem("basket");
+let basket;
 
+try { basket = JSON.parse(getBasket); }
+catch (error) {
+    basket = [];
+}
 
-function displayContent(tag) {
+function displayContent() {
     let productGrid = document.querySelector(".baskets");
     const subtotal = document.querySelector(".subtotal");
     const total = document.querySelector(".total");
@@ -11,6 +15,14 @@ function displayContent(tag) {
 
     while (productGrid.firstChild) {
         productGrid.removeChild(productGrid.firstChild);
+    }
+
+    if (basket.length === 0 || basket.length === null)
+    {
+        let noitems = document.createElement("h3");
+        noitems.textContent = "No items in basket";
+        console.log("no items in le basket");
+        return;
     }
 
     for (let i = 0; i < basket.length; i++) {
@@ -28,7 +40,6 @@ function displayContent(tag) {
     console.log(subtotalvalue);
     amountText.textContent= basket.length + " Items";
 }
-
 
 function createBasketItemElement(product, index) {
     let basketItemElement = document.createElement("div");
@@ -81,9 +92,13 @@ function createBasketItemElement(product, index) {
     return basketItemElement;
 }
 
-
-
-
-
+function clearbasket()
+{
+    basket = [];
+    localStorage.removeItem("basket");
+    console.log("basket cleared");
+    UpdateBasketNumberText();
+    displayContent();
+}
 
 window.addEventListener("load", displayContent("all"))

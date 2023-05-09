@@ -31,6 +31,7 @@
     --productText: #bb7aea;
     --productTextHover: white;
     --productTextActive: black;
+    --productSelected: #bb7aea;
     /* Basket Elements */
     --basketBorder: #b37ee5;
     --removeText: #bb7aea;
@@ -94,6 +95,7 @@ p
     --productText: #bb7aea;
     --productTextHover: white;
     --productTextActive: black;
+    --productSelected: #3f0b64;
     /* Basket Elements */
     --basketBorder: #b37ee5;
     --removeText: #bb7aea;
@@ -130,20 +132,7 @@ img{
 .productimage {
     width: 300px; /* Set a fixed width for the container */
     height: 300px; /* Set a fixed height for the container */
-    display: flex; /* Use flexbox to center the embed element */
-    justify-content: center; /* Horizontally center the embed element */
-    align-items: center; /* Vertically center the embed element */
 }
-
-.productimage embed {
-    width: 100%; /* Allow the embed element to take up the full width of its container */
-    height: 100%; /* Allow the embed element to take up the full height of its container */
-    object-fit: contain; /* Resize the embed element while maintaining its aspect ratio */
-}
-
-
-
-
 
 h1{
     font-size: 3.3vw;
@@ -943,4 +932,60 @@ font-size: 1.4vw;
 {
     margin: 3px 3px 0px 10px;
 }
+#gallery{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+#current-image{
+    height: 400px;
+    transform:scale(1);
+    border: 1px solid black;
+}
+
+#thumbnails{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 1em;
+}
+.thumbnail{
+    width: 50px;
+    height: 50px;
+    margin: 0 1em;
+}
+.thumbnailselected
+{
+    border: 2px solid var(--productSelected);
+}
+.galleryimage
+{
+    align-content: center;
+    justify-content: center;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.galleryImageContainer
+{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+.checkoutMessage{
+    padding: 20px;
+    color: white;
+    border-radius: 5px;
+    border: white 1px solid;
+}
+.checkoutHidden{
+    display: none;
+}
+.checkoutError {
+    background-color: red;
+}
+.checkoutSuccess{
+    background-color: green;
+}
