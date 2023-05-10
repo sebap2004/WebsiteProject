@@ -1,3 +1,4 @@
+// Array containing all products that are available.
 var products = [
     // COMPUTER PARTS
     {
@@ -14,7 +15,7 @@ var products = [
         tags: ["consoles"],
         url: "InteractiveProductPage.html",
         image: "media/products/xboxcontroller/black1.jpg",
-        description: "Award-winning performance and optimized technology. For gamers. For creators. For everyone"
+        description: "Experience the modernized design of the Xbox Wireless Controller in Robot White, featuring sculpted surfaces and refined geometry for enhanced comfort and effortless control during gameplay"
     },
     {
         name: "Ryzen 5 3600XT",
@@ -37,7 +38,7 @@ var products = [
         price: 699.99,
         tags: ["computer"],
         url: "DynamicProductPage.html",
-        image: "https://m.media-amazon.com/images/I/81ye21szIDL._AC_SL1500_.jpg",
+        image: "https://m.media-amazon.com/images/I/61f2PAGtRtL._AC_SL1002_.jpg",
         description: "Elevate your gaming experience with AMD Radeon RX 6700 XT graphics card"
     },
     {
@@ -126,7 +127,7 @@ var products = [
         name: "ASUS ROG Strix GL10DH Gaming Desktop",
         price: 1499.99,
         tags: ["prebuilts"],
-        url: "https://www.asus.com/us/Tower-PCs/ROG-Strix-GL10DH/",
+        url: "https://rog.asus.com/desktops/mid-tower/rog-strix-gl10dh-series/",
         image: "https://image.polargaming.co.uk/64d81923-926c-47f7-b204-26b6ddc4cb0a.d4d3d2677e39d941d200338ddad32eee.jpeg",
         description: "Get the ultimate gaming experience with the ASUS ROG Strix GL10DH Gaming Desktop. Featuring an AMD Ryzen 7 processor and NVIDIA GeForce RTX 2060 graphics, this desktop delivers high-end performance and stunning visuals.",
     }
@@ -135,9 +136,11 @@ var products = [
 
 ]
 
+// Creates a product basket object and loads from storage using a seperate variable.
 let ProductBasket;
-console.log()
 const productBasketLoad = localStorage.getItem("basket");
+
+// Checks if there is any basket item in local storage. If not, create one.
 if (productBasketLoad === null)
 {
     console.log("Created new empty basket");
@@ -145,6 +148,7 @@ if (productBasketLoad === null)
 }
 else
 {
+    // If there is an item, try and parse it. If it throws an error, it's usually because the array isn't formatted right. Set ProductBasket to an empty array to be filled.
     try {
         ProductBasket = JSON.parse(productBasketLoad);
         console.log("Basket detected");
@@ -154,7 +158,9 @@ else
     }
 }
 
-
+// Function whichs adds each product element to the productcontainer div.
+// Deletes all objects already in the product container.
+// Filters by tag parameter, if tag is "all" then insert all objects, otherwise only insert the ones that match the tag.
 function displayContent(tag) {
     let productGrid = document.querySelector(".productcontainer");
 
@@ -180,7 +186,7 @@ function displayContent(tag) {
     console.log("Loaded with " + tag + " tag");
 }
 
-
+// External function that creates all of the necessary html objects, then returns a complete html object.
 function createProductElement(product) {
     let productElement = document.createElement("section");
     productElement.classList.add("bodyitemrow", "productsection");
@@ -213,7 +219,7 @@ function createProductElement(product) {
     infoContainer.appendChild(priceElement);
 
     let button = document.createElement("button");
-    button.textContent = "Add to cart";
+    button.textContent = "Add to basket";
     button.onclick = function(){
         addTobasket(product)
     }
@@ -222,6 +228,7 @@ function createProductElement(product) {
     return productElement;
 }
 
+// Function is added to the "add to basket" button with the product that its related to.
 function addTobasket(product)
 {
     ProductBasket.push(product);
@@ -230,5 +237,6 @@ function addTobasket(product)
     UpdateBasketNumberText();
 }
 
+// Loads all content on page load.
 window.addEventListener("load", displayContent("all"))
 

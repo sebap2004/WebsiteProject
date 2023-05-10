@@ -1,3 +1,4 @@
+// From W3Schools, referenced in document.
 let slideIndex = 1;
 showSlides(slideIndex);
 
@@ -10,7 +11,7 @@ function plusSlides(n) {
 function currentSlide(n) {
     showSlides(slideIndex = n);
 }
-
+``
 function showSlides(n) {
     let i;
     let slides = document.getElementsByClassName("mySlides");

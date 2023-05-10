@@ -2,11 +2,14 @@
 const canvas = document.getElementById('animationCanvas');
 const context = canvas.getContext('2d');
 
+
+// Sets the minimum/maximum random speeds, square size and line width.
 const min = -2;
 const max = 2;
 const squareRadius = 10;
-const lineWidth = 0;
+const lineWidth = 2;
 
+// Sets the colors of each shape.
 const firstLinesColor = "#A32CC4";
 const firstSquareColor = "#6B1A92";
 const firstFillColorStart = "#A32CC4";
@@ -17,7 +20,7 @@ const secondSquareColor = "#0E697A";
 const secondFillColorStart = "#1ECFC6";
 const secondFillColorEnd = "#66FFF8";
 
-// Set the initial position of the circle
+// Set the initial positions of the squares
 let x1 = Math.random() * (canvas.width - 2 * squareRadius) + squareRadius;
 let y1 = Math.random() * (canvas.height - 2 * squareRadius) + squareRadius;
 
@@ -36,7 +39,7 @@ let y5 = Math.random() * (canvas.height - 2 * squareRadius) + squareRadius;
 let x6 = Math.random() * (canvas.width - 2 * squareRadius) + squareRadius;
 let y6 = Math.random() * (canvas.height - 2 * squareRadius) + squareRadius;
 
-// Set the speed and direction of the circle
+// Sets the speed and direction of the squares.
 let dx1 = Math.floor(Math.random() * (max - min + 1) + min);
 let dy1 = Math.floor(Math.random() * (max - min + 1) + min);
 let dx2 = Math.floor(Math.random() * (max - min + 1) + min);
@@ -49,6 +52,8 @@ let dx5 = Math.floor(Math.random() * (max - min + 1) + min);
 let dy5 = Math.floor(Math.random() * (max - min + 1) + min);
 let dx6 = Math.floor(Math.random() * (max - min + 1) + min);
 let dy6 = Math.floor(Math.random() * (max - min + 1) + min);
+
+// function that is called by the canvas.
 function animate() {
     context.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -62,6 +67,7 @@ function animate() {
     gradient1.addColorStop(1, firstFillColorEnd);
     context.fillStyle = gradient1;
 
+    // Triangle is drawn by moving the pen to each of its points.D
     context.lineWidth = lineWidth;
     context.moveTo(x1, y1);
     context.lineTo(x2, y2);
@@ -101,7 +107,7 @@ function animate() {
     context.fillRect(x6 - squareRadius, y6 - squareRadius, squareRadius * 2, squareRadius * 2);
 
 
-    // Check if the first set of lines has hit the edge of the canvas
+    // Code to make the squares bounce off the walls of the canvas.
     if (x1 + dx1 > canvas.width - squareRadius || x1 + dx1 < squareRadius) {
         dx1 = -dx1;
     }

@@ -1,6 +1,11 @@
+
+// Grabs the list of thumbnails on the page
 let thumbnailsList = document.querySelectorAll(".thumbnail");
-console.log(thumbnailsList.length);
+
+// Grabs the dropdown menu
 let colorSelector = document.querySelector("#colorSelect");
+
+// Creates a function that changes all the images based on the value of the dropdown menu that is clicked.
 colorSelector.onchange = function ()
 {
     let currentImage = document.querySelector("#current-image");

@@ -1,5 +1,9 @@
+
+// Creates a checkout basket, loads from a seperate const.
 let OrderCheckoutBasket;
 const orderbasketload = localStorage.getItem("basket");
+
+// If basket is null, create empty array, otherwise parse from the local storage.
 if (orderbasketload === null)
 {
     console.log("Created new empty basket");
@@ -11,6 +15,9 @@ else
     OrderCheckoutBasket = JSON.parse(orderbasketload);
     console.log(OrderCheckoutBasket);
 }
+
+// Similar to the productload.js display content, with some changes.
+// Adds up the prices of all the products in the basket and adds 5 for a total price.
 function displayContent() {
     let productGrid = document.querySelector(".basketsummary");
     const subtotal = document.querySelector(".subtotal");
@@ -45,7 +52,7 @@ function displayContent() {
     basketAmount.textContent = "Your " + OrderCheckoutBasket.length + " items will be arriving shortly.";
 }
 
-
+// Same principle as the product load element creator in productload.js, but with different elements.
 function createBasketItemSummaryElement(product) {
     const itemSummaryElement = document.createElement("div");
     itemSummaryElement.classList.add("basketitemsummary");

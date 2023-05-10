@@ -1,3 +1,5 @@
+
+// Creates CheckoutBasket object and loads from local storage on a seperate object.
 let CheckoutBasket;
 const basketload = localStorage.getItem("basket");
 if (basketload === null)
@@ -26,15 +28,17 @@ formSubmitButton.addEventListener('click', function(event) {
     const securitynumberRegex = /^[0-9]{3}$/;
     const expiryDateRegex = /^(0[1-9]|1[0-2])\/\d{2}$/;
 
+    // Checks if basket load is null, if it is then return an error
     if (basketload === null)
     {
         messageText.innerText = "Basket is empty.";
         messageText.classList.remove("checkoutHidden");
-        messageText.classList.add("checkoutError");
+        messageText.classList.add("checkoutError");S
         messageText.classList.remove("checkoutSuccess");
         return;
     }
 
+    // Checks if basket is empty, if it is then return an error
     if (basketload.length === 0)
     {
         messageText.innerText = "Basket is empty.";
@@ -44,6 +48,7 @@ formSubmitButton.addEventListener('click', function(event) {
         return;
     }
 
+    // Checks if the name fits the requirements, if not then return an error
     const fullNameInput = document.getElementById('fullname');
     if (!fullNameInput || fullNameInput.value.length < 2 || fullNameInput.value.length > 50)
     {
@@ -55,6 +60,7 @@ formSubmitButton.addEventListener('click', function(event) {
         return;
     }
 
+    // Checks if the phone number fits the regex, if not then return an error
     const phoneNumberInput = document.getElementById('phoneNumber');
     if (!phoneNumberInput || !phoneNumberRegex.test(phoneNumberInput.value)) {
         console.log("Please enter a valid phone number.");
@@ -65,6 +71,7 @@ formSubmitButton.addEventListener('click', function(event) {
         return;
     }
 
+    // Checks if the email fits the regex, if not then return an error
     const emailInput = document.getElementById('email');
     if (!emailInput || !emailRegex.test(emailInput.value)) {
         console.log("Please enter a valid email address.");
@@ -75,6 +82,7 @@ formSubmitButton.addEventListener('click', function(event) {
         return;
     }
 
+    // Checks if the address line 1 is valid, if not then return an error
     const addressLine1Input = document.getElementById('addressline1');
     if (!addressLine1Input || addressLine1Input.value.length < 2)
     {
@@ -86,6 +94,7 @@ formSubmitButton.addEventListener('click', function(event) {
         return;
     }
 
+    // Checks if the address line 2 is used, if so it checks if its valid, if not return an error
     const addressLine2Input = document.getElementById('addressline1');
     if (addressLine2Input && addressLine2Input.value.length < 2)
     {
@@ -97,6 +106,7 @@ formSubmitButton.addEventListener('click', function(event) {
         return;
     }
 
+    // Checks if county is valid, if not return an error
     const countyInput = document.getElementById('county');
     if (!countyInput || countyInput.value.length < 2)
     {
@@ -108,6 +118,7 @@ formSubmitButton.addEventListener('click', function(event) {
         return;
     }
 
+    // Checks if the card name is vaild, if not return an error
     const cardNameInput = document.getElementById('cardname');
     if (!cardNameInput || cardNameInput.value.length < 2 || cardNameInput.value.length > 50)
     {
@@ -119,6 +130,7 @@ formSubmitButton.addEventListener('click', function(event) {
         return;
     }
 
+    // Checks if the credit card number fits the regex, if not return an error
     const cardNumberInput = document.getElementById('cardnumber');
     if (!cardNumberInput || !creditcardRegex.test(cardNumberInput.value)) {
         console.log("Please enter a valid card number.");
@@ -128,6 +140,8 @@ formSubmitButton.addEventListener('click', function(event) {
         messageText.classList.remove("checkoutSuccess");
         return;
     }
+
+    // Checks if the security number fits the regex, if not return an error
     const securityNumberInput = document.getElementById('securitynumber');
     if (!securityNumberInput || !securitynumberRegex.test(securityNumberInput.value)) {
         console.log("Please enter a valid security number.");
@@ -137,6 +151,8 @@ formSubmitButton.addEventListener('click', function(event) {
         messageText.classList.remove("checkoutSuccess");
         return;
     }
+
+    // Checks if the expiry date fits the regex, if not return an error
     const expiryDateInput = document.getElementById('expirydate');
     if (!expiryDateInput || !expiryDateRegex.test(expiryDateInput.value)) {
         console.log("Please enter a valid expiry date.");
@@ -146,8 +162,13 @@ formSubmitButton.addEventListener('click', function(event) {
         messageText.classList.remove("checkoutSuccess");
         return;
     }
+
+
+    // If all conditions are met, redirect to the order confirmation screen.
     window.location.href = "orderconfirmation.html";
 });
+
+// Displays content similar to the basketload.js displayContent method.
 function displayContent() {
     let productGrid = document.querySelector(".basketsummary");
     const subtotal = document.querySelector(".subtotal");
@@ -181,7 +202,7 @@ function displayContent() {
     basketAmount.textContent = "Basket Summary (" + CheckoutBasket.length + " Items)";
 }
 
-
+// Displays content the same way that the orderConfirmation.js summary is created.
 function createBasketItemSummaryElement(product) {
     const itemSummaryElement = document.createElement("div");
     itemSummaryElement.classList.add("basketitemsummary");

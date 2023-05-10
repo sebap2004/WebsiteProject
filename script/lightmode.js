@@ -1,51 +1,29 @@
-const gamewindow = document.getElementsByClassName("gamewindow")[0];
+
+// Variable is loaded from storage.
 let lightmode = localStorage.getItem("lightMode");
-const pagetheme = document.body;
 
-function openFullscreen()
-{
-    if (gamewindow.requestFullscreen) {
-        gamewindow.requestFullscreen();
-    }
-}
-
-var elem = document.activeElement;
-var monitor = setInterval(function(){
-    var elem = document.activeElement;
-    if(elem && elem.id === 'game'){
-        document.body.style.setProperty("overflow", "hidden")
-
-    }
-    else{
-        document.body.style.setProperty("overflow", "auto")
-
-    }
-}, 100);
-
+// Function is called on page load.
 function loadLightMode()
 {
     lightmode = localStorage.getItem("lightMode");
     let icon;
-    let isOn = 0;
     const element = document.body;
-    if (lightmode === null)
+    if (lightmode === null) // Checks if the lightmode cookie is null, removes light mode by default
     {
         console.log("light mode token is null, light mode is off")
         icon = "../media/sun.png";
         element.classList.remove("lightMode");
+        return;
     }
-    if (lightmode === "1") {
+    if (lightmode === "1") { // If light mode is 1, then add the lightmode class.
         console.log("Loaded light mode: Light mode is on");
         icon = "../media/moon.png";
         element.classList.add("lightMode");
     }
-    else {
-
-    }
     document.getElementById("darkmodeicon").src=icon;
 }
 
-
+// Toggles light mode. called from the button on the top left of the page.
 function toggleLightMode()
 {
     let icon;
@@ -67,8 +45,9 @@ function toggleLightMode()
 }
 
 const navbar = document.querySelector('.nav');
-const buttons = navbar.querySelectorAll('.navitem');
-document.addEventListener("DOMContentLoaded", loadLightMode);
+
+
+document.addEventListener("load", loadLightMode);
 
 
 

@@ -1,14 +1,16 @@
+
+// Creates a basket variable and loads the basket object from local storage.
 const getBasket = localStorage.getItem("basket");
 let basket;
 
+// Tries to load the basket object, if it fails create an empty basket.
 try { basket = JSON.parse(getBasket); }
 catch (error) {
     basket = [];
-    console.log("plonker");
 }
 
 
-
+// Similar to the productload.js displayContent function, but with different HTML elements.
 function displayContent() {
     let productGrid = document.querySelector(".baskets");
     const subtotal = document.querySelector(".subtotal");
@@ -54,7 +56,8 @@ function displayContent() {
     }
 }
 
-function createBasketItemElement(product, index) {
+// Creates a basket item that shows the product that is in the basket at the index pIndex.
+function createBasketItemElement(product, pIndex) {
     let basketItemElement = document.createElement("div");
     basketItemElement.classList.add("basketitem");
 
@@ -84,6 +87,7 @@ function createBasketItemElement(product, index) {
     removeLink.setAttribute("href", "#");
     removeLink.textContent = "Remove from basket";
     removeLink.addEventListener('click', function(event) {
+        // Local function that removes the product from the array.
         event.preventDefault();
         if (basket.length <= 1)
         {
@@ -94,7 +98,7 @@ function createBasketItemElement(product, index) {
             displayContent()
             return;
         }
-        basket.splice(index, 1);
+        basket.splice(pIndex, 1);
         localStorage.setItem("basket", JSON.stringify(basket));
         displayContent();
         UpdateBasketNumberText();
@@ -115,6 +119,7 @@ function createBasketItemElement(product, index) {
     return basketItemElement;
 }
 
+// Clears all items from the basket and removes the localstorage object.
 function clearbasket()
 {
     basket = null;
