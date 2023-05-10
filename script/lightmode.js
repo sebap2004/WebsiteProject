@@ -3,25 +3,21 @@
 let lightmode = localStorage.getItem("lightMode");
 
 // Function is called on page load.
-function loadLightMode()
-{
+function loadLightMode() {
     lightmode = localStorage.getItem("lightMode");
-    let icon;
     const element = document.body;
-    if (lightmode === null) // Checks if the lightmode cookie is null, removes light mode by default
-    {
-        console.log("light mode token is null, light mode is off")
-        icon = "../media/sun.png";
+    let icon;
+    if (lightmode === null || lightmode === "0") { // If lightmode cookie is null or 0, remove light mode by default
         element.classList.remove("lightMode");
-        return;
-    }
-    if (lightmode === "1") { // If light mode is 1, then add the lightmode class.
-        console.log("Loaded light mode: Light mode is on");
-        icon = "../media/moon.png";
+        icon = "../media/sun.png";
+    } else if (lightmode === "1") { // If light mode is 1, then add the lightmode class
         element.classList.add("lightMode");
+        icon = "../media/moon.png";
     }
-    document.getElementById("darkmodeicon").src=icon;
+    document.getElementById("darkmodeicon").src = icon;
 }
+
+
 
 // Toggles light mode. called from the button on the top left of the page.
 function toggleLightMode()
@@ -44,10 +40,12 @@ function toggleLightMode()
     document.getElementById("darkmodeicon").src=icon;
 }
 
+
 const navbar = document.querySelector('.nav');
 
+document.addEventListener("DOMContentLoaded", loadLightMode);
+window.addEventListener("load", loadLightMode);
 
-document.addEventListener("load", loadLightMode);
 
 
 
